@@ -1,0 +1,35 @@
+.landing__header {
+  background-color: $gray-eighty;
+  padding: 20px;
+  width: 100%;
+  div {
+    margin: 20px 0;
+  }
+}
+
+.landing__buttons {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  button {
+    font-size: 20px;
+    width: 300px;
+    height: 2em;
+  }
+}
+
+.landing__about {
+  div {
+    margin: 10px;
+  }
+  .landing__about-heading {
+    font-weight: bold;
+    line-height: 1.3em;
+  }
+}
+
+.landing__admin {
+  text-align: right;
+}

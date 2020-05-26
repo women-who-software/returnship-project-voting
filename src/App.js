@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Route, Switch } from "react-router-dom";
+import Landing from "./Components/Landing/Landing";
+import Login from "./Components/Login/Login";
 
-function App() {
+export default function App() {
+  const [hasError, setHasError] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <main className="App">
+        {hasError && <p className="red">There was an error}</p>}
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
+      </main>
+    </React.Fragment>
   );
 }
-
-export default App;
