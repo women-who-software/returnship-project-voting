@@ -8,7 +8,7 @@
 }
 
 .landing__buttons {
-  margin: 20px 0;
+  margin: 50px 0 20px 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -21,8 +21,9 @@
 }
 
 .landing__about {
+  margin-top: 50px;
   div {
-    margin: 10px;
+    margin: 20px 50px;
   }
   .landing__about-heading {
     font-weight: bold;
@@ -32,4 +33,5 @@
 
 .landing__admin {
   text-align: right;
+  margin-right: 50px;
 }

@@ -26,8 +26,8 @@ ul {
   list-style: none;
 }
 
-section {
-  margin: 50px;
+.strong {
+  font-weight: bold;
 }
 
 .landing__header {
@@ -41,7 +41,7 @@ section {
 }
 
 .landing__buttons {
-  margin: 20px 0;
+  margin: 50px 0 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,8 +62,12 @@ section {
   height: 2em;
 }
 
+.landing__about {
+  margin-top: 50px;
+}
+
 .landing__about div {
-  margin: 10px;
+  margin: 20px 50px;
 }
 
 .landing__about .landing__about-heading {
@@ -73,5 +77,114 @@ section {
 
 .landing__admin {
   text-align: right;
+  margin-right: 50px;
+}
+
+.nav__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 10px;
+  background-color: #dddddd;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 10px;
+  background-color: #dddddd;
+}
+
+.nav__logo {
+  margin-left: 1rem;
+}
+
+.nav__logo a {
+  color: #000;
+  text-decoration: none;
+}
+
+.spacer {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.nav__links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.nav__links ul li {
+  margin: 0 5px;
+}
+
+.projects {
+  margin: 20px 50px 20px 50px;
+  width: 80%;
+}
+
+.projects__header {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.projects__items-project {
+  border: 1px solid #999;
+  padding: 20px;
+  margin: 5px 0;
+  background-color: #dddddd;
+  border-radius: 5px;
+}
+
+.projects__items-project div {
+  margin: 5px 0;
+}
+
+.projects__items-project .projects__items-status,
+.projects__items-project .projects__items-more {
+  display: inline-block;
+}
+
+.projects__items-project .projects__items-more {
+  float: right;
+}
+
+.projectdetails {
+  margin: 20px 50px 20px 50px;
+  width: 80%;
+}
+
+.projectdetails__header {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.projectdetails__description {
+  border: 1px solid #dddddd;
+  padding: 20px;
+}
+
+.projectdetails__description div {
+  margin: 20px 10px;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,28 @@
+.projects {
+  margin: 20px 50px 20px 50px;
+  width: 80%;
+}
+
+.projects__header {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.projects__items-project {
+  border: 1px solid $gray-light;
+  padding: 20px;
+  margin: 5px 0;
+  background-color: $gray-dark-bg;
+  border-radius: 5px;
+
+  div {
+    margin: 5px 0;
+  }
+  .projects__items-status,
+  .projects__items-more {
+    display: inline-block;
+  }
+  .projects__items-more {
+    float: right;
+  }
+}

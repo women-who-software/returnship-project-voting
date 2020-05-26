@@ -1,0 +1,37 @@
+export default {
+  projects: [
+    {
+      project_id: 1,
+      project_name: "Project 1",
+      short_desc: "This is a short description for Project 1",
+      long_desc: "This is a really long description for Project 1",
+      contact: "John Doe",
+      company: "Doe and Associates",
+      team_members_needed: 5,
+      status: "Open",
+      tech_stack: ["React", "Python"],
+    },
+    {
+      project_id: 2,
+      project_name: "Project 2",
+      short_desc: "This is a short description for Project 2",
+      long_desc: "This is a really long description for Project 2",
+      contact: "John Smith",
+      company: "Smith and Associates",
+      team_members_needed: 3,
+      status: "In-Progress",
+      tech_stack: ["React", "PHP"],
+    },
+    {
+      project_id: 3,
+      project_name: "Project 3",
+      short_desc: "This is a short description for Project 3",
+      long_desc: "This is a really long description for Project 3",
+      contact: "John Darling",
+      company: "Darling and Associates",
+      team_members_needed: 1,
+      status: "Fulfilled",
+      tech_stack: ["COBOL", "CICS"],
+    },
+  ],
+};
