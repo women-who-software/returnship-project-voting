@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Nav from "../Nav/Nav";
 
 export default function ProjectDetails(props) {
@@ -8,7 +9,7 @@ export default function ProjectDetails(props) {
     <>
       <Nav />
       <section className="projectdetails">
-        <div className="projectdetails__header">{project.project_name}</div>
+        <div className="header">{project.project_name}</div>
         <div className="projectdetails__description">
           <div>
             <span className="strong">Description: </span>
@@ -28,8 +29,19 @@ export default function ProjectDetails(props) {
               <div key={tech}>{tech}</div>
             ))}
           </div>
-          <div><span className='strong'>Team Members Needed: </span>{project.team_members_needed}</div>
-          <div><span className='strong'>Status: </span>{project.status}</div>
+          <div>
+            <span className="strong">Team Members Needed: </span>
+            {project.team_members_needed}
+          </div>
+          <div>
+            <span className="strong">Status: </span>
+            {project.status}
+          </div>
+        </div>
+        <div className="projectdetails__back">
+          <NavLink to="/projects">
+            <button>Back to Projects</button>
+          </NavLink>
         </div>
       </section>
     </>

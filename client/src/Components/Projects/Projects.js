@@ -22,7 +22,7 @@ export default function Projects(props) {
     <>
       <Nav />
       <section className="projects">
-        <div className="projects__header">Projects</div>
+        <div className="header">Projects</div>
         <div className="projects__items">{getProjects}</div>
       </section>
     </>
