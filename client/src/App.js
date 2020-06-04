@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Route, Switch } from "react-router-dom";
 import Landing from "./Components/Landing/Landing";
 import Login from "./Components/Login/Login";
 import Projects from "./Components/Projects/Projects";
-import ProjectDetails from './Components/Projects/ProjectDetails';
+import ProjectDetails from "./Components/Projects/ProjectDetails";
 import Voting from "./Components/Voting/Voting";
 import SignUps from "./Components/SignUps/SignUps";
 import STORE from "./STORE";
+import { GlobalContext } from "./Context/GlobalContext";
 
 export default function App() {
   const [hasError, setHasError] = useState("");
-  const [projects, setProjects] = useState([]);
+  const { projects, setProjects } = useContext(GlobalContext);
 
   useEffect(() => {
     setProjects(STORE.projects);
@@ -30,8 +31,7 @@ export default function App() {
             component={(routeProps) => (
               <ProjectDetails
                 project={projects.find(
-                  (project) =>
-                    project.project_id === Number(routeProps.match.params.project_id)
+                  (project) => project.project_id === Number(routeProps.match.params.project_id)
                 )}
               />
             )}

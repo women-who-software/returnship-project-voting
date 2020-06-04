@@ -40,7 +40,7 @@ export default function ProjectDetails(props) {
         </div>
         <div className="projectdetails__back">
           <NavLink to="/projects">
-            <button>Back to Projects</button>
+            <button className='small-button'>Back to Projects</button>
           </NavLink>
         </div>
       </section>

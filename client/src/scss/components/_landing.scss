@@ -1,5 +1,5 @@
 .landing__header {
-  background-color: $gray-eighty;
+  background-color: $bg-nav;
   padding: 20px;
   width: 100%;
   div {
@@ -17,6 +17,10 @@
     font-size: 20px;
     width: 300px;
     height: 2em;
+    $background-color: $bg-button;
+    &:hover {
+      $background-color: $bg-button-hover;
+    }
   }
 }
 

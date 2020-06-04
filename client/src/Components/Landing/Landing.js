@@ -33,7 +33,7 @@ export default function LandingPage() {
       </div>
       <div className="landing__admin">
         <NavLink to="/login">
-          <button>Admin</button>
+          <button className="small-button">Admin</button>
         </NavLink>
       </div>
     </section>
