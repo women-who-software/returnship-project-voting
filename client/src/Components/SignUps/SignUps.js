@@ -1,30 +1,163 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useHistory } from "react-router";
 import Nav from "../Nav/Nav";
+import ValidateError from "../ValidateError/ValidateError";
+import { GlobalContext } from "../../Context/GlobalContext";
+
+const Required = () => <span className="required">*</span>;
 
 export default function SignUps() {
-  const [name, setName] = useState("");
-  const [gitHub, setGitHub] = useState("");
-  const [email, setEmail] = useState("");
-  const [projects, setProjects] = useState({
-    project1: false,
-    project2: false,
-  });
+  const { projects } = useContext(GlobalContext);
+  let history = useHistory();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    // const newEmployee = {
-    //   id: employees.length + 1,
-    //   name,
-    //   location,
-    //   designation,
-    // };
-    // addEmployee(newEmployee);
-    // history.push("/");
+  const Checkbox = ({
+    type = "checkbox",
+    name,
+    id,
+    checked = false,
+    onChange,
+  }) => {
+    return (
+      <input
+        type={type}
+        htmlFor={id}
+        name={name}
+        value={id}
+        checked={checked}
+        onChange={onChange}
+      />
+    );
   };
 
-  const handleProjectClick = ({ target }) =>
-    setProjects((project) => ({ ...setProjects, [target.name]: !project[target.name] }));
+  const [name, setName] = useState({ value: "", touched: "" });
+  const [github, setGithub] = useState({ value: "", touched: "" });
+  const [email, setEmail] = useState({ value: "", touched: "" });
+  const [selectedProjects, setSelectedProjects] = useState({});
 
+  // Update state from form
+
+  const updateName = (name) => {
+    setName({
+      value: name,
+      touched: true,
+    });
+  };
+
+  const updateGithub = (github) => {
+    setGithub({
+      value: github,
+      touched: true,
+    });
+  };
+
+  const updateEmail = (email) => {
+    setEmail({
+      value: email,
+      touched: true,
+    });
+  };
+
+  const updateSelectedProjects = (event) => {
+    setSelectedProjects({
+      ...selectedProjects,
+      [event.target.name]: {
+        checked: event.target.checked,
+        id: event.target.value,
+      },
+    });
+  };
+
+  // Form Submit
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+
+    console.log("name", name);
+    console.log("github", github);
+    console.log("email", email);
+    console.log("selectedProjects", selectedProjects);
+  };
+
+  // Validate form fields
+  const validateUserName = () => {
+    const userName = name.value.trim();
+
+    if (userName.length === 0) {
+      return { error: true, message: "Name is required" };
+    }
+
+    return { error: false, message: "" };
+  };
+
+  const validateGithub = () => {
+    const userGithub = github.value.trim();
+
+    if (userGithub.length === 0) {
+      return { error: true, message: "Github Handle is required" };
+    }
+
+    return { error: false, message: "" };
+  };
+
+  const validateEmail = () => {
+    const userEmail = email.value.trim();
+
+    if (userEmail.length === 0) {
+      return { error: true, message: "Email address is required" };
+    }
+
+    return { error: false, message: "" };
+  };
+
+  const validateSelectedProjects = () => {
+    const userSelectedProjects = selectedProjects;
+
+    console.log("userSelectedProjects", userSelectedProjects);
+
+    if (Object.keys(userSelectedProjects).length === 0) {
+      return {
+        error: true,
+        message: "You must selected at least 1 Project to vote for",
+      };
+    }
+
+    return { error: false, message: "" };
+  };
+
+  // Check for validation errors
+  let buttonDisabled = true;
+
+  const NameError = validateUserName();
+  const GithubError = validateGithub();
+  const EmailError = validateEmail();
+  const SelectedProjectsError = validateSelectedProjects();
+
+  if (
+    !NameError.error &&
+    !GithubError.error &&
+    !EmailError.error &&
+    !SelectedProjectsError.error
+  ) {
+    buttonDisabled = false;
+  }
+
+  // Project Options
+  const projectOptions = [];
+  projects.map((project) =>
+    projectOptions.push({
+      key: project.project_id,
+      name: project.project_name,
+      label: project.project_name,
+    })
+  );
+
+  // Check if selectedOption is checked
+  const checkSelectedProject = (project) => {
+    return selectedProjects[project]
+      ? selectedProjects[project].checked
+      : false;
+  };
+
+  // render
   return (
     <>
       <Nav />
@@ -32,69 +165,104 @@ export default function SignUps() {
         <div className="header">Sign-Ups</div>
         <div className="card">
           <div>
-            Please let us know if you are interested in working on one of the projects below
+            Please let us know if you are interested in working on one of the
+            projects below:
           </div>
-          <form onSubmit={onSubmit}>
-            <div className="signups__project-input">
-              <label className="signups__project-input-label" htmlFor="project">
-                Pick your top 2
-              </label>
-              {Object.keys(projects).map((key) => (
-                <div key={key}>
-                  <input
-                    type="checkbox"
-                    onChange={handleProjectClick}
-                    key={key}
-                    name={key}
-                    checked={projects[key]}
-                  />
-                  <span>{key}</span>
-                </div>
-              ))}
+          <form onSubmit={handleOnSubmit}>
+            <div className="required">* Required Fields</div>
+            <div className="signups__project-options">
+              <div>
+                <Required />
+                Available Projects
+              </div>
+              <div className="signups__projects-options-option">
+                {projectOptions.map((item) => (
+                  <div key={item.key}>
+                    <Checkbox
+                      name={item.name}
+                      id={item.key}
+                      checked={checkSelectedProject(item.name)}
+                      value={item.key}
+                      onChange={updateSelectedProjects}
+                    />
+                    <label id={item.key} htmlFor={item.key}>
+                      {item.name}
+                    </label>
+                  </div>
+                ))}
+              </div>
             </div>
+            <div>
+              {selectedProjects && (
+                <ValidateError message={SelectedProjectsError.userName} />
+              )}
+            </div>
+
             <div className="signups__name-input">
-              <label className="signups__name-input-label" htmlFor="name">
+              <label className="signups__name-input-label" htmlFor="userName">
+                <Required />
                 Name:
               </label>
               <input
-                name="name"
+                name="userName"
                 className="signups__name-input-input"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => updateName(e.target.value)}
                 type="text"
-                placeholder="your name"
+                placeholder="Your name"
+                required
               />
             </div>
+            <div>
+              {name.touched && <ValidateError message={NameError.userName} />}
+            </div>
+
             <div className="signups__github-input">
-              <label className="signups__github-input-label" htmlFor="slack">
+              <label className="signups__github-input-label" htmlFor="github">
+                <Required />
                 Github Handle:
               </label>
               <input
-                name="slack"
+                name="github"
                 className="signups__github-input-input"
-                value={gitHub}
-                onChange={(e) => setGitHub(e.target.value)}
+                onChange={(e) => updateGithub(e.target.value)}
                 type="text"
-                placeholder="enter your github handle"
+                placeholder="Enter your Github Handle"
                 size="50"
+                required
               />
             </div>
+            <div>
+              {github.touched && (
+                <ValidateError message={GithubError.projects} />
+              )}
+            </div>
+
             <div className="signups__email-input">
-              <label className="signups__email-input-label" htmlFor="slack">
-                Email:
+              <label className="signups__email-input-label" htmlFor="github">
+                <Required />
+                Email Address:
               </label>
               <input
-                name="slack"
-                className="signups__github-input-input"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+                className="signups__email-input-input"
+                onChange={(e) => updateEmail(e.target.value)}
                 type="text"
-                placeholder="enter your email address"
+                placeholder="Enter your Email Address"
                 size="50"
+                required
               />
             </div>
+            <div>
+              {email.touched && <ValidateError message={EmailError.projects} />}
+            </div>
             <div className="signups__submit">
-              <button className='small-button'>submit</button>
+              <button
+                className="small-button"
+                type="submit"
+                disabled={buttonDisabled}
+              >
+                submit
+              </button>
             </div>
           </form>
         </div>

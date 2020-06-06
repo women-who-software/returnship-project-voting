@@ -57,7 +57,7 @@ ul {
 input {
   height: 2em;
   border-radius: 5px;
-  padding: 2px;
+  padding: 5px;
 }
 
 .required {
@@ -66,4 +66,14 @@ input {
   font-style: italic;
   vertical-align: super;
   margin-right: 5px;
+}
+
+form {
+  margin: 0 50px;
+  div {
+    margin: 20px 0;
+  }
+  label {
+    margin-right: 5px;
+  }
 }

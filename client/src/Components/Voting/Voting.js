@@ -10,7 +10,13 @@ export default function Voting() {
   const { projects } = useContext(GlobalContext);
   let history = useHistory();
 
-  const Checkbox = ({ type = "checkbox", name, id, checked = false, onChange }) => {
+  const Checkbox = ({
+    type = "checkbox",
+    name,
+    id,
+    checked = false,
+    onChange,
+  }) => {
     return (
       <input
         type={type}
@@ -46,7 +52,10 @@ export default function Voting() {
   const updateSelectedProjects = (event) => {
     setSelectedProjects({
       ...selectedProjects,
-      [event.target.name]: { checked: event.target.checked, id: event.target.value },
+      [event.target.name]: {
+        checked: event.target.checked,
+        id: event.target.value,
+      },
     });
   };
 
@@ -74,7 +83,10 @@ export default function Voting() {
     const userSlack = slack.value.trim();
 
     if (userSlack.length === 0) {
-      return { error: true, message: "Slack Handle or Email address is required" };
+      return {
+        error: true,
+        message: "Slack Handle or Email address is required",
+      };
     }
 
     return { error: false, message: "" };
@@ -86,7 +98,10 @@ export default function Voting() {
     console.log("userSelectedProjects", userSelectedProjects);
 
     if (Object.keys(userSelectedProjects).length === 0) {
-      return { error: true, message: "You must selected at least 1 Project to vote for" };
+      return {
+        error: true,
+        message: "You must selected at least 1 Project to vote for",
+      };
     }
 
     return { error: false, message: "" };
@@ -115,7 +130,9 @@ export default function Voting() {
 
   // Check if selectedOption is checked
   const checkSelectedProject = (project) => {
-    return selectedProjects[project] ? selectedProjects[project].checked : false;
+    return selectedProjects[project]
+      ? selectedProjects[project].checked
+      : false;
   };
 
   // render
@@ -126,8 +143,8 @@ export default function Voting() {
         <div className="header">Vote</div>
         <div className="card">
           <div>
-            In order to prioritize potential projects, please vote on which projects you would be
-            interested in working on
+            In order to prioritize potential projects, please vote on which
+            projects you would be interested in working on
           </div>
           <form onSubmit={handleOnSubmit}>
             <div className="required">* Required Fields</div>
@@ -154,7 +171,9 @@ export default function Voting() {
               </div>
             </div>
             <div>
-              {selectedProjects && <ValidateError message={SelectedProjectsError.userName} />}
+              {selectedProjects && (
+                <ValidateError message={SelectedProjectsError.userName} />
+              )}
             </div>
             <div className="voting__name-input">
               <label className="voting__name-input-label" htmlFor="userName">
@@ -166,11 +185,13 @@ export default function Voting() {
                 className="voting__name-input-input"
                 onChange={(e) => updateName(e.target.value)}
                 type="text"
-                placeholder="your name"
+                placeholder="Your name"
                 required
               />
             </div>
-            <div>{name.touched && <ValidateError message={NameError.userName} />}</div>
+            <div>
+              {name.touched && <ValidateError message={NameError.userName} />}
+            </div>
             <div className="voting__slack-input">
               <label className="voting__slack-input-label" htmlFor="slack">
                 <Required />
@@ -181,14 +202,20 @@ export default function Voting() {
                 className="voting__slack-input-input"
                 onChange={(e) => updateSlack(e.target.value)}
                 type="text"
-                placeholder="enter either your slack handle or email address"
+                placeholder="Enter either your Slack Handle or Email address"
                 size="50"
                 required
               />
             </div>
-            <div>{slack.touched && <ValidateError message={SlackError.projects} />}</div>
+            <div>
+              {slack.touched && <ValidateError message={SlackError.projects} />}
+            </div>
             <div className="voting__submit">
-              <button className="small-button" type="submit" disabled={buttonDisabled}>
+              <button
+                className="small-button"
+                type="submit"
+                disabled={buttonDisabled}
+              >
                 submit
               </button>
             </div>
