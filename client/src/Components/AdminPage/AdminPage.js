@@ -43,7 +43,7 @@ export default function AdminPage() {
               <h3>Projects</h3>
             </Col>
             <Col className='d-flex justify-content-end'>
-              <a href=''>Add New Projects</a>
+              <a href='' className='admin-btn'>Add New Projects</a>
             </Col>
           </Row>
           <Row>

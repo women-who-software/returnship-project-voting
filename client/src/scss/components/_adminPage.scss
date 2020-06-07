@@ -1,0 +1,15 @@
+.admin-btn {
+  border: 1px solid #42213d;
+  padding: 0.5rem;
+  background-color: $bg-nav;
+  color: black;
+  // width: auto;
+  // height: 1.3rem;
+}
+.admin-btn:hover {
+  border: 1px solid black;
+  padding: 0.5rem;
+  background-color: #683257;
+  color: white;
+  text-decoration: none;
+}
