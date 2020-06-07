@@ -12,10 +12,14 @@ export default function Header() {
       <Navbar expand='lg' id='header'>
         <Navbar.Brand href='/'>WWC - Boulder / Denver</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='mr-auto'>
-            <Nav.Link href='#home'>Career Returnship</Nav.Link>
-            <Nav.Link href='/projects'>ProjectHub</Nav.Link>
+        <Navbar.Collapse id='basic-navbar-nav' className='justify-content-end'>
+          <Nav className=''>
+            <Nav.Link href='/' className='header-link'>
+              Career Returnship
+            </Nav.Link>
+            <Nav.Link href='/projects' className='header-link'>
+              ProjectHub
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
