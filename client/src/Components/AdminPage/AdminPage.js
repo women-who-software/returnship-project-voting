@@ -2,6 +2,7 @@
 import React, { useContext } from 'react'
 import Header from '../Header/Header'
 import { GlobalContext } from '../../Context/GlobalContext'
+import { NavLink } from 'react-router-dom'
 
 // Import ReactBootstrap Components
 import Container from 'react-bootstrap/Container'
@@ -24,9 +25,10 @@ export default function AdminPage() {
         {projects.status}
       </div>
       <div className='projects__items-more'>
-        <Nav.Link to={`/projects/${projects.project_id}`}>
+        {/*?? TODO - Change the route to EditProjectDetailsPage */}
+        <NavLink to={`/edit/${projects.project_id}`}>
           <button className='small-button'>More Details</button>
-        </Nav.Link>
+        </NavLink>
       </div>
     </div>
   ))
@@ -43,7 +45,9 @@ export default function AdminPage() {
               <h3>Projects</h3>
             </Col>
             <Col className='d-flex justify-content-end'>
-              <a href='' className='admin-btn'>Add New Projects</a>
+              <a href='' className='admin-btn'>
+                Add New Projects
+              </a>
             </Col>
           </Row>
           <Row>
