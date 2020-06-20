@@ -5,6 +5,8 @@ import Nav from "../Nav/Nav";
 export default function ProjectDetails(props) {
   const { project } = props;
 
+  console.log('project', project)
+
   return (
     <>
       <Nav />
@@ -13,15 +15,15 @@ export default function ProjectDetails(props) {
         <div className="projectdetails__description">
           <div>
             <span className="strong">Description: </span>
-            {project.long_desc}
+            {project.project_long_desc}
           </div>
           <div>
             <span className="strong">Contact: </span>
-            {project.contact}
+            {project.client_name}
           </div>
           <div>
             <span className="strong">Company: </span>
-            {project.company}
+            {project.client_company}
           </div>
           <div>
             <span className="strong">Tech Stack: </span>
@@ -31,7 +33,7 @@ export default function ProjectDetails(props) {
           </div>
           <div>
             <span className="strong">Team Members Needed: </span>
-            {project.team_members_needed}
+            {project.max_team_members}
           </div>
           <div>
             <span className="strong">Status: </span>

@@ -5,6 +5,7 @@ import ValidateError from "../ValidateError/ValidateError";
 import { GlobalContext } from "../../Context/GlobalContext";
 
 const Required = () => <span className="required">*</span>;
+const validator = require("email-validator");
 
 export default function Voting() {
   const { projects } = useContext(GlobalContext);
@@ -31,7 +32,9 @@ export default function Voting() {
 
   const [name, setName] = useState({ value: "", touched: "" });
   const [slack, setSlack] = useState({ value: "", touched: "" });
+  const [email, setEmail] = useState({ value: "", touched: "" });
   const [selectedProjects, setSelectedProjects] = useState({});
+  const [projectsTouched, setProjectedTouched] = useState(false);
 
   // Update state from form
 
@@ -49,14 +52,22 @@ export default function Voting() {
     });
   };
 
+  const updateEmail = (email) => {
+    setEmail({
+      value: email,
+      touched: true,
+    });
+  };
+
   const updateSelectedProjects = (event) => {
     setSelectedProjects({
       ...selectedProjects,
       [event.target.name]: {
         checked: event.target.checked,
         id: event.target.value,
-      },
+      }
     });
+    setProjectedTouched(true);
   };
 
   // Form Submit
@@ -65,7 +76,10 @@ export default function Voting() {
 
     console.log("name", name);
     console.log("slack", slack);
-    console.log("selectedProjects", selectedProjects);
+    console.log("email", email);
+    console.log('selected', Object.keys(selectedProjects).filter(key => selectedProjects[key].checked))
+
+    history.push("/projects");
   };
 
   // Validate form fields
@@ -92,15 +106,35 @@ export default function Voting() {
     return { error: false, message: "" };
   };
 
+  const validateEmail = () => {
+    const userEmail = email.value.trim();
+
+    if (!validator.validate(userEmail) && userEmail.length > 0) {
+      return {
+        error: true,
+        message: "Please enter a valid email address",
+      };
+    }
+
+    return { error: false, message: "" };
+  };
+
   const validateSelectedProjects = () => {
     const userSelectedProjects = selectedProjects;
 
-    console.log("userSelectedProjects", userSelectedProjects);
+    const count = Object.values(userSelectedProjects).filter((k) => k.checked);
 
-    if (Object.keys(userSelectedProjects).length === 0) {
+    if (Object.keys(userSelectedProjects).length === 0 || count.length === 0) {
       return {
         error: true,
         message: "You must selected at least 1 Project to vote for",
+      };
+    }
+
+    if (count.length > 2) {
+      return {
+        error: true,
+        message: "Please selected a max of 2 projects only",
       };
     }
 
@@ -112,9 +146,15 @@ export default function Voting() {
 
   const NameError = validateUserName();
   const SlackError = validateSlack();
+  const EmailError = validateEmail();
   const SelectedProjectsError = validateSelectedProjects();
 
-  if (!NameError.error && !SlackError.error && !SelectedProjectsError.error) {
+  if (
+    !NameError.error &&
+    !SlackError.error &&
+    !EmailError.error &&
+    !SelectedProjectsError.error
+  ) {
     buttonDisabled = false;
   }
 
@@ -171,8 +211,8 @@ export default function Voting() {
               </div>
             </div>
             <div>
-              {selectedProjects && (
-                <ValidateError message={SelectedProjectsError.userName} />
+              {projectsTouched.touched && (
+                <ValidateError message={SelectedProjectsError.message} />
               )}
             </div>
             <div className="voting__name-input">
@@ -190,25 +230,41 @@ export default function Voting() {
               />
             </div>
             <div>
-              {name.touched && <ValidateError message={NameError.userName} />}
+              {name.touched && <ValidateError message={NameError.message} />}
             </div>
             <div className="voting__slack-input">
               <label className="voting__slack-input-label" htmlFor="slack">
                 <Required />
-                Slack Handle / Email :
+                Slack Handle :
               </label>
               <input
                 name="slack"
                 className="voting__slack-input-input"
                 onChange={(e) => updateSlack(e.target.value)}
                 type="text"
-                placeholder="Enter either your Slack Handle or Email address"
+                placeholder="Enter your Slack Handle"
                 size="50"
                 required
               />
             </div>
             <div>
-              {slack.touched && <ValidateError message={SlackError.projects} />}
+              {slack.touched && <ValidateError message={SlackError.message} />}
+            </div>
+            <div className="voting__email-input">
+              <label className="voting__email-input-label" htmlFor="email">
+                Email Address :
+              </label>
+              <input
+                name="email"
+                className="voting__email-input-input"
+                onChange={(e) => updateEmail(e.target.value)}
+                type="text"
+                placeholder="Please enter a valid Email address"
+                size="50"
+              />
+            </div>
+            <div>
+              {email.touched && <ValidateError message={EmailError.message} />}
             </div>
             <div className="voting__submit">
               <button
