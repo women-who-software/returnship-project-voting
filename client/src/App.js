@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Landing from './Components/Landing/Landing'
+import Login from './Components/Login/Login'
 import AdminPage from './Components/AdminPage/AdminPage'
 import Projects from './Components/Projects/Projects'
 import ProjectDetails from './Components/Projects/ProjectDetails'
@@ -24,6 +25,7 @@ export default function App() {
         {hasError && <p className='red'>There was an error}</p>}
         <Switch>
           <Route exact path='/' component={Landing} />
+          <Route exact path='/login' component={Login} />
           <Route exact path='/admin' component={AdminPage} />
           <Route
             exact
