@@ -1,4 +1,4 @@
-# Women Who Code (WWWC) Colorado Career Returnship' s ProjectHub
+# Women Who Code (WWC) Colorado Career Returnship' s ProjectHub
 
 ## Project Status
 
