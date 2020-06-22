@@ -4,7 +4,7 @@ export default function ValidateError(props) {
 
   if (props.message) {
     return (
-      <div className='form__input-error'>
+      <div className='error'>
         {props.message}
       </div>
     )

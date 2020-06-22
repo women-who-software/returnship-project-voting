@@ -60,12 +60,18 @@ input {
   padding: 5px;
 }
 
-.required {
+.required,
+.error {
   color: red;
   font-size: .8em;
   font-style: italic;
   vertical-align: super;
   margin-right: 5px;
+}
+
+.error {
+  margin-top: 0;
+  margin-left: 100px;
 }
 
 form {

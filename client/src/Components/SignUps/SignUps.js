@@ -5,6 +5,7 @@ import ValidateError from "../ValidateError/ValidateError";
 import { GlobalContext } from "../../Context/GlobalContext";
 
 const Required = () => <span className="required">*</span>;
+const validator = require("email-validator");
 
 export default function SignUps() {
   const { projects } = useContext(GlobalContext);
@@ -33,6 +34,7 @@ export default function SignUps() {
   const [github, setGithub] = useState({ value: "", touched: "" });
   const [email, setEmail] = useState({ value: "", touched: "" });
   const [selectedProjects, setSelectedProjects] = useState({});
+  const [projectsTouched, setProjectedTouched] = useState(false);
 
   // Update state from form
 
@@ -63,8 +65,9 @@ export default function SignUps() {
       [event.target.name]: {
         checked: event.target.checked,
         id: event.target.value,
-      },
+      }
     });
+    setProjectedTouched(true);
   };
 
   // Form Submit
@@ -74,7 +77,9 @@ export default function SignUps() {
     console.log("name", name);
     console.log("github", github);
     console.log("email", email);
-    console.log("selectedProjects", selectedProjects);
+    console.log('selected', Object.keys(selectedProjects).filter(key => selectedProjects[key].checked))
+
+    history.push("/projects");
   };
 
   // Validate form fields
@@ -101,8 +106,11 @@ export default function SignUps() {
   const validateEmail = () => {
     const userEmail = email.value.trim();
 
-    if (userEmail.length === 0) {
-      return { error: true, message: "Email address is required" };
+    if (!validator.validate(userEmail)) {
+      return {
+        error: true,
+        message: "Please enter a valid email address",
+      };
     }
 
     return { error: false, message: "" };
@@ -111,12 +119,19 @@ export default function SignUps() {
   const validateSelectedProjects = () => {
     const userSelectedProjects = selectedProjects;
 
-    console.log("userSelectedProjects", userSelectedProjects);
+    const count = Object.values(userSelectedProjects).filter((k) => k.checked);
 
-    if (Object.keys(userSelectedProjects).length === 0) {
+    if (Object.keys(userSelectedProjects).length === 0 || count.length === 0) {
       return {
         error: true,
         message: "You must selected at least 1 Project to vote for",
+      };
+    }
+
+    if (count.length > 2) {
+      return {
+        error: true,
+        message: "Please selected a max of 2 projects only",
       };
     }
 
@@ -166,7 +181,7 @@ export default function SignUps() {
         <div className="card">
           <div>
             Please let us know if you are interested in working on one of the
-            projects below:
+            projects below (Maximum 2 projects):
           </div>
           <form onSubmit={handleOnSubmit}>
             <div className="required">* Required Fields</div>
@@ -193,8 +208,8 @@ export default function SignUps() {
               </div>
             </div>
             <div>
-              {selectedProjects && (
-                <ValidateError message={SelectedProjectsError.userName} />
+              {projectsTouched.touched && (
+                <ValidateError message={SelectedProjectsError.message} />
               )}
             </div>
 
@@ -213,7 +228,7 @@ export default function SignUps() {
               />
             </div>
             <div>
-              {name.touched && <ValidateError message={NameError.userName} />}
+              {name.touched && <ValidateError message={NameError.message} />}
             </div>
 
             <div className="signups__github-input">
@@ -233,7 +248,7 @@ export default function SignUps() {
             </div>
             <div>
               {github.touched && (
-                <ValidateError message={GithubError.projects} />
+                <ValidateError message={GithubError.message} />
               )}
             </div>
 
