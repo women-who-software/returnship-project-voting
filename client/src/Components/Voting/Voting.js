@@ -243,7 +243,7 @@ export default function Voting() {
                 onChange={(e) => updateSlack(e.target.value)}
                 type="text"
                 placeholder="Enter your Slack Handle"
-                size="50"
+                size="35"
                 required
               />
             </div>
@@ -260,7 +260,7 @@ export default function Voting() {
                 onChange={(e) => updateEmail(e.target.value)}
                 type="text"
                 placeholder="Please enter a valid Email address"
-                size="50"
+                size="35"
               />
             </div>
             <div>
