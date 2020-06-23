@@ -37,7 +37,7 @@ ul {
 
 .card {
   border: 1px solid $card-border;
-  padding: 10px;
+  padding: 20px;
   margin: 5px 0;
   background-color: $card-bg;
   border-radius: 5px;
@@ -75,34 +75,11 @@ input {
 }
 
 form {
-  margin: 0 10px;
+  margin: 0 50px;
   div {
     margin: 20px 0;
   }
   label {
-    display: block;
-  }
-  .voting__projects-options-option,
-  .signups__projects-options-option {
-    & label {
-      display: inline-block;
-    }
-  }
-}
-
-@media (min-width: 540px) {
-  .card {
-    padding: 20px;
-  }
-
-  form {
-    margin: 0 50px;
-    div {
-      margin: 20px 0;
-    }
-    label {
-      display: inline-block;
-      margin-right: 5px;
-    }
+    margin-right: 5px;
   }
 }

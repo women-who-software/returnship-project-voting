@@ -5,7 +5,7 @@ import Nav from "../Nav/Nav";
 export default function ProjectDetails(props) {
   const { project } = props;
 
-  console.log("project", project);
+  console.log('project', project)
 
   return (
     <>
@@ -42,7 +42,7 @@ export default function ProjectDetails(props) {
         </div>
         <div className="projectdetails__back">
           <NavLink to="/projects">
-            <button className="small-button">Back to Projects</button>
+            <button className='small-button'>Back to Projects</button>
           </NavLink>
         </div>
       </section>
