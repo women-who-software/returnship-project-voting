@@ -11,9 +11,11 @@
     font-size: 1.2em;
     margin-bottom: 10px;
   }
-  .projects__items-status,
-  .projects__items-more {
+  .projects__items-status {
     display: inline-block;
+  }
+  .projects__items-more {
+    display: block;
   }
 }
 

@@ -20,7 +20,7 @@ export default function App() {
   return (
     <React.Fragment>
       <main className="App">
-        {hasError && <p className="red">There was an error}</p>}
+        {hasError && <p className="red">There was an error</p>}
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/login" component={Login} />
