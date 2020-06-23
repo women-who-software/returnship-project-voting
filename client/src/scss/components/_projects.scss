@@ -1,5 +1,5 @@
 .projects {
-  margin: 20px 50px 20px 50px;
+  margin: 20px;
 }
 
 .projects__items-project {
@@ -15,6 +15,14 @@
   .projects__items-more {
     display: inline-block;
   }
+}
+
+@media (min-width: 540px) {
+  .projectdetails {
+    margin: 20px 50px;
+    padding: 20px;
+  }
+
   .projects__items-more {
     float: right;
   }

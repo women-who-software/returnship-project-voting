@@ -1,5 +1,5 @@
 .signups {
-  margin: 20px 50px 20px 50px;
+  margin: 20px;
 }
 
 .signups__project-options {
@@ -13,4 +13,10 @@
 
 .signups__projects-options-option {
   margin-left: 20px;
+}
+
+@media (min-width: 540px) {
+  .signups {
+    margin: 20px 50px;
+  }
 }
