@@ -1,5 +1,6 @@
 .voting {
   margin: 20px;
+  min-height: calc(86vh - 100px);
 }
 
 .voting__project-options {
@@ -11,6 +12,20 @@
   }
 }
 
+.voting__email-input-input,
+.voting__slack-input-input,
+.voting__name-input-input {
+  width: 250px;
+}
+
 .voting__projects-options-option {
   margin-left: 20px 50px;
+}
+
+@media (min-width: 540px) {
+  .voting__email-input-input,
+  .voting__slack-input-input,
+  .voting__name-input-input {
+    width: 300px;
+  }
 }

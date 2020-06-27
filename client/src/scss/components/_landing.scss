@@ -1,3 +1,7 @@
+.landing {
+  min-height: calc(100vh - 120px);
+}
+
 .landing__header {
   background-color: $bg-nav;
   padding: 20px;
