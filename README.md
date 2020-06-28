@@ -43,12 +43,12 @@ Since we want to have both the frontend and backend combined into a single proje
 2. Once cloned, in the terminal run
 `cd returnship-project-voting/API`
 and create a virtual environment called `venv`, by entering (for Unix-based operating systems)
-`$ python3 -m venv venv
-$ source venv/bin/activate`
+``$ python3 -m venv venv
+$ source venv/bin/activate``
 and you will get the terminal as `(venv) $ `
 If you are using Windows, then you will do this instead:
-`$ python -m venv venv
-$ venv\Scripts\activate`
+``$ python -m venv venv
+$ venv\Scripts\activate``
 3. To get started,
    - In `returnship-project-voting/API` run `flask run` to start the Flask development server.To stop the Flask server press Ctrl-C.
-4. Visit api of the project locally at `http://localhost:5000/` 
+4. Visit api of the project locally at `http://localhost:5000/`
