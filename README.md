@@ -47,8 +47,8 @@ and create a virtual environment called `venv`, by entering (for Unix-based oper
 $ source venv/bin/activate``
 and you will get the terminal as `(venv) $ `
 If you are using Windows, then you will do this instead:
-``$ python -m venv venv
-$ venv\Scripts\activate``
+``$ python -m venv venv``
+``$ venv\Scripts\activate``
 3. To get started,
    - In `returnship-project-voting/API` run `flask run` to start the Flask development server.To stop the Flask server press Ctrl-C.
 4. Visit api of the project locally at `http://localhost:5000/`
