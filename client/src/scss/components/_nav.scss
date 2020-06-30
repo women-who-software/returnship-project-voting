@@ -1,0 +1,35 @@
+.nav__header {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  background-color: $bg-nav;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: $bg-nav;
+}
+
+.nav__logo {
+  margin-left: 1rem;
+  a {
+    //color: $black;
+    text-decoration: none;
+  }
+}
+
+.spacer {
+	flex: 1; // takes all available space
+}
+
+.nav__links ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  li {
+    margin: 0 5px;
+  }
+}

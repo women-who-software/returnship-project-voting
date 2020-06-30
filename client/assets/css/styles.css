@@ -1,0 +1,279 @@
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #37393A;
+  background: #E8EEF2;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.header {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: 1px solid #37393A;
+  padding: 20px;
+  margin: 5px 0;
+  background-color: #c7d3dd;
+  border-radius: 5px;
+}
+
+.small-button {
+  background-color: #D6C9C9;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 125px;
+  height: 2em;
+}
+
+.small-button:hover {
+  background-color: #77B6EA;
+}
+
+input {
+  height: 2em;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.required {
+  color: red;
+  font-size: .8em;
+  font-style: italic;
+  vertical-align: super;
+  margin-right: 5px;
+}
+
+.landing__header {
+  background-color: #D6C9C9;
+  padding: 20px;
+  width: 100%;
+}
+
+.landing__header div {
+  margin: 20px 0;
+}
+
+.landing__buttons {
+  margin: 50px 0 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.landing__buttons button {
+  font-size: 20px;
+  width: 300px;
+  height: 2em;
+}
+
+.landing__about {
+  margin-top: 50px;
+}
+
+.landing__about div {
+  margin: 20px 50px;
+}
+
+.landing__about .landing__about-heading {
+  font-weight: bold;
+  line-height: 1.3em;
+}
+
+.landing__admin {
+  text-align: right;
+  margin-right: 50px;
+}
+
+.nav__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 10px;
+  background-color: #D6C9C9;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 10px;
+  background-color: #D6C9C9;
+}
+
+.nav__logo {
+  margin-left: 1rem;
+}
+
+.nav__logo a {
+  text-decoration: none;
+}
+
+.spacer {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.nav__links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.nav__links ul li {
+  margin: 0 5px;
+}
+
+.projects {
+  margin: 20px 50px 20px 50px;
+}
+
+.projects__items-project div {
+  margin: 5px 0;
+}
+
+.projects__items-project .projects__items-project-name {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.projects__items-project .projects__items-status,
+.projects__items-project .projects__items-more {
+  display: inline-block;
+}
+
+.projects__items-project .projects__items-more {
+  float: right;
+}
+
+.projectdetails {
+  margin: 20px 50px 20px 50px;
+  padding: 20px;
+}
+
+.projectdetails__description {
+  border: 1px solid #37393A;
+  background-color: #c7d3dd;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.projectdetails__description div {
+  margin: 20px 10px;
+}
+
+.projectdetails__description div:first-child {
+  margin-top: 0;
+}
+
+.projectdetails__back {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.projectdetails__back button {
+  width: 150px;
+}
+
+.voting {
+  margin: 20px 50px 20px 50px;
+  width: 80%;
+}
+
+form {
+  margin: 0 50px;
+}
+
+form div {
+  margin: 20px 0;
+}
+
+form label {
+  margin-right: 5px;
+}
+
+.voting__project-options input[type="checkbox"] {
+  vertical-align: middle;
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.signups {
+  margin: 20px 50px 20px 50px;
+  width: 80%;
+}
+
+form {
+  margin: 0 50px;
+}
+
+form div {
+  margin: 20px 0;
+}
+
+form label {
+  margin-right: 5px;
+}
+
+.signups__project-input input {
+  margin-right: 10px;
+}
+
+.signups__project-input div {
+  margin: 10px 20px;
+}
+/*# sourceMappingURL=styles.css.map */

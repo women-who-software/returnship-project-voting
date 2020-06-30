@@ -1,0 +1,21 @@
+.projects {
+  margin: 20px 50px 20px 50px;
+}
+
+.projects__items-project {
+  div {
+    margin: 5px 0;
+  }
+  .projects__items-project-name {
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .projects__items-status,
+  .projects__items-more {
+    display: inline-block;
+  }
+  .projects__items-more {
+    float: right;
+  }
+}

@@ -1,0 +1,85 @@
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: $font-color;
+  background: $bg;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.header {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: 1px solid $card-border;
+  padding: 20px;
+  margin: 5px 0;
+  background-color: $card-bg;
+  border-radius: 5px;
+}
+
+.small-button {
+  background-color: $small-button-bg;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 125px;
+  height: 2em;
+  &:hover {
+    background-color: $bg-button-hover;
+  }
+}
+
+input {
+  height: 2em;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.required,
+.error {
+  color: red;
+  font-size: .8em;
+  font-style: italic;
+  vertical-align: super;
+  margin-right: 5px;
+}
+
+.error {
+  margin-top: 0;
+  margin-left: 100px;
+}
+
+form {
+  margin: 0 50px;
+  div {
+    margin: 20px 0;
+  }
+  label {
+    margin-right: 5px;
+  }
+}
