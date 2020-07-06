@@ -20,11 +20,7 @@ export default function App() {
   return (
     <React.Fragment>
       <main className="App">
-<<<<<<< HEAD
         {hasError && <p className="red">There was an error</p>}
-=======
-        {hasError && <p className="red">There was an error}</p>}
->>>>>>> 14c0f891d257ae42971f616ea9ba23eb467bbc7e
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/login" component={Login} />

@@ -34,8 +34,4 @@ def admin():
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     app.run(debug=True)
-=======
-    app.run(debug=True)
->>>>>>> 14c0f891d257ae42971f616ea9ba23eb467bbc7e
