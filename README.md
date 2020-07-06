@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Women Who Code (WWC) Colorado Career Returnship' s ProjectHub
 
 ## Project Status
@@ -52,3 +53,8 @@ If you are using Windows, then you will do this instead:
 3. To get started,
    - In `returnship-project-voting/API` run `flask run` to start the Flask development server.To stop the Flask server press Ctrl-C.
 4. Visit api of the project locally at `http://localhost:5000/`
+=======
+Career Returnship
+
+## ProjectHub
+>>>>>>> 14c0f891d257ae42971f616ea9ba23eb467bbc7e

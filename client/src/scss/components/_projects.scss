@@ -11,6 +11,7 @@
     font-size: 1.2em;
     margin-bottom: 10px;
   }
+<<<<<<< HEAD
   .projects__items-status {
     display: inline-block;
   }
@@ -25,6 +26,12 @@
     padding: 20px;
   }
 
+=======
+  .projects__items-status,
+  .projects__items-more {
+    display: inline-block;
+  }
+>>>>>>> 14c0f891d257ae42971f616ea9ba23eb467bbc7e
   .projects__items-more {
     float: right;
   }
