@@ -1,10 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Logo from "../Images/Logo.svg";
 
 export default function LandingPage() {
   return (
     <section className="landing">
+      
       <div className="landing__header">
+      <div className="landing__logo">
+        <img src={Logo} alt="Returnship Logo" />
+      </div>
         <div>Women Who Code Boulder / Denver</div>
         <div>Career Returnship</div>
         <div>ProjectHub</div>
