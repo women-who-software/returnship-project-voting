@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Route, Switch } from "react-router-dom";
-import Landing from "./Components/Landing/Landing";
+import AboutPage from "./routes/aboutPage";
 import Login from "./Components/Login/Login";
-import Projects from "./Components/Projects/Projects";
-import ProjectDetails from "./Components/Projects/ProjectDetails";
+import ProjectsPage from "./routes/projectsPage";
 import Voting from "./Components/Voting/Voting";
 import SignUps from "./Components/SignUps/SignUps";
 import STORE from "./STORE";
@@ -19,13 +18,13 @@ export default function App() {
 
   return (
     <React.Fragment>
-      <main className="App">
+      <main className="main">
         {hasError && <p className="red">There was an error</p>}
         <Switch>
-          <Route exact path="/" component={Landing} />
+          <Route exact path="/" component={AboutPage} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/projects" component={() => <Projects projects={projects} />} />
-          <Route
+          <Route exact path="/projects" component={ProjectsPage} />
+          {/* <Route
             exact
             path="/projects/:project_id"
             component={(routeProps) => (
@@ -35,7 +34,7 @@ export default function App() {
                 )}
               />
             )}
-          />
+          /> */}
           <Route exact path="/voting" component={Voting} />
           <Route exact path="/signups" component={SignUps} />
         </Switch>

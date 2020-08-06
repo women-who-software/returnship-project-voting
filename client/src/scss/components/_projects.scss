@@ -1,31 +1,18 @@
 .projects {
-  margin: 20px 50px 20px 50px;
-}
+  padding: 20px 110px;
 
-.projects__items-project {
-  div {
-    margin: 5px 0;
+  &__header {
+    font-size: $font-size-header;
+    font-weight: $font-weight-bold;
   }
-  .projects__items-project-name {
-    font-weight: 700;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  .projects__items-status {
-    display: inline-block;
-  }
-  .projects__items-more {
-    display: block;
-  }
-}
+  &__about {
+    &-header {
+      font-size: $font-size-sub-header;
+      font-weight: $font-weight-bold;
+    }
 
-@media (min-width: 540px) {
-  .projectdetails {
-    margin: 20px 50px;
-    padding: 20px;
-  }
-
-  .projects__items-more {
-    float: right;
+    & ol {
+      list-style-position: inside;
+    }
   }
 }

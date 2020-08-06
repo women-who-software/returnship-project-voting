@@ -1,0 +1,15 @@
+.header {
+  background: $white url("../../Components/Images/banner.jpg") no-repeat;
+  background-size: cover;
+  height: auto;
+  padding: 50px 0;
+
+  &__title {
+    color: $accent;
+    font-weight: $font-weight-extra-bold;
+    font-size: 32px;
+    text-align: right;
+    margin-right: 50px;
+    line-height: 1.6em;
+  }
+}

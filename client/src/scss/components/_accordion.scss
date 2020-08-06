@@ -1,0 +1,125 @@
+.accordion {
+  margin: 0 100px;
+}
+
+.accordion__wrapper {
+  & + * {
+    margin-top: 1em;
+  }
+}
+
+.accordion__item {
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+  height: auto;
+  max-height: 9999px;
+}
+
+.accordion__item.collapsed {
+  max-height: 0;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+}
+
+.accordion__title {
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sub-header;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  padding: 30px 80px;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px 0 $shadow-color;
+  transition: background-color 0.6s ease;
+
+  &::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+  }
+
+  &:hover,
+  &.open {
+    color: black;
+    background-color: $hover-color;
+    background-color: $hover-color;
+  }
+
+  &.open {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  &:hover {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  &.open {
+    &::after {
+      content: "";
+      border-top: 0;
+      border-bottom: 5px solid;
+    }
+  }
+}
+
+.accordion__content {
+  font-weight: $font-weight-regular;
+  font-size: $font-size-small;
+  padding: 30px 80px;
+  border-right: 1px solid $border-color;
+  border-left: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 3px 6px 0 $shadow-color;
+
+  display: flex;
+  flex-direction: column;
+  
+  &-line {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &-item,
+  &-desc {
+    margin: 20px;
+  }
+
+  &-label,
+  &-desc-label {
+    width: 200px;
+    font-weight: $font-weight-bold;
+  }
+
+  &-value {
+    width: 200px;
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  &-desc-label {
+    width: 100%;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &-desc-value {
+    padding: 20px;
+    background-color: $bg-accent-color;
+  }
+}
