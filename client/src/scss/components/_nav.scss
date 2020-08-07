@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: nowrap;
   background-color: $white;
+  
   &__logo {
     padding-left: 100px;
     & img {
@@ -35,6 +36,19 @@
     }
     &-nav {
       display: flex;
+
+      & a {
+        color: $font-color
+      }
+    }
+
+    &-button button {
+      border: none;
+      background-color: $white;
+      color: $font-color;
+      font-size: $font-size-small;
+      line-height: 28px;
+      cursor: pointer;
     }
   }
 }
