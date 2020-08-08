@@ -31,6 +31,7 @@ export default function ProjectsPage() {
       </div>
 
       <Projects />
+      
       <Footer />
     </section>
   );

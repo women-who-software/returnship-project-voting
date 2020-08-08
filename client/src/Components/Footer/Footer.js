@@ -26,7 +26,11 @@ export default function Footer() {
           <a href="https://www.linkedin.com/showcase/wwcodecolorado/">
             <img src={LinkedIn} alt="LinkedIn Logo" />
           </a>
-          <img src={Meetup} alt="Meetup Logo" />
+          
+          <a href="https://www.meetup.com/Women-Who-Code-Boulder-Denver/">
+            <img src={Meetup} alt="Meetup Logo" />
+          </a>
+
           <img src={Slack} alt="Slack Logo" />
         </div>
       </div>

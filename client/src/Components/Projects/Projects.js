@@ -1,25 +1,18 @@
 import React, { useContext } from "react";
 import Accordion from "../Accordion/Accordion";
+import useToggle from "../Hooks/useToggle";
+import Modal from "../Modals/Modal";
+import VotingModalForm from "../Modals/VotingModalForm";
+import SignUpsModalForm from "../Modals/SignUpsModalForm";
 import { GlobalContext } from "../../Context/GlobalContext";
 
 export default function Projects() {
   const { projects } = useContext(GlobalContext);
+  const [openVoting, setOpenVoting] = useToggle(false);
+  const [openSignUps, setOpenSignUps] = useToggle(false);
 
   const getProjects = projects.map((project) => (
     <Accordion project={project} key={project.project_id}>
-      <div className="accordion__content-line">
-        <div className="accordion__content-item">
-          <div className="accordion__content-label">COMPANY</div>
-          <div className="accordion__content-value">
-            {project.client_company}
-          </div>
-        </div>
-        <div className="accordion__content-item">
-          <div className="accordion__content-label">CONTACT</div>
-          <div className="accordion__content-value">{project.client_email}</div>
-        </div>
-      </div>
-
       <div className="accordion__content-line">
         <div className="accordion__content-item">
           <div className="accordion__content-label">NAME</div>
@@ -46,8 +39,28 @@ export default function Projects() {
           {project.project_desc}
         </div>
       </div>
+
+      <div className="accordion__content-buttons">
+      <button onClick={ () => setOpenVoting() }>VOTE FOR PROJECT</button>
+        <button onClick={ () => setOpenSignUps() }>SIGN UP FOR PROJECT</button>
+      </div>
     </Accordion>
   ));
 
-  return <div className="accordion">{getProjects}</div>;
+  return (
+    <div className="accordion">
+      {getProjects}
+
+      {openVoting && (
+        <Modal open={openVoting} toggle={setOpenVoting}>
+          <VotingModalForm />
+        </Modal>
+      )}
+      {openSignUps && (
+        <Modal open={openSignUps} toggle={setOpenSignUps}>
+          <SignUpsModalForm />
+        </Modal>
+      )}
+    </div>
+  );
 }
