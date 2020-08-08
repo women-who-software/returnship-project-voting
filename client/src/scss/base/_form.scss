@@ -20,7 +20,7 @@
 
   &__input {
     margin-bottom: 10px;
-    margin-left: 50px;
+    margin-left: 10px;
 
     &-label {
       display: inline-block;
@@ -39,7 +39,7 @@
   }
 
   &__options-values {
-    margin-left: 20px;
+    margin-left: 10px;
     margin-bottom: 20px;
     & label {
       margin-left: 10px;
@@ -58,5 +58,15 @@
       font-weight: $font-weight-bold;
       border: none;
     }
+  }
+}
+
+@media (min-width: 700px) {
+  .form__input {
+    margin-left: 50px;
+  }
+
+  .form__options-values {
+    margin-left: 20px;
   }
 }

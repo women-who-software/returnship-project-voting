@@ -1,5 +1,5 @@
 .accordion {
-  margin: 0 100px;
+  margin: 0 20px;
 }
 
 .accordion__wrapper {
@@ -22,14 +22,15 @@
 
 .accordion__title {
   font-weight: $font-weight-regular;
-  font-size: $font-size-sub-header;
+  font-size: $font-size-small;
   cursor: pointer;
   color: #666;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: $white;
-  padding: 30px 80px;
+  padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid $border-color;
   border-radius: 10px;
   box-shadow: 0 3px 6px 0 $shadow-color;
@@ -39,9 +40,9 @@
     margin-top: 10px;
     font-weight: $font-weight-bold;
     font-size: $font-size-small;
-    
+
     &-header {
-      margin-right: 50px;
+      margin-right: 20px;
     }
 
     & img {
@@ -96,7 +97,8 @@
 .accordion__content {
   font-weight: $font-weight-regular;
   font-size: $font-size-small;
-  padding: 30px 80px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
   border-right: 1px solid $border-color;
   border-left: 1px solid $border-color;
   border-bottom: 1px solid $border-color;
@@ -115,7 +117,7 @@
   &-item {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     border-bottom: 1px solid $border-color;
   }
 
@@ -132,7 +134,7 @@
 
   &-value {
     width: 200px;
-    text-align: right;
+    text-align: left;
     padding-right: 10px;
   }
 
@@ -142,7 +144,7 @@
   }
 
   &-desc-value {
-    padding: 20px;
+    padding: 10px;
     background-color: $bg-accent-color;
   }
 
@@ -151,7 +153,7 @@
     margin: 10px 0;
 
     & button {
-      margin: 0 20px;
+      margin: 10px 20px;
       width: 200px;
       height: 32px;
       border: 1px solid $red;
@@ -159,6 +161,33 @@
       background-color: $white;
       font-weight: $font-weight-bold;
       $font-size: $font-size-extra-small;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .accordion {
+    margin: 0 100px;
+  }
+
+  .accordion__title {
+    font-size: $font-size-sub-header;
+    padding: 30px 80px;
+
+    &-sub-header {
+      margin-right: 50px;
+    }
+  }
+
+  .accordion__content {
+    padding: 30px 80px;
+
+    &-value {
+      text-align: right;
+    }
+
+    &-desc-value {
+      padding: 20px;
     }
   }
 }

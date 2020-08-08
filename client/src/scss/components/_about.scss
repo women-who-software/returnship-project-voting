@@ -1,9 +1,19 @@
 .about {
-  margin: 50px 100px;
+  margin: 25px 20px;
 
   &__header {
     font-weight: $font-weight-semi-bold;
     margin-bottom: 30px;
-    font-size: $font-size-header;
+    font-size: $font-size-sub-header;
+  }
+}
+
+@media (min-width: 700px) {
+  .about {
+    margin: 50px 100px;
+
+    &__header {
+      font-size: $font-size-header;
+    }
   }
 }

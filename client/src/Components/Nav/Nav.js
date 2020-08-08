@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import useToggle from '../Hooks/useToggle';
-import Modal from '../Modals/Modal';
-import VotingModalForm from '../Modals/VotingModalForm';
-import SignUpsModalForm from '../Modals/SignUpsModalForm';
+import useToggle from "../Hooks/useToggle";
+import Modal from "../Modals/Modal";
+import VotingModalForm from "../Modals/VotingModalForm";
+import SignUpsModalForm from "../Modals/SignUpsModalForm";
 import Logo from "../Images/logo.svg";
 import AdminLogo from "../Images/admin_logo.svg";
 
@@ -25,10 +25,12 @@ export default function Nav() {
               <NavLink to="/projects">Project list</NavLink>
             </div>
             <div className="nav__links-button">
-              <button onClick={ () => setOpenVoting() }>Vote on Projects</button>
+              <button onClick={() => setOpenVoting()}>Vote on Projects</button>
             </div>
             <div className="nav__links-button">
-            <button onClick={ () => setOpenSignUps() }>Sign Up for Projects</button>
+              <button onClick={() => setOpenSignUps()}>
+                Sign Up for Projects
+              </button>
             </div>
           </div>
           <div className="nav__links-admin">

@@ -233,7 +233,7 @@ export default function SignUpsModalForm() {
           <input
             name="github"
             className="form__input-input"
-            onChange={(e) => updateEmail(e.target.value)}
+            onChange={(e) => updateGithub(e.target.value)}
             type="text"
             placeholder="your github handle"
             size="50"
