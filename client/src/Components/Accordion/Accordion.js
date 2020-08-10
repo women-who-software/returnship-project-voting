@@ -64,6 +64,9 @@ export default function Accordion({ project, children }) {
               />
             </div>
           </div>
+          <div className="accordion__title-more">
+            More details
+          </div>
         </div>
         <div className={`accordion__item ${!isOpen ? "collapsed" : ""}`}>
           <div className="accordion__content">{children}</div>

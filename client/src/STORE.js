@@ -10,7 +10,7 @@ export default {
       client_phone: 3035551212,
       max_team_members: 5,
       status: "new-members",
-      tech_stack: ["React", "Python"],
+      tech_stack: "React, Python",
     },
     {
       project_id: 2,
@@ -22,7 +22,7 @@ export default {
       client_phone: 3035551212,
       max_team_members: 5,
       status: "in-progress",
-      tech_stack: ["React", "PHP"],
+      tech_stack: "React, PHP",
     },
     {
       project_id: 3,
@@ -34,7 +34,7 @@ export default {
       client_phone: 3035551212,
       max_team_members: 5,
       status: "open",
-      tech_stack: ["COBOL", "CICS"],
+      tech_stack: "COBOL, CICS",
     },
   ],
 };
