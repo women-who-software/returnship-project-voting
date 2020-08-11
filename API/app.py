@@ -3,32 +3,32 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/api/')
 def index():
     return "Home"
 
 
-@app.route('/projects')
+@app.route('/api/projects')
 def projects():
     return "Project list"
 
 
-@app.route('/details')
+@app.route('/api/details')
 def details():
     return "Project details"
 
 
-@app.route('/vote')
+@app.route('/api/vote')
 def vote():
     return "Vote"
 
 
-@app.route('/signup')
+@app.route('/api/signup')
 def signup():
     return "Sign up"
 
 
-@app.route('/admin')
+@app.route('/api/admin')
 def admin():
     return "Admin"
 
