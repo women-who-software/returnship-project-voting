@@ -1,5 +1,8 @@
+// Import React Components
 import React, { useState, useEffect, useContext } from 'react'
 import { Route, Switch } from 'react-router-dom'
+
+// Import Custom Components
 import Landing from './Components/Landing/Landing'
 import Login from './Components/Login/Login'
 import AdminPage from './Components/AdminPage/AdminPage'
@@ -8,7 +11,8 @@ import ProjectDetails from './Components/Projects/ProjectDetails'
 import ProjectEdit from './Components/ProjectEdit/ProjectEdit'
 import Voting from './Components/Voting/Voting'
 import SignUps from './Components/SignUps/SignUps'
-import STORE from './STORE'
+
+// State Management
 import { GlobalContext } from './Context/GlobalContext'
 
 export default function App() {
