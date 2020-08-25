@@ -1,35 +1,64 @@
-.nav__header {
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
-  background-color: $bg-nav;
-}
-
 .nav {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 10px;
-  background-color: $bg-nav;
-}
+  flex-wrap: nowrap;
+  background-color: $white;
 
-.nav__logo {
-  margin-left: 1rem;
-  a {
-    //color: $black;
-    text-decoration: none;
+  &__logo {
+    padding-left: 20px;
+
+    & img {
+      width: 25px;
+      height: auto;
+      margin-right: 20px;
+      padding: 10px 0;
+      vertical-align: middle;
+    }
+    & a {
+      color: $accent;
+      font-weight: $font-weight-medium;
+    }
+  }
+  &__links {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 20px;
+
+    & a {
+      font-size: 15px;
+      margin: 0 10px;
+    }
+    &-admin {
+      margin-left: 100px;
+      & img {
+        vertical-align: middle;
+        width: 30px;
+        height: auto;
+      }
+    }
+    &-nav {
+      display: flex;
+
+      & a {
+        color: $font-color;
+      }
+    }
+
+    &-button button {
+      border: none;
+      background-color: $white;
+      color: $font-color;
+      font-size: $font-size-small;
+      line-height: 28px;
+      cursor: pointer;
+    }
   }
 }
 
-.spacer {
-	flex: 1; // takes all available space
-}
-
-.nav__links ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  li {
-    margin: 0 5px;
+@media (min-width: 700px) {
+  .nav__logo {
+    padding-left: 100px;
+    & img {
+      width: 52px;
+    }
   }
 }

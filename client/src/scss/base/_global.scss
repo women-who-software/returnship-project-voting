@@ -7,10 +7,10 @@ ol {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 16px;
+  line-height: 28px;
   color: $font-color;
-  background: $bg;
 }
 
 * {
@@ -25,84 +25,10 @@ ul {
   list-style: none;
 }
 
-.strong {
-  font-weight: bold;
+.main {
+  background-image: linear-gradient($bg, white);
 }
 
-.header {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.card {
-  border: 1px solid $card-border;
-  padding: 10px;
-  margin: 5px 0;
-  background-color: $card-bg;
-  border-radius: 5px;
-}
-
-.small-button {
-  background-color: $small-button-bg;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 125px;
-  height: 2em;
-  &:hover {
-    background-color: $bg-button-hover;
-  }
-}
-
-input {
-  height: 2em;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.required,
-.error {
-  color: red;
-  font-size: 0.8em;
-  font-style: italic;
-  vertical-align: super;
-  margin-right: 5px;
-}
-
-.error {
-  margin-top: 0;
-  margin-left: 100px;
-}
-
-form {
-  margin: 0 10px;
-  div {
-    margin: 20px 0;
-  }
-  label {
-    display: block;
-  }
-  .voting__projects-options-option,
-  .signups__projects-options-option {
-    & label {
-      display: inline-block;
-    }
-  }
-}
-
-@media (min-width: 540px) {
-  .card {
-    padding: 20px;
-  }
-
-  form {
-    margin: 0 50px;
-    div {
-      margin: 20px 0;
-    }
-    label {
-      display: inline-block;
-      margin-right: 5px;
-    }
-  }
+.spacer {
+  flex: 1;
 }

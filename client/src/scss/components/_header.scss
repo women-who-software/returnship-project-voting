@@ -7,3 +7,27 @@
   color: #683257 !important;
 }
 
+
+.header {
+  background: $white url("../../Components/Images/banner.jpg") no-repeat;
+  background-size: cover;
+  height: auto;
+  padding: 50px 0;
+
+  &__title {
+    color: $accent;
+    font-weight: $font-weight-extra-bold;
+    font-size: $font-size-small;
+    text-align: right;
+    margin-right: 20px;
+    line-height: 1.6em;
+
+  }
+}
+
+@media (min-width: 700px) {
+  .header__title {
+    font-size: $font-size-header;
+    margin-right: 50px;
+  }
+}

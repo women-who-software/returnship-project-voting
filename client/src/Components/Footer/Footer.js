@@ -1,70 +1,40 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { NavLink } from "react-router-dom";
+import Logo from "../Images/logo.svg";
+import LinkedIn from "../Images/linkedin_logo.svg";
+import Slack from "../Images/slack_logo.svg";
+import Meetup from "../Images/meetup_logo.svg";
 
 export default function Footer() {
-  const copyrightDate = new Date().getFullYear();
-
-  library.add(fab);
-
+  const date = new Date().getFullYear();
   return (
-    <address className="footer">
-      <div className="footer__about">
-        <div>Women Who Code is a 501(c)(3) not-for-profit organization</div>
-        <div>EIN 46-4218859</div>
+    <div className="footer">
+      <hr />
+      <div className="footer__nav">
         <div>
-          {"\u00a9"} {copyrightDate} Women Who Code{" "}
+          <img src={Logo} alt="Career Returnship Logo" />
         </div>
-      </div>
-      <div className="footer__spacer"></div>
-      <div className="footer__socialMedia-icons">
-        <div>
-          <a href="https://github.com/wwcodecolorado">
-            <FontAwesomeIcon
-              icon={["fab", "github"]}
-              size="2x"
-              className="socialIcons"
-            />
-          </a>
+        <div className="footer__nav-link">
+          <NavLink to="/">About Us</NavLink>
+          <NavLink to="/projects">Project List</NavLink>
+          <NavLink to="/contact">Contact Us</NavLink>
+          <NavLink to="/">Career Returnship</NavLink>
+          <a href="https://linktr.ee/wwcodecolorado">Women Who Code</a>
         </div>
-        <div>
+        <div></div>
+        <div className="footer__nav-logo footer__nav-link">
           <a href="https://www.linkedin.com/showcase/wwcodecolorado/">
-            <FontAwesomeIcon
-              icon={["fab", "linkedin"]}
-              size="2x"
-              className="socialIcons"
-            />
+            <img src={LinkedIn} alt="LinkedIn Logo" />
           </a>
-        </div>
-        <div>
-          <a href="https://www.instagram.com/wwcodecolorado/">
-            <FontAwesomeIcon
-              icon={["fab", "instagram"]}
-              size="2x"
-              className="socialIcons"
-            />
+          
+          <a href="https://www.meetup.com/Women-Who-Code-Boulder-Denver/">
+            <img src={Meetup} alt="Meetup Logo" />
           </a>
-        </div>
-        <div>
-          <a href="https://twitter.com/wwcodecolorado">
-            <FontAwesomeIcon
-              icon={["fab", "twitter"]}
-              size="2x"
-              className="socialIcons"
-            />
-          </a>
-        </div>
-        <div>
-          <a href="https://www.facebook.com/wwcodecolorado/">
-            <FontAwesomeIcon
-              icon={["fab", "facebook"]}
-              size="2x"
-              className="socialIcons"
-            />
-          </a>
+
+          <img src={Slack} alt="Slack Logo" />
         </div>
       </div>
-    </address>
+      <div className="footer__copyright">Copyright {date}</div>
+    </div>
   );
 }
