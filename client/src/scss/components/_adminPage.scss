@@ -1,3 +1,12 @@
+$bg: #e8eef2;
+$font-color: #37393a;
+$bg-nav: #d6c9c9;
+$bg-button-hover: #77b6ea;
+$bg-button: #c7d3dd;
+$card-border: #37393a;
+$card-bg: #c7d3dd;
+$small-button-bg: #d6c9c9;
+
 .admin-btn {
   border: 1px solid #42213d;
   padding: 0.4rem;
@@ -12,4 +21,21 @@
   background-color: #683257;
   color: white;
   text-decoration: none;
+}
+.small-button {
+  background-color: $small-button-bg;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 125px;
+  height: 2em;
+  &:hover {
+    background-color: $bg-button-hover;
+  }
+}
+.card {
+  border: 1px solid $card-border;
+  padding: 20px;
+  margin: 5px 0;
+  background-color: $card-bg;
+  border-radius: 5px;
 }
