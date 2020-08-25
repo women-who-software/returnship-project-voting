@@ -22,6 +22,25 @@ $small-button-bg: #d6c9c9;
   color: white;
   text-decoration: none;
 }
+
+.strong {
+  font-weight: bold;
+}
+
+.header {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: 1px solid $card-border;
+  padding: 20px;
+  margin: 5px 0;
+  background-color: $card-bg;
+  border-radius: 5px;
+}
+
 .small-button {
   background-color: $small-button-bg;
   border-radius: 5px;
@@ -32,10 +51,35 @@ $small-button-bg: #d6c9c9;
     background-color: $bg-button-hover;
   }
 }
-.card {
-  border: 1px solid $card-border;
-  padding: 20px;
-  margin: 5px 0;
-  background-color: $card-bg;
-  border-radius: 5px;
+
+.projects {
+  margin: 20px 50px 20px 50px;
+}
+
+.projects__items-project {
+  div {
+    margin: 5px 0;
+  }
+  .projects__items-project-name {
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .projects__items-status {
+    display: inline-block;
+  }
+  .projects__items-more {
+    display: block;
+  }
+}
+
+@media (min-width: 540px) {
+  .projectdetails {
+    margin: 20px 50px;
+    padding: 20px;
+  }
+
+  .projects__items-more {
+    float: right;
+  }
 }
