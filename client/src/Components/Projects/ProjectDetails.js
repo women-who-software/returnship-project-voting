@@ -5,8 +5,6 @@ import Nav from "../Nav/Nav";
 export default function ProjectDetails(props) {
   const { project } = props;
 
-  console.log("project", project);
-
   return (
     <>
       <Nav />

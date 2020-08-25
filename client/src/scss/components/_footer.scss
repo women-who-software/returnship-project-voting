@@ -1,0 +1,25 @@
+.footer {
+  margin-top: 20px;
+  padding: 30px !important;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  background-color: $bg-nav;
+  &__spacer {
+    flex: 1;
+  }
+  &__socialMedia-icons {
+    display: flex;
+    flex-direction: row;
+    & div {
+      margin: 0 10px;
+    }
+  }
+}
+
+.socialIcons {
+  color: blue;
+  &:hover {
+    color: yellow;
+  }
+}
