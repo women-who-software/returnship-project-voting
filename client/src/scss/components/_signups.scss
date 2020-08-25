@@ -1,5 +1,6 @@
 .signups {
-  margin: 20px 50px 20px 50px;
+  margin: 20px;
+  min-height: calc(86vh - 100px);
 }
 
 .signups__project-options {
@@ -12,5 +13,21 @@
 }
 
 .signups__projects-options-option {
-  margin-left: 20px;
+  margin-left: 20px 50px;
+}
+
+.signups__email-input-input,
+.signups__slack-input-input,
+.signups__name-input-input,
+.signups__github-input-input {
+  width: 250px;
+}
+
+@media (min-width: 540px) {
+  .signups__email-input-input,
+  .signups__slack-input-input,
+  .signups__name-input-input,
+  .signups__github-input-input {
+    width: 300px;
+  }
 }

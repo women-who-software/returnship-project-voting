@@ -51,7 +51,7 @@ export default function App() {
           <Route exact path="/voting" component={Voting} />
           <Route exact path="/signups" component={SignUps} />
         </Switch>
-        <Footer />
+        <Route path="/" component={Footer} />
       </main>
     </React.Fragment>
   );

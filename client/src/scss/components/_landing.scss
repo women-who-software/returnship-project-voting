@@ -1,3 +1,7 @@
+.landing {
+  min-height: calc(100vh - 120px);
+}
+
 .landing__header {
   background-color: $bg-nav;
   padding: 20px;
@@ -14,6 +18,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   button {
+    margin-top: 5px;
     font-size: 20px;
     width: 300px;
     height: 2em;
