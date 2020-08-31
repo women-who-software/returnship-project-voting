@@ -64,46 +64,48 @@ Since we want to have both the frontend and backend combined into a single proje
 
 1. If you haven't cloned the project, open the terminal and in the desired directory, run
 ```shell
-git clone https://github.com/wwcodecolorado/returnship-project-voting.git
+  git clone https://github.com/wwcodecolorado/returnship-project-voting.git
 ```
-to clone this project repository to the local machine.
+  to clone this project repository to the local machine.
+
 2. Once cloned, in the terminal run
 ```shell
-cd returnship-project-voting/API
+  cd returnship-project-voting/API
 ```
-and create a virtual environment called `venv`, by entering (for Unix-based operating systems)
+  and create a virtual environment called `venv`, by entering (for Unix-based operating systems)
 ```shell
-$ python3 -m venv venv
-$ source venv/bin/activate
+  $ python3 -m venv venv
+  $ source venv/bin/activate
 ```
-and you will get the terminal as `(venv) $ `
-If you are using Windows, then you will do this instead:
+  and you will get the terminal as `(venv) $ `
+  If you are using Windows, then you will do this instead:
 ```shell
-$ python -m venv venv
-$ venv\Scripts\activate
+  $ python -m venv venv
+  $ venv\Scripts\activate
 ```
-3. To get started,
-   - In `returnship-project-voting/API` run
+
+3. To get started, in `returnship-project-voting/API` run
    ```shell
-   flask run
+    flask run
    ```
-   to start the Flask development server.To stop the Flask server press Ctrl-C.
+   to start the Flask development server. To stop the Flask server press Ctrl-C.
+
 4. Visit api of the project locally at `http://localhost:5000/`
 
 ### Contribute to this project:
 
-1. Find a non assigned [issue](https://github.com/wwcodecolorado/returnship-project-voting/issues) which you want to work and self assign your name.
+1. **Find a non assigned [issue](https://github.com/wwcodecolorado/returnship-project-voting/issues) which you want to work and self assign your name.**
 
-2. Follow the steps Prerequisites and Project Setup.
+2. **Follow the steps Prerequisites and Project Setup.**
 
-3. Before making any changes, create a branch in your name with issue number.
+3. **Before making any changes, create a branch in your name with issue number.**
 ```shell
-git branch [your-feature-branch-name]
+  git branch [your-feature-branch-name]
 ```
 
-4. Open the source code and start editing/coding!
+4. **Open the source code and start editing/coding!**
 
-5. **Updating your feature branch to latest master changes**
+5. **Updating your feature branch to latest master changes: **
 If you have your branch created for a while now, you may need to update it to what master has currently to avoid conflicts as you push/ commit your changes. You can skip this if you are just starting out.  
 
 Follow [these](https://gist.github.com/santisbon/a1a60db1fb8eecd1beeacd986ae5d3ca) git commands or this summary:
@@ -137,4 +139,4 @@ git push
 ```
 Then go to Github and click the 'Create Pull Request' button and assign a reviewer.
 
-7. **After reviewing, your changes will be merged to the master branch.🎉 🎉 🎉** 
+7. **After reviewing, your changes will be merged to the master branch.🎉 🎉 🎉**
