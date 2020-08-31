@@ -4,7 +4,6 @@ import AboutPage from "./routes/aboutPage";
 import Login from "./Components/Login/Login";
 import ProjectsPage from "./routes/projectsPage";
 import STORE from "./STORE";
-import { GlobalContext } from "./Context/GlobalContext";
 
 export default function App() {
   const [hasError, setHasError] = useState("");
@@ -23,6 +22,7 @@ export default function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/projects" component={ProjectsPage} />
         </Switch>
+        <Route path="/" component={Footer} />
       </main>
     </React.Fragment>
   );
