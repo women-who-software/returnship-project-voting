@@ -247,7 +247,6 @@ export default function SignUps() {
                 onChange={(e) => updateGithub(e.target.value)}
                 type="text"
                 placeholder="Enter your Github Handle"
-                size="50"
                 required
               />
             </div>
@@ -268,7 +267,6 @@ export default function SignUps() {
                 onChange={(e) => updateEmail(e.target.value)}
                 type="text"
                 placeholder="Enter your Email Address"
-                size="50"
                 required
               />
             </div>

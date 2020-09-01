@@ -1,0 +1,20 @@
+.Footer {
+  width: 100%;
+  background-color: $bg-nav;
+  padding: 10px 20px;
+  margin-top: 20px;
+  height: auto;
+  line-height: 1.5em;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  &__left {
+    align-self: left;
+  }
+  &__spacer {
+    flex: 1;
+  }
+  &__socialIcons {
+    align-self: right;
+  }
+}

@@ -10,6 +10,7 @@ import Projects from "./Components/Projects/Projects";
 import ProjectDetails from "./Components/Projects/ProjectDetails";
 import Voting from "./Components/Voting/Voting";
 import SignUps from "./Components/SignUps/SignUps";
+import Footer from "./Components/Footer/Footer";
 import STORE from "./STORE";
 // State Management
 import { GlobalContext } from "./Context/GlobalContext";
@@ -50,6 +51,7 @@ export default function App() {
           <Route exact path="/voting" component={Voting} />
           <Route exact path="/signups" component={SignUps} />
         </Switch>
+        <Route path="/" component={Footer} />
       </main>
     </React.Fragment>
   );
