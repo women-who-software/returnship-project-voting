@@ -105,7 +105,7 @@ Since we want to have both the frontend and backend combined into a single proje
 
 4. **Open the source code and start editing/coding!**
 
-5. **Updating your feature branch to latest master changes: **
+5. **Updating your feature branch to latest master changes:**
 If you have your branch created for a while now, you may need to update it to what master has currently to avoid conflicts as you push/ commit your changes. You can skip this if you are just starting out.  
 
 Follow [these](https://gist.github.com/santisbon/a1a60db1fb8eecd1beeacd986ae5d3ca) git commands or this summary:
