@@ -1,6 +1,6 @@
 // Import React Packages
 import React, { useContext } from "react";
-import Header from "../Header/Header";
+import AdminPanelHeader from "../AdminPanelHeader/AdminPanelHeader";
 import { GlobalContext } from "../../Context/GlobalContext";
 import { NavLink } from "react-router-dom";
 
@@ -10,7 +10,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 
-export default function AdminPage() {
+export default function AdminPanel() {
   //?? TODO - Move `project` into a separate component
   const { projects } = useContext(GlobalContext);
 
@@ -34,7 +34,7 @@ export default function AdminPage() {
   ));
   return (
     <>
-      <Header />
+      <AdminPanelHeader />
       <section className="admin">
         <Container>
           <Row>

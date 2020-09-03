@@ -48,7 +48,7 @@
       background-color: $white;
       color: $font-color;
       font-size: $font-size-small;
-      line-height: 28px;
+      // line-height: 28px; // Removed because it creates an uneven line
       cursor: pointer;
     }
   }

@@ -21,7 +21,7 @@ export default function Nav() {
         <div className="spacer" />
         <div className="nav__links">
           <div className="nav__links-nav">
-            <div>
+            <div className="nav__links-button">
               <NavLink to="/projects">Project list</NavLink>
             </div>
             <div className="nav__links-button">

@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../Components/Header/Header";
+// import Header from "../Components/Header/Header";
 import Nav from "../Components/Nav/Nav";
 import Projects from "../Components/Projects/Projects";
 import Footer from "../Components/Footer/Footer";
@@ -7,9 +7,9 @@ import Footer from "../Components/Footer/Footer";
 export default function ProjectsPage() {
   return (
     <section>
-      <Header />
+      {/* <Header /> */}
       <Nav />
-      
+
       <div className="projects">
         <h1 className="projects__header">Project List:</h1>
 
@@ -28,10 +28,9 @@ export default function ProjectsPage() {
             </li>
           </ol>
         </div>
+        <Projects />
       </div>
 
-      <Projects />
-      
       <Footer />
     </section>
   );

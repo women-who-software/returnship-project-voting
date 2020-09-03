@@ -3,8 +3,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { Route, Switch } from "react-router-dom";
 
 // Import Custom Components
-import AdminPage from "./Components/AdminPage/AdminPage";
-import Footer from './Components/Footer/Footer';
+import AdminPanel from "./Components/AdminPanel/AdminPanel";
+import Footer from "./Components/Footer/Footer";
 import AboutPage from "./routes/aboutPage";
 // import Login from "./Components/Login/Login";
 import ProjectsPage from "./routes/projectsPage";
@@ -28,7 +28,7 @@ export default function App() {
           <Route exact path="/" component={AboutPage} />
           {/* <Route exact path="/login" component={Login} /> */}
           <Route exact path="/projects" component={ProjectsPage} />
-          <Route exact path="/admin" component={AdminPage} />
+          <Route exact path="/admin" component={AdminPanel} />
         </Switch>
         {/* <Route path="/" component={Footer} /> */}
       </main>
