@@ -37,13 +37,13 @@ export default function AdminPanel() {
       <AdminPanelHeader />
       <section className="admin">
         <Container>
-          <Row>
+          {/* <Row>
             <h2>Admin Panel</h2>
-          </Row>
+          </Row> */}
           <Row>
-            <Col>
+            {/* <Col>
               <h3>Projects</h3>
-            </Col>
+            </Col> */}
             <Col className="d-flex justify-content-end">
               <a href="" className="admin-btn">
                 Add New Projects

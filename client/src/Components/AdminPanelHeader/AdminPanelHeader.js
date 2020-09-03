@@ -8,18 +8,29 @@ import Nav from "react-bootstrap/Nav";
 export default function AdminPanelHeader() {
   return (
     <>
-      <Navbar expand="lg" className="admin-header-container">
-        <Navbar.Brand href="/" className="admin-header-brand">
-          <img src="../../../assets/icons/Home.png" alt="Home Icon" className='admin-header-icon'/>
+      <Navbar expand="lg" className="admin-header--container">
+        <Navbar.Brand href="/" className="admin-header--brand">
+          <img
+            src="https://github.com/wwcodecolorado/returnship-project-voting/blob/kl-feature12-admin-panel-redesign/client/assets/icons/Home.png?raw=true"
+            alt="Home Icon"
+            className="admin-header--icon"
+            id="admin-header--home-icon"
+          />
           Woman Who Code Boulder / Denver
-          <span>Career Returnship</span>
+          <br />
+          <span className="admin-header--sub-heading">Career Returnship</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="">
-            <Nav.Link href="/" className="header-link">
-              <img src="../../../assets/icons/Profile.svg" alt="Circular Profile Icon" className='admin-header-icon'/>
-              Admin
+            <Nav.Link href="/" className="">
+              <img
+                src="https://raw.githubusercontent.com/wwcodecolorado/returnship-project-voting/6e19f099a323b9f94d15c7df4bda6efd7ea17093/client/assets/icons/Profile.svg"
+                alt="Circular Profile Icon"
+                className="admin-header--icon"
+                id="admin-header--profile-icon"
+              />
+              <span className="admin-header--nav-link">Admin</span>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

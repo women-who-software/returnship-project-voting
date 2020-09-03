@@ -1,12 +1,36 @@
-.admin-header-container,
-.admin-header-container a,
-.navbar-light,
-.navbar-brand {
-  color: #58bacc !important;
-  background-color: #262e3d;
+.admin-header {
+  &--container {
+    background-color: #262e3d;
+    height: 4.75rem;
+    line-height: 0px;
+  }
+  &--container a {
+    color: #58bacc !important;
+    font-family: $font-body;
+  }
+
+  &--icon {
+    height: 1.5rem;
+    padding-right: 0.75rem;
+  }
+  &--brand {
+    font-size: 1.1rem !important;
+  }
+  &--sub-heading {
+    padding-left: 2.8rem;
+    text-transform: uppercase;
+  }
+  &--nav-link,
+  a {
+    text-transform: uppercase;
+    color: whitesmoke !important;
+  }
 }
 
-.admin-header-icon {
-  width: 30px;
-  height: 30px;
+#admin-header--home-icon {
+  padding: 0;
+  margin: 0.5rem 1rem 0 0;
 }
+// #admin-header--profile-icon {
+//   fill: #58bacc;
+// }
