@@ -25,7 +25,7 @@ export default function AdminPanelHeader() {
           <Nav className="">
             <Nav.Link href="/" className="">
               <img
-                src="https://raw.githubusercontent.com/wwcodecolorado/returnship-project-voting/6e19f099a323b9f94d15c7df4bda6efd7ea17093/client/assets/icons/Profile.svg"
+                src="https://raw.githubusercontent.com/wwcodecolorado/returnship-project-voting/95131d763e19fd80be8df4cff037076b6ea20b09/client/assets/icons/Profile.svg"
                 alt="Circular Profile Icon"
                 className="admin-header--icon"
                 id="admin-header--profile-icon"
