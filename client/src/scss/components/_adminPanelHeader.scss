@@ -1,3 +1,6 @@
+.admin {
+  padding: 0 !important;
+}
 .admin-header {
   &--container {
     background-color: #262e3d;
@@ -14,7 +17,7 @@
     padding-right: 0.75rem;
   }
   &--brand {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
   }
   &--sub-heading {
     padding-left: 2.8rem;
@@ -22,6 +25,7 @@
   }
   &--nav-link,
   a {
+    font-size: 0.8rem !important;
     text-transform: uppercase;
     color: whitesmoke !important;
   }
@@ -34,3 +38,4 @@
 // #admin-header--profile-icon {
 //   fill: #58bacc;
 // }
+

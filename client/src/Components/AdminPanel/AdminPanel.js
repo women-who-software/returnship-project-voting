@@ -1,8 +1,11 @@
 // Import React Packages
 import React, { useContext } from "react";
-import AdminPanelHeader from "../AdminPanelHeader/AdminPanelHeader";
-import { GlobalContext } from "../../Context/GlobalContext";
 import { NavLink } from "react-router-dom";
+
+// Custom Imports
+import AdminPanelHeader from "../AdminPanelHeader/AdminPanelHeader";
+import SideBar from "../SideBar/SideBar";
+import { GlobalContext } from "../../Context/GlobalContext";
 
 // Import ReactBootstrap Components
 import Container from "react-bootstrap/Container";
@@ -35,26 +38,23 @@ export default function AdminPanel() {
   return (
     <>
       <AdminPanelHeader />
-      <section className="admin">
-        <Container>
-          {/* <Row>
-            <h2>Admin Panel</h2>
-          </Row> */}
-          <Row>
-            {/* <Col>
-              <h3>Projects</h3>
-            </Col> */}
-            <Col className="d-flex justify-content-end">
+      <Container fluid className="admin">
+        <Row>
+          <Col className="sideBar">
+            <SideBar />
+          </Col>
+          <Col className='admin-panel'>
+            <Row className="d-flex justify-content-end">
               <a href="" className="admin-btn">
                 Add New Projects
               </a>
-            </Col>
-          </Row>
-          <Row>
-            <Col>{getProjects}</Col>
-          </Row>
-        </Container>
-      </section>
+            </Row>
+            <Row>
+              <Col>{getProjects}</Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }
