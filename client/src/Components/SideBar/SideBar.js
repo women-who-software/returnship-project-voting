@@ -14,7 +14,7 @@ const SideBar = () => (
       {/* <Col> */}
       <NavLink className="sideBar--link" exact to="/admin">
         <img
-          src="https://github.com/wwcodecolorado/returnship-project-voting/blob/kl-feature12-admin-panel-redesign/client/assets/icons/copy-archives1.png?raw=true"
+          src="https://github.com/wwcodecolorado/returnship-project-voting/blob/kl-feature12-admin-panel-redesign/client/assets/icons/archives.png?raw=true"
           alt="Archives Icon"
           className="admin-header--icon"
           id="admin-header--archives-icon"
