@@ -1,18 +1,37 @@
 .projects {
-  padding: 20px 110px;
+  padding: 10px 20px;
 
   &__header {
-    font-size: $font-size-header;
+    font-size: 24px;
     font-weight: $font-weight-bold;
   }
   &__about {
-    &-header {
-      font-size: $font-size-sub-header;
-      font-weight: $font-weight-bold;
-    }
-
     & ol {
       list-style-position: inside;
+      & li {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .projects {
+    padding: 20px 110px;
+  
+    &__header {
+      font-size: $font-size-header;
+      font-weight: $font-weight-bold;
+    }
+    &__about {
+      &-header {
+        font-size: $font-size-sub-header;
+        font-weight: $font-weight-bold;
+      }
+  
+      & ol {
+        list-style-position: inside;
+      }
     }
   }
 }

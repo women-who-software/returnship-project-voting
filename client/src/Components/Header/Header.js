@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from '../Images/logo.svg';
 
 export default function LandingPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setMenuOpen(!menuOpen);
+  }
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  }
+  
   return (
     <div className="header">
       <div className="header__title">

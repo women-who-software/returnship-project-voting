@@ -36,5 +36,17 @@ export default {
       status: "open",
       tech_stack: ["COBOL", "CICS"],
     },
+    {
+      project_id: 4,
+      project_name: "Special App",
+      project_desc: "This is a really long description for Project 4",
+      client_name: "John Doe",
+      client_email: "johndoe@gmail.com",
+      client_company: "Doe Enterprises",
+      client_phone: 3035551212,
+      max_team_members: 5,
+      status: "completed",
+      tech_stack: ["COBOL", "CICS"],
+    },
   ],
 };

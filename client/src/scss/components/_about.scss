@@ -1,13 +1,33 @@
 .about {
-  margin: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 10px;
 
   &__header {
-    font-weight: $font-weight-semi-bold;
-    margin-bottom: 30px;
-    font-size: $font-size-header;
+    font-weight: $font-weight-bold;
+    margin-bottom: 20px;
+    font-size: 24px;
   }
 
   &__body div {
-    margin-top: 15px;
+    margin: 15px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 700px) {
+  .about {
+    margin-top: 100px;
+    margin-left: 20%;
+  
+    &__header {
+      margin-bottom: 75px;
+      font-size: $font-size-header;
+    }
+  
+    &__body div {
+      width: 495px;
+    }
   }
 }

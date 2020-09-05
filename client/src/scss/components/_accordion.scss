@@ -28,27 +28,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $white;
+  background-color: $bg;
   padding: 30px 80px;
-  border: 1px solid $border-color;
+  border: 1px solid $card-border;
   border-radius: 10px;
   box-shadow: 0 3px 6px 0 $shadow-color;
   transition: background-color 0.6s ease;
 
-  &::after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid currentColor;
+  &-more {
+    font-size: $font-size-small;
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid currentColor;
+      vertical-align: -45%;
+    }
   }
 
   &:hover,
   &.open {
     color: black;
-    background-color: $hover-color;
-    background-color: $hover-color;
+    background-color: $card-hover;
+    background-color: $card-hover;
   }
 
   &.open {
@@ -62,11 +66,20 @@
   }
 
   &.open {
-    &::after {
-      content: "";
-      border-top: 0;
-      border-bottom: 5px solid;
+    .accordion__title-more {
+      &::after {
+        content: "";
+        border-top: 0;
+        border-bottom: 5px solid;
+        vertical-align: 40%;
+      }
     }
+  }
+
+  & img {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
   }
 }
 
@@ -74,16 +87,16 @@
   font-weight: $font-weight-regular;
   font-size: $font-size-small;
   padding: 30px 80px;
-  border-right: 1px solid $border-color;
-  border-left: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
+  border-right: 1px solid $card-border;
+  border-left: 1px solid $card-border;
+  border-bottom: 1px solid $card-border;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: 0 3px 6px 0 $shadow-color;
 
   display: flex;
   flex-direction: column;
-  
+
   &-line {
     display: flex;
     flex-direction: row;
@@ -93,7 +106,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $card-border;
   }
 
   &-item,
@@ -115,11 +128,31 @@
 
   &-desc-label {
     width: 100%;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $card-border;
   }
 
   &-desc-value {
     padding: 20px;
-    background-color: $bg-accent-color;
+    background-color: $card-hover;
   }
+}
+
+.Status {
+  display: inline-block;
+}
+.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  visibility: hidden;
+  padding: 5px;
+  border-radius: 5px;
+}
+.tooltip-arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.7) transparent transparent;
 }

@@ -9,22 +9,29 @@ export default function ProjectsPage() {
     <section>
       <Header />
       <Nav />
-      
+
       <div className="projects">
         <h1 className="projects__header">Project List:</h1>
 
         <div className="projects__about">
-          <h2 className="projects__about-header">How Projects work:</h2>
+          <div>How to be involved in WWC Returnship:</div>
           <ol>
             <li>Read about Projects and details.</li>
-            <li>Open Project is available for voting.</li>
             <li>
-              Once enough votes are received, a project is open for members to
-              sign up.
+              An <strong>open project</strong> is available for voting. Vote in
+              projects you are interested in.
             </li>
             <li>
-              In progress projects may still accept members, contact is to find
-              out.
+              Once enough votes are received, a project is open to{" "}
+              <strong>accepting new members</strong>.
+            </li>
+            <li>
+              Once enough members are signed up for a project, a project is{" "}
+              <strong>open for development</strong>.
+            </li>
+            <li>
+              In development projects may still accept members.{" "}
+              <strong>contact us</strong> to find out how to get invloved.
             </li>
           </ol>
         </div>
