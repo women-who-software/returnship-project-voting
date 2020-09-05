@@ -1,40 +1,46 @@
 .nav {
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: $white;
-  &__logo {
-    padding-left: 100px;
-    & img {
-      width: 52px;
-      height: auto;
-      margin-right: 20px;
-      padding: 10px 0;
-      vertical-align: middle;
-    }
-    & a {
-      color: $accent;
-      font-weight: $font-weight-medium;
-    }
-  }
-  &__links {
+  display: none;
+}
+
+@media (min-width: 940px) {
+  .nav {
     display: flex;
-    flex-direction: row;
-    padding: 30px 20px;
-    
-    & a {
-      font-size: 15px;
-      margin: 0 10px;
-    }
-    &-admin {
-      margin-left: 100px;
+    flex-wrap: nowrap;
+    background-color: $white;
+    &__logo {
+      padding-left: 100px;
       & img {
-        vertical-align: middle;
-        width: 30px;
+        width: 52px;
         height: auto;
+        margin-right: 20px;
+        padding: 10px 0;
+        vertical-align: middle;
+      }
+      & a {
+        color: $accent;
+        font-weight: $font-weight-medium;
       }
     }
-    &-nav {
+    &__links {
       display: flex;
+      flex-direction: row;
+      padding: 30px 20px;
+      
+      & a {
+        font-size: 15px;
+        margin: 0 10px;
+      }
+      &-admin {
+        margin-left: 100px;
+        & img {
+          vertical-align: middle;
+          width: 30px;
+          height: auto;
+        }
+      }
+      &-nav {
+        display: flex;
+      }
     }
   }
 }

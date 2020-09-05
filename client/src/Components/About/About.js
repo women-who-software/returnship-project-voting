@@ -4,18 +4,35 @@ export default function About() {
   return (
     <div className="about">
       <div className="about__header">About Career Returnship</div>
-      <div>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-        officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis
-        unde omnis istpoe natus error sit voluptatem accusantium doloremque
-        eopsloi laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-        veritatis et quasi architecto beatae vitae dicta sunot explicabo. Nemo
-        ernim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-        sedopk quia consequuntur magni dolores eos qui rationesopl voluptatem
-        sequi nesciunt. Neque porro quisquameo est, qui dolorem ipsum quia dolor
-        sit amet, eopsmiep consectetur, adipisci velit, seisud quia non numquam
-        eius modi tempora incidunt ut labore et dolore wopeir magnam aliquam
-        quaerat voluptatem eoplmuriquisqu
+
+      <div className="about__body">
+        <div>
+          Kickstarting your career and reentering the workforce after a break
+          can be a huge challenge; together we can make this a lot easier.
+        </div>
+
+        <div>
+          This initiative is a small step towards empowering those of us in
+          technology trying to relaunch our careers.
+        </div>
+
+        <div>
+          Browse our Projects, Vote and Sign up for Projects. Once signed up,
+          our project manager will contact you.
+        </div>
+
+        <div>You’ll be on your way toward achieving your goals!</div>
+
+        <div>
+          Who should is this program for? If you are thinking about restarting
+          your career or currently struggling alone in the process, this program
+          is for you.
+        </div>
+
+        <div>
+          If you are currently working, we would love your insights to help the
+          community.
+        </div>
       </div>
     </div>
   );

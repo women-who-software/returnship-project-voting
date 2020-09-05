@@ -2,14 +2,62 @@
   background: $white url("../../Components/Images/banner.jpg") no-repeat;
   background-size: cover;
   height: auto;
-  padding: 50px 0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
 
   &__title {
     color: $accent;
     font-weight: $font-weight-extra-bold;
-    font-size: 32px;
-    text-align: right;
-    margin-right: 50px;
-    line-height: 1.6em;
+    font-size: 18px;
+    & .header__title-WWC {
+      display: none;
+    }
+    & .header__title-small {
+      margin: 0 20px;
+      & img {
+        width: 20px;
+        height: auto;
+      }
+    }
+    & .header__title-large {
+      display: none;
+    }
+  }
+
+  & .header__nav-small-spacer {
+    flex: 1;
+  }
+
+  & .header__nav-small {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 940px) {
+  .header {
+    flex-direction: column;
+    padding: 50px 0;
+    &__title {
+      color: $accent;
+      font-weight: $font-weight-extra-bold;
+      font-size: 32px;
+      text-align: right;
+      margin-right: 50px;
+      line-height: 1.6em;
+      & .header__title-WWC {
+        display: block;
+      }
+      & .header__title-small {
+        display: none;
+      }
+      & .header__title-large {
+        display: block;
+      }
+    }
+
+    & .header__nav-small {
+      display: none;
+    }
   }
 }
