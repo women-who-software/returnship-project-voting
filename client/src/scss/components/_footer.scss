@@ -1,15 +1,15 @@
 .footer {
   font-size: $font-size-nav;
   & hr {
-    margin: 20px 100px 0 100px;
+    margin: 20px 20px 0 20px;
   }
   &__nav {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 10px 50px;
+    padding: 10px 20px;
     & img {
-      width: 40px;
+      width: 30px;
       height: auto;
       margin-right: 20px;
     }
@@ -19,12 +19,10 @@
         margin: 0 10px;
       }
     }
-    // & a {
-    //   margin-right: 15px;
-    //   color: $font-color;
-    // }
     &-link {
-      padding-top: 20px;
+      padding-top: 2px;
+      font-size: 16px;
+      flex-wrap: wrap;
       & li {
         position: relative;
         display: inline-block;
@@ -37,14 +35,14 @@
             width: 0;
             height: 1px;
             display: block;
-            margin-top: 5px;
+            margin-top: 1px;
             right: 0;
             background: #000;
             transition: width 0.5s ease;
             -webkit-transition: width 0.5s ease;
           }
           &:hover {
-            text-transform: uppercase;
+            text-transform: none;
             color: $text-nav-hover;
           }
           &:hover:after {
@@ -61,5 +59,36 @@
     color: $bg;
     font-weight: $font-weight-regular;
     padding: 20px 0 20px 110px;
+  }
+}
+
+@media (min-width: 940px) {
+  .footer {
+    & hr {
+      margin: 20px 100px 0 100px;
+    }
+    &__nav {
+      padding: 10px 50px;
+      & img {
+        width: 40px;
+      }
+      &-link {
+        padding-top: 20px;
+        font-size: 18px;
+        & li {
+          position: relative;
+          display: inline-block;
+          padding: 0 10px;
+          & .animate-left {
+            &:after {
+              margin-top: 5px;
+            }
+          }
+          &:hover {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
   }
 }

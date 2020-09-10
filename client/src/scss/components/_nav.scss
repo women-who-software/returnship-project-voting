@@ -2,7 +2,53 @@
   display: none;
 }
 
+.nav__small {
+  box-shadow: 0px 4px 4px  $shadow-color;
+
+  & .nav__links {
+    & a {
+      font-size: 18px;
+      line-height: 21px;
+      margin: 0 10px;
+    }
+    &-nav {
+      display: flex;
+      flex-direction: column;
+      & a {
+        font-size: 18px;
+        line-height: 21px;
+        font-weight: $font-weight-bold;
+        color: $text-nav;
+      }
+      & div {
+        padding: 5px;
+        border-bottom: 1px solid $bg-nav;
+        &:hover {
+          background-color: $card-hover;
+        }
+      }
+    }
+    &-admin {
+      display: none;
+    }
+
+    &-button button {
+      border: none;
+      background-color: transparent;
+      color: $text-nav;
+      font-weight: $font-weight-bold;
+      font-size: 18px;
+      line-height: 21px;
+      cursor: pointer;
+    }
+  }
+}
+
 @media (min-width: 940px) {
+  .nav__small {
+    display: none;
+  }
+
   .nav {
     display: flex;
     flex-wrap: nowrap;
@@ -23,6 +69,9 @@
       & a {
         color: $font-accent-color;
         font-weight: $font-weight-medium;
+        &:hover {
+          font-variant: small-caps;
+        }
       }
     }
     &__links {
@@ -47,6 +96,36 @@
 
         & a {
           color: $font-color;
+          font-weight: $font-weight-bold;
+        }
+
+        & div {
+          position: relative;
+
+          & .animate-left {
+            color: $font-color;
+            &:after {
+              content: "";
+              position: absolute;
+              width: 0;
+              height: 1px;
+              display: block;
+              margin-top: 1px;
+              right: 0;
+              background: #000;
+              transition: width 0.5s ease;
+              -webkit-transition: width 0.5s ease;
+            }
+            &:hover {
+              color: $text-nav-hover;
+              text-transform: uppercase;
+            }
+            &:hover:after {
+              width: 100%;
+              left: 0;
+              background: #000;
+            }
+          }
         }
       }
 
@@ -55,6 +134,7 @@
         background-color: $bg;
         color: $font-color;
         font-size: $font-size-small;
+        font-weight: $font-weight-bold;
         line-height: 28px;
         cursor: pointer;
       }

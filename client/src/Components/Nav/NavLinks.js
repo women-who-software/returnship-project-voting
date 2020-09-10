@@ -15,13 +15,17 @@ export default function Nav() {
       <div className="nav__links">
         <div className="nav__links-nav">
           <div>
-            <NavLink to="/projects">Project list</NavLink>
+            <NavLink to="/projects" className="animate-left">
+              Project List
+            </NavLink>
           </div>
           <div className="nav__links-button">
-            <button onClick={() => setOpenVoting()}>Vote on Projects</button>
+            <button onClick={() => setOpenVoting()} className="animate-left">
+              Vote on Projects
+            </button>
           </div>
           <div className="nav__links-button">
-            <button onClick={() => setOpenSignUps()}>
+            <button onClick={() => setOpenSignUps()} className="animate-left">
               Sign Up for Projects
             </button>
           </div>
