@@ -7,9 +7,14 @@ $card-border: #37393a;
 $card-bg: #c7d3dd;
 $small-button-bg: #d6c9c9;
 
+// .admin-container {
+//   width: 150%;
+// }
+
 .admin-panel {
   padding-right: 15px;
   padding-left: 15px;
+  left: -39rem;
 }
 
 .admin-btn {
@@ -77,7 +82,22 @@ $small-button-bg: #d6c9c9;
     display: block;
   }
 }
+.row {
+  margin-right: 0 !important;
+}
 
+// SideBar Col
+
+// .sideBar-component {
+//   width: 20rem !important;
+// }
+
+// div.sideBar.col {
+//   padding-right: 0 !important;
+//   width: 10rem !important;
+// }
+
+//! Media Queries
 @media (min-width: 540px) {
   .projectdetails {
     margin: 20px 50px;

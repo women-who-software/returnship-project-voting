@@ -38,23 +38,38 @@ export default function AdminPanel() {
   return (
     <>
       <AdminPanelHeader />
-      <Container fluid className="admin">
-        <Row>
-          <Col className="sideBar">
-            <SideBar />
-          </Col>
-          <Col className='admin-panel'>
-            <Row className="d-flex justify-content-end">
-              <a href="" className="admin-btn">
-                Add New Projects
-              </a>
-            </Row>
-            <Row>
-              <Col>{getProjects}</Col>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
+      {/* <Container className="admin"> */}
+      {/* <Row>
+        <Col className="sideBar">
+          <SideBar />
+        </Col>
+        <Col className="admin-panel">
+          <Row className="d-flex justify-content-end">
+            <a href="" className="admin-btn">
+              Add New Projects
+            </a>
+          </Row>
+          <Row>
+            <Col>{getProjects}</Col>
+          </Row>
+        </Col>
+      </Row> */}
+      {/* </Container> */}
+      <div className="row admin-container">
+        <div className="col sideBar">
+          <SideBar className="sideBar-component" />
+        </div>
+        <div className="col admin-panel">
+          <div className="row d-flex justify-content-end">
+            <a href="" className="admin-btn">
+              Add New Projects
+            </a>
+          </div>
+          <div className="row">
+            <div className="col">{getProjects}</div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
