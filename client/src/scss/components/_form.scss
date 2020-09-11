@@ -1,0 +1,56 @@
+.form {
+  margin: 10px;
+
+  & h1 {
+    font-size: 18px;
+    text-align: center;
+  }
+  &__about {
+    font-size: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  & input[type="checkbox"] {
+    margin-right: 10px;
+  }
+
+  &__input-label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  &__input-input {
+    border: 2px solid $card-border;
+    border-radius: 10px;
+    line-height: 20px;
+    padding: 5px;
+    width: 250px;
+  }
+
+  &__submit {
+    text-align: center;
+    margin-top: 20px;
+    & button {
+      width: 185px;
+      height: 40px;
+      background-color: $text-nav;
+      color: white;
+      &:hover {
+        background-color: $text-nav-hover;
+      }
+    }
+  }
+}
+
+@media (min-width: 940px) {
+  .form {
+    margin: 30px 50px;
+
+    &__submit {
+      text-align: left;
+    }
+  }
+}

@@ -36,3 +36,15 @@ ul {
 button {
   font-family: 'Raleway', sans-serif;
 }
+
+.error {
+  color: $error;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.required {
+  color: $error;
+  font-style: italic;
+  font-size: 25px;
+}

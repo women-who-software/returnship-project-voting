@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import MenuClosed from "../Images/hamburger-closed.svg";
 import MenuOpen from "../Images/hamburger-open.svg";
 import Logo from "../Images/logo.svg";
@@ -21,7 +22,7 @@ export default function LandingPage() {
           <div className="header__image">
             <img src={Logo} alt="Career Returnship Logo" />
           </div>
-          <div className="header__title-Career">Career Returnship</div>
+          <NavLink to="/" className="header__title-Career" style={{color: '#58bacc'}}>Career Returnship</NavLink>
 
           <div className="header__spacer"></div>
 

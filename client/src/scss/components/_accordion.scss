@@ -1,5 +1,5 @@
 .accordion {
-  margin: 0 100px;
+  margin: 0 10px;
 }
 
 .accordion__wrapper {
@@ -27,14 +27,14 @@
 
 .accordion__title {
   font-weight: $font-weight-regular;
-  font-size: $font-size-sub-header;
+  font-size: 18px;
   cursor: pointer;
   color: #666;
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: center;
   background-color: $bg;
-  padding: 30px 80px;
+  padding: 10px 20px;
   border: 1px solid $card-border;
   border-radius: 10px;
   box-shadow: 0 3px 6px 0 $shadow-color;
@@ -42,6 +42,7 @@
 
   &-more {
     font-size: $font-size-small;
+    text-align: right;
     &::after {
       content: "";
       width: 0;
@@ -91,7 +92,7 @@
 .accordion__content {
   font-weight: $font-weight-regular;
   font-size: $font-size-small;
-  padding: 30px 80px;
+  padding: 10px 20px;
   border-right: 1px solid $card-border;
   border-left: 1px solid $card-border;
   border-bottom: 1px solid $card-border;
@@ -104,13 +105,13 @@
 
   &-line {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   &-item {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     border-bottom: 1px solid $card-border;
   }
 
@@ -139,5 +140,29 @@
   &-desc-value {
     padding: 20px;
     background-color: $card-hover;
+  }
+}
+
+@media (min-width: 700px) {
+  .accordion {
+    margin: 0 100px;
+  }
+
+  .accordion__title {
+    padding: 30px 80px;
+    font-size: $font-size-sub-header;
+    display: flex;
+  }
+
+  .accordion__content {
+    padding: 30px 80px;
+
+    &-line {
+      flex-direction: row;
+    }
+
+    &-item {
+      flex-wrap: wrap;
+    }
   }
 }

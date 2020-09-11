@@ -14,7 +14,7 @@
   padding: 20px;
   width: 90%;
   background-color: $bg;
-  box-shadow: 0 30px 30px 0 rgba(221, 226, 229, 0.64);
+  box-shadow: 0 0px 10px 0 $shadow-color;
 
   &-close-btn {
     color: $font-color;

@@ -10,6 +10,14 @@ export default function Nav() {
   const [openVoting, setOpenVoting] = useToggle(false);
   const [openSignUps, setOpenSignUps] = useToggle(false);
 
+  const handleSignUpsOnSubmit = () => {
+    setOpenSignUps();
+  }
+
+  const handleVotingOnSubmit = () => {
+    setOpenVoting();
+  }
+
   return (
     <>
       <div className="nav__links">
@@ -37,12 +45,12 @@ export default function Nav() {
       </div>
       {openVoting && (
         <Modal open={openVoting} toggle={setOpenVoting}>
-          <VotingModalForm />
+          <VotingModalForm handleSubmit={handleVotingOnSubmit} />
         </Modal>
       )}
       {openSignUps && (
         <Modal open={openSignUps} toggle={setOpenSignUps}>
-          <SignUpsModalForm />
+          <SignUpsModalForm handleSubmit={handleSignUpsOnSubmit} />
         </Modal>
       )}
     </>

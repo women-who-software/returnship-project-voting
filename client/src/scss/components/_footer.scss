@@ -11,7 +11,7 @@
     & img {
       width: 30px;
       height: auto;
-      margin-right: 20px;
+      margin-right: 5px;
     }
     &-logo {
       img {
@@ -21,12 +21,12 @@
     }
     &-link {
       padding-top: 2px;
-      font-size: 16px;
+      font-size: 12px;
       flex-wrap: wrap;
       & li {
         position: relative;
         display: inline-block;
-        padding: 0 10px;
+        padding: 0 5px;
         & .animate-left {
           color: $font-color;
           &:after {
@@ -71,6 +71,7 @@
       padding: 10px 50px;
       & img {
         width: 40px;
+        margin-right: 20px;
       }
       &-link {
         padding-top: 20px;

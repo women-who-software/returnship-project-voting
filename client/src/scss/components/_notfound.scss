@@ -1,0 +1,9 @@
+.notfound {
+  margin: 20px;
+  text-align: center;
+  font-weight: $font-weight-bold;
+
+  & img {
+    width: 90%;
+  }
+}

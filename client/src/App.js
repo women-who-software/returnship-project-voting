@@ -7,6 +7,7 @@ import Voting from "./Components/Voting/Voting";
 import SignUps from "./Components/SignUps/SignUps";
 import STORE from "./STORE";
 import { GlobalContext } from "./Context/GlobalContext";
+import NotFound from "./routes/notFoundPage";
 
 export default function App() {
   const [hasError, setHasError] = useState("");
@@ -37,6 +38,7 @@ export default function App() {
           /> */}
           <Route exact path="/voting" component={Voting} />
           <Route exact path="/signups" component={SignUps} />
+          <Route component={NotFound} />
         </Switch>
       </main>
     </React.Fragment>
