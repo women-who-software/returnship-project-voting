@@ -1,9 +1,7 @@
 .notfound {
-  margin: 20px;
   text-align: center;
-  font-weight: $font-weight-bold;
-
-  & img {
-    width: 90%;
+  margin: 50px 10px;
+  &__text {
+    margin-top: 20px;
   }
 }

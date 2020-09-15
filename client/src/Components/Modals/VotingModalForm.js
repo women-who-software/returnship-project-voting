@@ -6,7 +6,7 @@ const validator = require("email-validator");
 
 export default function VotingModalForm(props) {
   const { projects } = useContext(GlobalContext);
-  const {handleSubmit} = props;
+  const { handleSubmit } = props;
 
   const Checkbox = ({
     type = "checkbox",
@@ -134,13 +134,15 @@ export default function VotingModalForm(props) {
 
   // Project Options
   const projectOptions = [];
-  projects.map((project) =>
-    projectOptions.push({
-      key: project.project_id,
-      name: project.project_name,
-      label: project.project_name,
-    })
-  );
+  projects.map((project) => {
+    if (project.status === "open") {
+      projectOptions.push({
+        key: project.project_id,
+        name: project.project_name,
+        label: project.project_name,
+      });
+    }
+  });
 
   // Check if selectedOption is checked
   const checkSelectedProject = (project) => {

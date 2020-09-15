@@ -46,6 +46,16 @@ export default function Projects() {
           {project.project_desc}
         </div>
       </div>
+
+      <div className="accordion__content-button">
+        {project.status === "new-members"
+          ? "Sign Up"
+          : ""}
+        
+        {project.status === "open"
+          ? "Vote"
+          : ""}
+      </div>
     </Accordion>
   ));
 

@@ -5,7 +5,7 @@ import { GlobalContext } from "../../Context/GlobalContext";
 const validator = require("email-validator");
 
 export default function SignUpsModalForm(props) {
-  const {handleSubmit} = props;
+  const { handleSubmit } = props;
   const { projects } = useContext(GlobalContext);
 
   const Checkbox = ({
@@ -159,13 +159,15 @@ export default function SignUpsModalForm(props) {
 
   // Project Options
   const projectOptions = [];
-  projects.map((project) =>
-    projectOptions.push({
-      key: project.project_id,
-      name: project.project_name,
-      label: project.project_name,
-    })
-  );
+  projects.map((project) => {
+    if (project.status === "new-members") {
+      projectOptions.push({
+        key: project.project_id,
+        name: project.project_name,
+        label: project.project_name,
+      });
+    }
+  });
 
   // Check if selectedOption is checked
   const checkSelectedProject = (project) => {

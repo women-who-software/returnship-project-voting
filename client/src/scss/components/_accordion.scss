@@ -20,16 +20,17 @@
   transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
 }
 
-.accordian__status {
+.accordion__status {
   border: none;
   background-color: transparent;
+  font-size: 14px;
 }
 
 .accordion__title {
   font-weight: $font-weight-regular;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
-  color: #666;
+  color: $font-color;
   display: block;
   justify-content: space-between;
   align-items: center;
@@ -39,6 +40,14 @@
   border-radius: 10px;
   box-shadow: 0 3px 6px 0 $shadow-color;
   transition: background-color 0.6s ease;
+
+  & img {
+    margin-right: 5px;
+  }
+
+  &-project {
+    font-weight: $font-weight-bold;
+  }
 
   &-more {
     font-size: $font-size-small;
@@ -109,9 +118,6 @@
   }
 
   &-item {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     border-bottom: 1px solid $card-border;
   }
 
@@ -127,7 +133,6 @@
   }
 
   &-value {
-    width: 200px;
     text-align: right;
     padding-right: 10px;
   }
@@ -150,19 +155,20 @@
 
   .accordion__title {
     padding: 30px 80px;
-    font-size: $font-size-sub-header;
+    font-size: 18px;
     display: flex;
+    &-project {
+      font-weight: $font-weight-bold;
+    }
+    &-status {
+      & img {
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
   }
 
   .accordion__content {
     padding: 30px 80px;
-
-    &-line {
-      flex-direction: row;
-    }
-
-    &-item {
-      flex-wrap: wrap;
-    }
   }
 }

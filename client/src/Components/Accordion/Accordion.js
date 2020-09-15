@@ -3,7 +3,6 @@ import StatusOpen from "../Images/project-open.svg";
 import StatusNew from "../Images/project-accepting-new.svg";
 import StatusDev from "../Images/project-in-development.png";
 import StatusCompleted from "../Images/project-completed.svg";
-import ReactTooltip from "react-tooltip";
 
 export default function Accordion({ project, children }) {
   const [isOpen, setOpen] = React.useState(false);
@@ -38,35 +37,12 @@ export default function Accordion({ project, children }) {
         break;
     }
 
-    return <img src={statusImage} alt={statusText} />;
-  };
-
-  const getStatusText = (status) => {
-    let statusText = "";
-
-    switch (status) {
-      case "open":
-        statusText = "Open Project";
-        break;
-
-      case "new-members":
-        statusText = "Accepting New members";
-        break;
-
-      case "in-progress":
-        statusText = "In Development";
-        break;
-
-      case "completed":
-        statusText = "Completed";
-        break;
-
-      default:
-        statusText = "";
-        break;
-    }
-
-    return statusText;
+    return (
+      <>
+        <img src={statusImage} alt={statusText} />
+        {statusText}
+      </>
+    );
   };
 
   return (
@@ -76,24 +52,14 @@ export default function Accordion({ project, children }) {
         onClick={() => setOpen(!isOpen)}
       >
         <div>
-          <div>Project: {project.project_name}</div>
           <div>
-            Status{"\u00a0"}{" "}
-            <button
-              className="accordian__status"
-              data-for="accordion__status"
-              data-tip={getStatusText(project.status)}
-            >
-              {getStatusImage(project.status)}
-            </button>
-            <ReactTooltip
-              id="accordion__status"
-              className="accordion__status"
-              delayHide={1000}
-              textColor="#000"
-              backgroundColor="#FFF"
-              effect="solid"
-            />
+            Project:{" "}
+            <span className="accordion__title-project">
+              {project.project_name}
+            </span>
+          </div>
+          <div className="accordion__title-status">
+            Status:{"\u00a0"} {getStatusImage(project.status)}
           </div>
         </div>
         <div className="accordion__title-more">More Details{"\u00a0"}</div>
