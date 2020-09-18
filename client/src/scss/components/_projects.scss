@@ -1,5 +1,6 @@
 .projects {
-  margin: 20px 50px 20px 50px;
+  margin: 20px;
+  min-height: calc(86vh - 100px);
 }
 
 .projects__items-project {
@@ -11,10 +12,20 @@
     font-size: 1.2em;
     margin-bottom: 10px;
   }
-  .projects__items-status,
-  .projects__items-more {
+  .projects__items-status {
     display: inline-block;
   }
+  .projects__items-more {
+    display: block;
+  }
+}
+
+@media (min-width: 540px) {
+  .projectdetails {
+    margin: 20px 50px;
+    padding: 20px;
+  }
+
   .projects__items-more {
     float: right;
   }

@@ -16,7 +16,6 @@ db = SQLAlchemy(app)
 
 # class for creating ptoject
 
-
 class Project(db.Model):
     project_id = db.Column(db.Integer, primary_key=True)
     project_name = db.Column(db.String(100))
