@@ -1,1 +1,3 @@
 node_modules
+/api/venv/
+/api/project.db
