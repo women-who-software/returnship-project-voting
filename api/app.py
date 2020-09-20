@@ -16,6 +16,7 @@ db = SQLAlchemy(app)
 
 # class for creating ptoject
 
+
 class Project(db.Model):
     project_id = db.Column(db.Integer, primary_key=True)
     project_name = db.Column(db.String(100))
@@ -60,9 +61,11 @@ class Signup(db.Model):
     signup_name = db.Column(db.String(100), nullable=True)
     sign_up_github = db.Column(db.String(100), nullable=True)
     signup_email = db.Column(db.String(100))
+    # todo project_id must be array -> projects_ids
 
     # constructor of Signup
-    def __init__(self, signup_id, signup_email, signup_name, sign_up_github, project_id=None):
+    def __init__(self, signup_id, signup_email, project_id, signup_name=None, sign_up_github=None):
+        self.project_id = project_id
         self.signup_id = signup_id
         self.signup_email = signup_email
         self.signup_name = signup_name
@@ -70,6 +73,27 @@ class Signup(db.Model):
 
     def __repr__(self):
         return '<Signup %r>' % self.signup_name
+
+    def serialize(self):
+        return {'signup_email': self.signup_email, 'signup_name': self.signup_name, 'sign_up_github': self.sign_up_github}
+
+
+@app.route('/api/signup', methods=['POST'])
+def create_signup():
+    project_id = request.form['project_id']
+    signup_email = request.form['signup_email']
+    sign_up_github = request.form['sign_up_github'] if 'sign_up_github' in request.form else None
+    signup_name = request.form['signup_name'] if 'signup_name' in request.form else None
+
+    signup = Signup(project_id=project_id, sign_up_github=sign_up_github,
+                    signup_email=signup_email, signup_id=signup_id)
+    try:
+        db.session.add(signup)
+        db.session.commit()
+        return jsonify(signup.serialize())
+    except Exception as e:
+        print(e)
+        return "Nothing here. Try again."
 
 
 # class for voting for the project which the member like
@@ -128,19 +152,25 @@ def post_project():
         print(e)
         return "Nothing here. Try add the project again."
 
+# method to get all signup
+@app.route('/api/signup')
+def all_signup():
+    rows = Signup.query.all()
+    return jsonify(list(map(lambda v: v.serialize(), rows)))
 
+# method to get all projects
 @app.route('/api/projects')
 def all_projects():
     projects = Project.query.order_by(Project.project_id).all()
     return jsonify(list(map(lambda v: v.serialize(), projects)))
 
-
+# method to read the project
 @app.route('/api/projects/<project_id>')
 def read_project(project_id):
     project = Project.query.get(project_id)
     return jsonify(project.serialize() if project else 'no object')
 
-
+# method to delete the project
 @app.route('/api/projects/<project_id>', methods=['DELETE'])
 def delete_project(project_id):
     db.session.query(Project).filter(Project.project_id == project_id).delete()
