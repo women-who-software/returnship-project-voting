@@ -78,6 +78,7 @@ class Signup(db.Model):
         return {'signup_email': self.signup_email, 'signup_name': self.signup_name, 'sign_up_github': self.sign_up_github}
 
 
+# method for creating signup
 @app.route('/api/signup', methods=['POST'])
 def create_signup():
     project_id = request.form['project_id']
@@ -96,7 +97,22 @@ def create_signup():
         return "Nothing here. Try again."
 
 
-# class for voting for the project which the member like
+# method to read in signup
+@app.route('/api/signup/<project_id>')
+def read_signup(project_id):
+    signup = Signup.query.get(project_id)
+    return jsonify(signup.serialize() if signup else 'no object')
+
+
+# method to delete in signup
+@app.route('/api/signup/<project_id>', methods=['DELETE'])
+def delete_signup(project_id):
+    db.session.query(Signup).filter(Signup.project_id == project_id).delete()
+    db.session.commit()
+    return jsonify({'success': True})
+
+
+# class for voting for the project with the member like
 class Vote(db.Model):
     project_id = db.Column(db.Integer, ForeignKey(
         "project.project_id"), nullable=False)
@@ -104,13 +120,57 @@ class Vote(db.Model):
     voter_slack_name = db.Column(db.String(100), nullable=True)
     voter_email = db.Column(db.String(100), primary_key=True)
 
-    def __init__(self, voter_name, voter_slack_name, voter_email, project_id=None):
+    def __init__(self, project_id, voter_email, voter_name=None, voter_slack_name=None):
         self.voter_name = voter_name
         self.voter_slack_name = voter_slack_name
         self.voter_email = voter_email
 
     def __repr__(self):
         return '<Vote %r>' % self.voter_name
+
+    def serialize(self):
+        return {'voter_name': self.voter_name, 'voter_slack_name': self.voter_slack_name, 'voter_email': self.voter_email}
+
+
+# method for adding vote
+@app.route('/api/vote', methods=['POST'])
+def create_vote():
+    project_id = request.form['project_id']
+    voter_name = request.form['voter_name']
+    voter_slack_name = request.form['voter_slack_name'] if 'voter_slack_name' in request.form else None
+    voter_email = request.form['voter_email'] if 'voter_email' in request.form else None
+
+    vote = Vote(project_id=project_id, voter_name=voter_name,
+                voter_slack_name=voter_slack_name, voter_email=voter_email)
+    try:
+        db.session.add(vote)
+        db.session.commit()
+        return jsonify(vote.serialize())
+    except Exception as e:
+        print(e)
+        return "Nothing here. Try again."
+
+
+# method to get all votes
+@app.route('/api/vote')
+def all_vote():
+    rows = Vote.query.all()
+    return jsonify(list(map(lambda v: v.serialize(), rows)))
+
+
+# method to read the votes
+@app.route('/api/vote/<project_id>')
+def read_vote(project_id):
+    vote = Vote.query.get(project_id)
+    return jsonify(vote.serialize() if vote else 'no object')
+
+
+# method to delete the votes
+@app.route('/api/vote/<project_id>', methods=['DELETE'])
+def delete_vote(project_id):
+    db.session.query(Vote).filter(Vote.project_id == project_id).delete()
+    db.session.commit()
+    return jsonify({'success': True})
 
 
 # class for admin page
@@ -128,10 +188,50 @@ class Admin(db.Model):
         return '<Admin %r>' % self.admin_name
 
 
+# method for adding in admin
+@app.route('/api/admin', methods=['POST'])
+def create_admin():
+    admin_name = request.form['admin_name']
+    password = request.form['password']
+    chapter_name = request.form['chapter_name']
+
+    admin = Admin(admin_name=admin_name,
+                  password=password, chapter_name=chapter_name)
+    try:
+        db.session.add(admin)
+        db.session.commit()
+        return jsonify(admin.serialize())
+    except Exception as e:
+        print(e)
+        return "Nothing here. Try again."
+
+
+# method to get in admin
+@app.route('/api/admin')
+def all_admin():
+    rows = Vote.query.all()
+    return jsonify(list(map(lambda v: v.serialize(), rows)))
+
+
+# method to read in admin
+@app.route('/api/admin')
+def read_admin(project_id):
+    admin = Admin.query.get(project_id)
+    return jsonify(admin.serialize() if admin else 'no object')
+
+
+# method to delete in admin
+@app.route('/api/admin/<project_id>', methods=['DELETE'])
+def delete_admin(project_id):
+    db.session.query(Admin).filter(Admin.project_id == project_id).delete()
+    db.session.commit()
+    return jsonify({'success': True})
+
+
 # @app.route('/')
 # def index():
 #     return "Home"
-#
+
 # method for creating the project
 @app.route('/api/post-project', methods=['POST'])
 def post_project():
