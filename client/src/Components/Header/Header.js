@@ -22,7 +22,7 @@ export default function LandingPage() {
           <div className="header__image">
             <img src={Logo} alt="Career Returnship Logo" />
           </div>
-          <NavLink to="/" className="header__title-Career" style={{color: '#58bacc'}}>Career Returnship</NavLink>
+          <NavLink to="/" className="header__title-career" style={{color: '#58bacc'}}>CAREER RETURNSHIP</NavLink>
 
           <div className="header__spacer"></div>
 

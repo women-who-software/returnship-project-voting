@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderLarge from "../Components/Header/HeaderLarge";
+import Header from "../Components/Header/Header";
 import Nav from "../Components/Nav/Nav";
 import About from '../Components/About/About';
 import Footer from "../Components/Footer/Footer";
@@ -7,7 +7,7 @@ import Footer from "../Components/Footer/Footer";
 export default function AboutPage() {
   return (
     <section>
-      <HeaderLarge />
+      <Header />
       <Nav />
       <About />
       <Footer />

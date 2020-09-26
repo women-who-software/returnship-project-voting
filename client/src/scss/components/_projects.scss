@@ -2,7 +2,7 @@
   padding: 10px 20px;
 
   &__header {
-    font-size: 24px;
+    font-size: $font-size-large;
     font-weight: $font-weight-bold;
   }
   &__about {
@@ -20,12 +20,12 @@
     padding: 20px 110px;
   
     &__header {
-      font-size: $font-size-header;
+      font-size: $font-size-xlarge;
       font-weight: $font-weight-bold;
     }
     &__about {
       &-header {
-        font-size: $font-size-sub-header;
+        font-size: $font-size-large;
         font-weight: $font-weight-bold;
       }
   

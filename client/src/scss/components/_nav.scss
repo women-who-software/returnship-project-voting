@@ -3,20 +3,20 @@
 }
 
 .nav__small {
-  box-shadow: 0px 4px 4px  $shadow-color;
+  box-shadow: 0px 4px 4px $shadow-color;
 
   & .nav__links {
     & a {
-      font-size: 18px;
-      line-height: 21px;
+      font-size: $font-size-med;
+      line-height: 1.2em;
       margin: 0 10px;
     }
     &-nav {
       display: flex;
       flex-direction: column;
       & a {
-        font-size: 18px;
-        line-height: 21px;
+        font-size: $font-size-med;
+        line-height: 1.2em;
         font-weight: $font-weight-bold;
         color: $text-nav;
       }
@@ -32,14 +32,19 @@
       display: none;
     }
 
-    &-button button {
-      border: none;
-      background-color: transparent;
-      color: $text-nav;
-      font-weight: $font-weight-bold;
-      font-size: 18px;
-      line-height: 21px;
-      cursor: pointer;
+    &-button {
+      &-admin {
+        display: block;
+      }
+      & button {
+        border: none;
+        background-color: transparent;
+        color: $text-nav;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-med;
+        line-height: 1.2em;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -55,6 +60,7 @@
     justify-content: center;
     background-color: $bg;
     box-shadow: 0 3px 6px 0 $shadow-color;
+    padding: 0 50px;
 
     &__logo {
       padding: 20px;
@@ -80,7 +86,7 @@
       padding: 30px 20px;
 
       & a {
-        font-size: 15px;
+        font-size: $font-size-small;
         margin: 0 10px;
       }
       &-admin {
@@ -103,7 +109,7 @@
           position: relative;
 
           & .animate-left {
-            color: $font-color;
+            color: $text-nav;
             &:after {
               content: "";
               position: absolute;
@@ -117,7 +123,7 @@
               -webkit-transition: width 0.5s ease;
             }
             &:hover {
-              color: $text-nav-hover;
+              color: $font-color;
               text-transform: uppercase;
             }
             &:hover:after {
@@ -129,14 +135,19 @@
         }
       }
 
-      &-button button {
-        border: none;
-        background-color: $bg;
-        color: $font-color;
-        font-size: $font-size-small;
-        font-weight: $font-weight-bold;
-        line-height: 28px;
-        cursor: pointer;
+      &-button {
+        &-admin {
+          display: none;
+        }
+        & button {
+          border: none;
+          background-color: $bg;
+          color: $font-color;
+          font-size: $font-size-small;
+          font-weight: $font-weight-bold;
+          line-height: 1.2em;
+          cursor: pointer;
+        }
       }
     }
   }

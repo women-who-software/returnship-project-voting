@@ -8,8 +8,8 @@ ol {
 
 body {
   font-family: 'Raleway', sans-serif;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: $font-size-small;
+  line-height: 1.5em;
   color: $font-color;
 }
 
@@ -40,11 +40,11 @@ button {
 .error {
   color: $error;
   font-style: italic;
-  font-size: 12px;
+  font-size: $font-size-xsmall;
 }
 
 .required {
   color: $error;
   font-style: italic;
-  font-size: 25px;
+  font-size: $font-size-large;
 }

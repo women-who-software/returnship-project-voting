@@ -17,17 +17,17 @@ export default function Accordion({ project, children }) {
         statusText = "Open Project";
         break;
 
-      case "new-members":
+      case "new":
         statusImage = StatusNew;
         statusText = "Accepting New members";
         break;
 
-      case "in-progress":
+      case "dev":
         statusImage = StatusDev;
         statusText = "In Development";
         break;
 
-      case "completed":
+      case "complete":
         statusImage = StatusCompleted;
         statusText = "Completed";
         break;
@@ -59,7 +59,7 @@ export default function Accordion({ project, children }) {
             </span>
           </div>
           <div className="accordion__title-status">
-            Status:{"\u00a0"} {getStatusImage(project.status)}
+            <span className="accordion__title-status-title">Status</span>{"\u00a0"} {getStatusImage(project.status)}
           </div>
         </div>
         <div className="accordion__title-more">More Details{"\u00a0"}</div>

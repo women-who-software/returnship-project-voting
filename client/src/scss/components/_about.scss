@@ -7,12 +7,13 @@
   &__header {
     font-weight: $font-weight-bold;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: $font-size-large;
   }
 
   &__body div {
     margin: 15px 20px;
-    font-size: 14px;
+    font-size: $font-size-small;
+    line-height: 1.8em;
   }
 }
 
@@ -22,8 +23,8 @@
     margin-left: 20%;
   
     &__header {
-      margin-bottom: 75px;
-      font-size: $font-size-header;
+      margin-bottom: 40px;
+      font-size: $font-size-large;
     }
   
     &__body div {

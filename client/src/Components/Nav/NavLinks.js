@@ -37,6 +37,11 @@ export default function Nav() {
               Sign Up for Projects
             </button>
           </div>
+          <div className="nav__links-button-admin">
+            <NavLink to="/admin" className="animate-left">
+              Admin
+            </NavLink>
+          </div>
         </div>
         <div className="nav__links-admin">
           <img src={AdminLogo} alt="Admin Button" />

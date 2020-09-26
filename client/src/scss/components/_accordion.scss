@@ -20,15 +20,9 @@
   transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
 }
 
-.accordion__status {
-  border: none;
-  background-color: transparent;
-  font-size: 14px;
-}
-
 .accordion__title {
   font-weight: $font-weight-regular;
-  font-size: 16px;
+  font-size: $font-size-small;
   cursor: pointer;
   color: $font-color;
   display: block;
@@ -41,8 +35,18 @@
   box-shadow: 0 3px 6px 0 $shadow-color;
   transition: background-color 0.6s ease;
 
-  & img {
-    margin-right: 5px;
+  &-status {
+    margin-top: 10px;
+    & img {
+      margin-right: 5px;
+      width: 25px;
+      height: auto;
+      vertical-align: middle;
+    }
+    &-title {
+      display: inline-block;
+      margin-right: 0;
+    }
   }
 
   &-project {
@@ -90,18 +94,12 @@
       }
     }
   }
-
-  & img {
-    width: 30px;
-    height: auto;
-    vertical-align: middle;
-  }
 }
 
 .accordion__content {
   font-weight: $font-weight-regular;
   font-size: $font-size-small;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-right: 1px solid $card-border;
   border-left: 1px solid $card-border;
   border-bottom: 1px solid $card-border;
@@ -123,12 +121,12 @@
 
   &-item,
   &-desc {
-    margin: 20px;
+    margin: 10px;
   }
 
   &-label,
   &-desc-label {
-    width: 200px;
+    width: 300px;
     font-weight: $font-weight-bold;
   }
 
@@ -146,6 +144,21 @@
     padding: 20px;
     background-color: $card-hover;
   }
+
+  &-button {
+    margin: 20px auto;
+    border: 1px solid $card-border;
+    border-radius: 5px;
+    width: 175px;
+    text-align: center;
+    color: $text-nav;
+    background-color: $bg;
+    font-weight: 600;
+    padding: 10px 5px;
+    &:hover {
+      color: $font-accent-color;
+    }
+  }
 }
 
 @media (min-width: 700px) {
@@ -155,7 +168,7 @@
 
   .accordion__title {
     padding: 30px 80px;
-    font-size: 18px;
+    font-size: $font-size-med;
     display: flex;
     &-project {
       font-weight: $font-weight-bold;
@@ -164,6 +177,10 @@
       & img {
         margin-right: 10px;
         vertical-align: middle;
+        width: 30px;
+      }
+      &-title {
+        margin-right: 15px;
       }
     }
   }

@@ -154,19 +154,16 @@ export default function VotingModalForm(props) {
   // render
   return (
     <div className="form">
-      <h1>VOTE FOR PROJECTS</h1>
+      <h1>VOTE ON PROJECTS</h1>
 
       <div className="form__about">
-        Select your top choices so we can prioritize our projects.
-        <div className="error">
-          <span className="required">*</span> are required
-        </div>
+        Select your top choice so we can prioritize projects.
       </div>
 
       <form onSubmit={handleOnSubmit} className="form__form">
         <div className="form__options">
           <div className="form__options-label">
-            Pick your top 2:<span className="required">*</span>
+            Pick your top 2:
           </div>
           <div className="form__options-values">
             {projectOptions.map((item) => (
@@ -193,7 +190,7 @@ export default function VotingModalForm(props) {
 
         <div className="form__input">
           <label className="form__input-label" htmlFor="userName">
-            Name:<span className="required">*</span>
+            Name:
           </label>
           <input
             name="userName"
@@ -209,7 +206,7 @@ export default function VotingModalForm(props) {
 
         <div className="form__input">
           <label className="form__input-label" htmlFor="email">
-            Email:<span className="required">*</span>
+            Email:
           </label>
           <input
             name="email"
@@ -226,7 +223,7 @@ export default function VotingModalForm(props) {
 
         <div className="form__submit">
           <button type="submit" disabled={buttonDisabled}>
-            SUBMIT VOTE
+            SUBMIT CHOICE
           </button>
         </div>
       </form>

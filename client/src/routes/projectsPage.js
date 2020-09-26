@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderLarge from "../Components/Header/HeaderLarge";
+import HeaderSmall from "../Components/Header/HeaderSmall";
 import Nav from "../Components/Nav/Nav";
 import Projects from "../Components/Projects/Projects";
 import Footer from "../Components/Footer/Footer";
@@ -7,7 +7,7 @@ import Footer from "../Components/Footer/Footer";
 export default function ProjectsPage() {
   return (
     <section>
-      <HeaderLarge />
+      <HeaderSmall />
       <Nav />
 
       <div className="projects">
@@ -18,16 +18,16 @@ export default function ProjectsPage() {
           <ol>
             <li>Read about Projects and details.</li>
             <li>
-              An <strong>open project</strong> is available for voting. Vote in
+              An <strong>Open Vote</strong> project is available for voting. Vote on
               projects you are interested in.
             </li>
             <li>
-              Once enough votes are received, a project is open to{" "}
-              <strong>accepting new members</strong>.
+              Once enough votes are received, you can {" "}
+              <strong>Sign Up</strong> for projects.
             </li>
             <li>
               Once enough members are signed up for a project, a project is{" "}
-              <strong>open for development</strong>.
+              <strong>Active</strong>.
             </li>
             <li>
               In development projects may still accept members.{" "}

@@ -182,14 +182,11 @@ export default function SignUpsModalForm(props) {
       <h1>SIGN UP FOR PROJECTS</h1>
       <div className="form__about">
         Select the projects you are interested in
-        <div className="error">
-          <span className="required">*</span> are required
-        </div>
       </div>
       <form onSubmit={handleOnSubmit} className="form__form">
         <div className="form__options">
           <div className="form__options-label">
-            Pick your top 2:<span className="required">*</span>
+            Pick your top 2:
           </div>
           <div className="form__options-values">
             {projectOptions.map((item) => (
@@ -216,7 +213,7 @@ export default function SignUpsModalForm(props) {
 
         <div className="form__input">
           <label className="form__input-label" htmlFor="userName">
-            Name:<span className="required">*</span>
+            Name:
           </label>
           <input
             name="userName"
@@ -232,7 +229,7 @@ export default function SignUpsModalForm(props) {
 
         <div className="form__input">
           <label className="form__input-label" htmlFor="email">
-            Email:<span className="required">*</span>
+            Email:
           </label>
           <input
             name="email"
@@ -249,7 +246,7 @@ export default function SignUpsModalForm(props) {
 
         <div className="form__input">
           <label className="form__input-label" htmlFor="github">
-            Github Handle:<span className="required">*</span>
+            Github Handle:
           </label>
           <input
             name="github"
@@ -266,7 +263,7 @@ export default function SignUpsModalForm(props) {
 
         <div className="form__submit">
           <button type="submit" disabled={buttonDisabled}>
-            SUBMIT CHOICE
+            SIGN ME UP
           </button>
         </div>
       </form>

@@ -9,7 +9,7 @@
     flex-direction: row;
     color: $font-accent-color;
     font-weight: $font-weight-bold;
-    font-size: 18px;
+    font-size: $font-size-med;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.29);
     padding: 0 20px;
     &-WWC {
@@ -34,14 +34,14 @@
       flex-direction: column;
       color: $font-accent-color;
       font-weight: $font-weight-bold;
-      font-size: 32px;
-      text-align: right;
-      margin-right: 50px;
-      line-height: 1.6em;
+      font-size: $font-size-large;
+      text-align: left;
+      margin-left: 425px;
+      line-height: 1.2em;
       & .header__title-WWC {
         display: block;
       }
-      & .header__title-Career {
+      & .header__title-career {
         display: block;
         color: $font-accent-color;
         cursor: pointer;

@@ -1,20 +1,24 @@
 import React from "react";
-import HeaderLarge from "../Components/Header/HeaderLarge";
-import Nav from "../Components/Nav/Nav";
-import NotFound from '../Components/Images/not_found.png';
+import Header from "../Components/Header/Header";
+import NotFound from "../Components/Images/not_found.png";
 
 export default function NotFoundPage() {
   return (
-    <section>
-      <HeaderLarge />
-      <Nav />
+    <section className="notfound__section">
+      <Header />
       <div className="notfound">
         <div className="notfound__img">
           <img src={NotFound} alt="404 Not Found" />
         </div>
         <div className="notfound__text">
-          Page not found. Please use the Navigation Menu to direct you to the
-          correct page.
+          Sorry! Looks like a bug found its way to our website and ate the page
+          you are looking for.
+        </div>
+        <div className="notfound__link">
+          <a href="/">Go back to home page</a> or{" "}
+          <a href="https://career-returnship.netlify.app/contactUs/">
+            let us know
+          </a>
         </div>
       </div>
     </section>
