@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Accordion from "../Accordion/Accordion";
 import { GlobalContext } from "../../Context/GlobalContext";
 import useToggle from "../Hooks/useToggle";
@@ -7,9 +7,16 @@ import VotingModalForm from "../Modals/VotingModalForm";
 import SignUpsModalForm from "../Modals/SignUpsModalForm";
 
 export default function Projects() {
-  const { projects } = useContext(GlobalContext);
+  const { projects, search } = useContext(GlobalContext);
   const [openVoting, setOpenVoting] = useToggle(false);
   const [openSignUps, setOpenSignUps] = useToggle(false);
+
+  const filterProjects =
+    search.length > 0
+      ? projects.filter((project) =>
+          project.project_name.toLowerCase().match(search)
+        )
+      : projects;
 
   const handleSignUpsOnSubmit = () => {
     setOpenSignUps();
@@ -19,7 +26,7 @@ export default function Projects() {
     setOpenVoting();
   };
 
-  const getProjects = projects.map((project) => (
+  const getProjects = filterProjects.map((project) => (
     <Accordion project={project} key={project.project_id}>
       <div className="accordion__content-line">
         <div className="accordion__content-item">
@@ -53,7 +60,6 @@ export default function Projects() {
       </div>
 
       {project.status === "new" ? (
-        // <div className="accordion__content-button">SIGN ME UP</div>
         <button
           onClick={() => setOpenSignUps()}
           className="accordion__content-button animate-left"
@@ -65,7 +71,6 @@ export default function Projects() {
       )}
 
       {project.status === "open" ? (
-        // <div className="accordion__content-button">VOTE FOR PROJECT</div>
         <button
           onClick={() => setOpenVoting()}
           className="accordion__content-button animate-left"
@@ -77,11 +82,11 @@ export default function Projects() {
       )}
 
       {project.status === "dev" ? (
-        <div className="accordion__content-button">
-          <a href=" ">
+        <button className="accordion__content-button animate-left">
+          <a href="https://career-returnship.netlify.app/contactUs/">
             CONTACT US
           </a>
-        </div>
+        </button>
       ) : (
         ""
       )}
@@ -91,6 +96,7 @@ export default function Projects() {
   return (
     <>
       <div className="accordion">{getProjects}</div>
+
       {openVoting && (
         <Modal open={openVoting} toggle={setOpenVoting}>
           <VotingModalForm handleSubmit={handleVotingOnSubmit} />

@@ -1,0 +1,29 @@
+import React, { useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { GlobalContext } from "../../Context/GlobalContext";
+import SearchIcon from '../Images/search.svg';
+
+export default function Search() {
+  const { search, setSearch } = useContext(GlobalContext);
+  const [searchString, setSearchString] = useState("");
+
+  const history = useHistory();
+
+  const handleChange = (value) => {
+    setSearch(value);
+    setSearchString(value);
+
+    history.push("/projects");
+  };
+
+  return (
+    <div className="search">
+      <input
+        type="search"
+        value={searchString}
+        onChange={(e) => handleChange(e.target.value)}
+      />
+      <img src={SearchIcon} alt='Search' />
+    </div>
+  );
+}

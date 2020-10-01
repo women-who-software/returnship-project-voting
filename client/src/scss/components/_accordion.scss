@@ -158,6 +158,12 @@
     &:hover {
       color: $font-accent-color;
     }
+    & a {
+      color: $text-nav;
+      &:hover {
+        color: $font-accent-color;
+      }
+    }
   }
 }
 

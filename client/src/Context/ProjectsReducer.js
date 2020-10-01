@@ -9,8 +9,8 @@ export default (state, action) => {
     case "DELETE_PROJECT":
       return state;
 
-      case "UPDATE_PROJECT":
-        return state;
+    case "UPDATE_PROJECT":
+      return state;
 
     default:
       return state;

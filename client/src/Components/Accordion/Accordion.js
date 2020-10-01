@@ -14,17 +14,17 @@ export default function Accordion({ project, children }) {
     switch (status) {
       case "open":
         statusImage = StatusOpen;
-        statusText = "Open Project";
+        statusText = "Open Vote";
         break;
 
       case "new":
         statusImage = StatusNew;
-        statusText = "Accepting New members";
+        statusText = "Sign Up";
         break;
 
       case "dev":
         statusImage = StatusDev;
-        statusText = "In Development";
+        statusText = "Active";
         break;
 
       case "complete":

@@ -64,7 +64,11 @@ export default function VotingModalForm(props) {
     e.preventDefault();
 
     console.log("name", name);
-    console.log("email", email);
+
+    validator.validate(email)
+    ? console.log("email", email)
+    : console.log("slack", email);
+
     console.log(
       "selected",
       Object.keys(selectedProjects).filter(
@@ -89,10 +93,10 @@ export default function VotingModalForm(props) {
   const validateEmail = () => {
     const userEmail = email.value.trim();
 
-    if (!validator.validate(userEmail)) {
+    if (userEmail.length <= 0) {
       return {
         error: true,
-        message: "Please enter a valid email address",
+        message: "Please enter a email address or Slack Handle",
       };
     }
 
@@ -206,7 +210,7 @@ export default function VotingModalForm(props) {
 
         <div className="form__input">
           <label className="form__input-label" htmlFor="email">
-            Email:
+            Slack Handle or Email:
           </label>
           <input
             name="email"

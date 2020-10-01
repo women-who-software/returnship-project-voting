@@ -32,11 +32,12 @@
     padding: 50px 0;
     &__title {
       flex-direction: column;
+      justify-content: flex-end;
       color: $font-accent-color;
       font-weight: $font-weight-bold;
       font-size: $font-size-large;
-      text-align: left;
-      margin-left: 425px;
+      text-align: right;
+      margin-right: 100px;
       line-height: 1.2em;
       & .header__title-WWC {
         display: block;
