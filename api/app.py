@@ -7,6 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import json
 
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///project.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -46,7 +47,7 @@ class Project(db.Model):
         return '<Project %r>' % self.project_name
 
     def serialize(self):
-        # todo в serialize указать все поля, даже если они пустые
+        # TODO в serialize указать все поля, даже если они пустые
         return {'project_id': self.project_id, 'project_desc': self.project_desc, 'client_name': self.client_name,
                 'client_phone': self.client_phone, 'project_status': self.project_status,
                 'project_stack': self.project_stack, 'date': self.date,
@@ -61,12 +62,11 @@ class Signup(db.Model):
     signup_name = db.Column(db.String(100), nullable=True)
     sign_up_github = db.Column(db.String(100), nullable=True)
     signup_email = db.Column(db.String(100))
-    # todo project_id must be array -> projects_ids
+    # TODO project_id must be array -> projects_ids
 
     # constructor of Signup
-    def __init__(self, signup_id, signup_email, project_id, signup_name=None, sign_up_github=None):
+    def __init__(self, signup_email, project_id, signup_name=None, sign_up_github=None):
         self.project_id = project_id
-        self.signup_id = signup_id
         self.signup_email = signup_email
         self.signup_name = signup_name
         self.sign_up_github = sign_up_github
@@ -75,7 +75,7 @@ class Signup(db.Model):
         return '<Signup %r>' % self.signup_name
 
     def serialize(self):
-        return {'signup_email': self.signup_email, 'signup_name': self.signup_name, 'sign_up_github': self.sign_up_github}
+        return {'signup_email': self.signup_email, 'signup_name': self.signup_name, 'sign_up_github': self.sign_up_github, 'project_id': self.project_id, 'signup_id': self.signup_id}
 
 
 # method for creating signup
@@ -87,7 +87,7 @@ def create_signup():
     signup_name = request.form['signup_name'] if 'signup_name' in request.form else None
 
     signup = Signup(project_id=project_id, sign_up_github=sign_up_github,
-                    signup_email=signup_email, signup_id=signup_id)
+                    signup_email=signup_email, signup_name=signup_name)
     try:
         db.session.add(signup)
         db.session.commit()
@@ -98,18 +98,34 @@ def create_signup():
 
 
 # method to read in signup
-@app.route('/api/signup/<project_id>')
-def read_signup(project_id):
-    signup = Signup.query.get(project_id)
+@app.route('/api/signup/<signup_id>')
+def read_signup(signup_id):
+    signup = Signup.query.get(signup_id)
     return jsonify(signup.serialize() if signup else 'no object')
 
 
 # method to delete in signup
-@app.route('/api/signup/<project_id>', methods=['DELETE'])
-def delete_signup(project_id):
-    db.session.query(Signup).filter(Signup.project_id == project_id).delete()
+@app.route('/api/signup/<signup_id>', methods=['DELETE'])
+def delete_signup(signup_id):
+    db.session.query(Signup).filter(Signup.signup_id == signup_id).delete()
     db.session.commit()
     return jsonify({'success': True})
+
+
+# method for updating in signup class
+@app.route('/api/signup/<signup_id>', methods=['PATCH'])
+def update_signup(signup_id):
+
+    signup_new = json.loads(request.form['signup'])
+    print(signup_new)
+    signup_old = Signup.query.get(signup_id)
+    signup_old.signup_name = signup_new['signup_name']
+    signup_old.signup_email = signup_new['signup_email']
+    signup_old.sign_up_github = signup_new['sign_up_github']
+    signup_old.project_id = signup_new['project_id']
+
+    db.session.commit()
+    return jsonify(signup_old.serialize())
 
 
 # class for voting for the project with the member like
@@ -287,9 +303,13 @@ def update_project(project_id):
     project_old.project_name = project_new['project_name']
     project_old.project_status = project_new['project_status']
     project_old.project_stack = project_new['project_stack']
+    # TODO дописать остальные поля класса Project
 
     db.session.commit()
     return jsonify(project_old.serialize())
+    # "{"project_name": "sdkjfhs", "project_status": "new project"}"
+    # t = json.loads("{"project_name": "sdkjfhs", "project_status": "new project"}") -> {"project_name": "sdkjfhs", "project_status": "new project"}
+    # обращаемся к t['project_name'] и получаем (sdkjfhs)
 
 
 if __name__ == "__main__":
