@@ -32,7 +32,6 @@
   padding: 10px 20px;
   border: 1px solid $card-border;
   border-radius: 10px;
-  box-shadow: 0 3px 6px 0 $shadow-color;
   transition: background-color 0.6s ease;
 
   &-status {
@@ -53,6 +52,14 @@
     font-weight: $font-weight-bold;
   }
 
+  &-project-dev {
+    background-color: $card-project-dev;
+  }
+
+  &-project-complete {
+    background-color: $card-project-complete;
+  }
+
   &-more {
     font-size: $font-size-small;
     text-align: right;
@@ -70,8 +77,6 @@
   &:hover,
   &.open {
     color: black;
-    background-color: $card-hover;
-    background-color: $card-hover;
   }
 
   &.open {
@@ -79,10 +84,6 @@
     border-bottom-right-radius: 0px;
   }
 
-  &:hover {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
 
   &.open {
     .accordion__title-more {
@@ -94,6 +95,14 @@
       }
     }
   }
+}
+
+.accordion__noresults {
+  color: $font-color;
+  font-weight: 600;
+  border: 1px solid $border-color;
+  padding: 20px 50px;
+  border-radius: 10px;
 }
 
 .accordion__content {
@@ -142,7 +151,7 @@
 
   &-desc-value {
     padding: 20px;
-    background-color: $card-hover;
+    background-color: $card-project-description;
   }
 
   &-button {

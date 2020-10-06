@@ -22,7 +22,7 @@ export default function ProjectsPage() {
         <h1 className="projects__header">Project List:</h1>
 
         <div className="projects__about">
-          <div>How to be involved in WWC Returnship:</div>
+          <div className="projects__about-title">How to be involved in WWC Returnship:</div>
           <ol>
             <li>Read about Projects and details.</li>
             <li>

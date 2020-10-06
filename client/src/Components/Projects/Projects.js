@@ -13,8 +13,13 @@ export default function Projects() {
 
   const filterProjects =
     search.length > 0
-      ? projects.filter((project) =>
-          project.project_name.toLowerCase().match(search)
+      ? projects.filter(
+          (project) =>
+            project.project_name.toLowerCase().match(search) ||
+            project.status.toLowerCase().match(search) ||
+            project.tech_stack.find(
+              (tech) => tech.toLowerCase() === search.toLowerCase()
+            )
         )
       : projects;
 
@@ -95,7 +100,9 @@ export default function Projects() {
 
   return (
     <>
-      <div className="accordion">{getProjects}</div>
+      <div className="accordion">
+        {getProjects.length > 0 ? getProjects : <div className="accordion__noresults">Sorry, no results were found.</div>}
+      </div>
 
       {openVoting && (
         <Modal open={openVoting} toggle={setOpenVoting}>

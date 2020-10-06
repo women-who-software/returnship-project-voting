@@ -1,15 +1,35 @@
 .search {
-  text-align: right;
-  & img {
-    height: 29px;
-    vertical-align: middle;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border: 1px solid $font-color;
+  border-radius: 5px;
+  width: 280px;
+  
+  &__input-icon {
+    padding: 10px;
+    background-image: url('../../Components/Images/search.svg');
+    background-color: $font-accent-color;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
+
   & input {
-    padding: 6px;
-    border: 1px solid $search-input-border;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    margin-top: 8px;
-    width: 200px;
+    border: $border-color;
+    outline: none;
+    width: 230px;
+  }
+}
+
+@media (min-width: 450px) {
+  .search {
+    width: 400px;
+    & input {
+      width: 350px;
+    }
   }
 }

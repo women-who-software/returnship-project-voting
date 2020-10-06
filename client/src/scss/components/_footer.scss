@@ -35,8 +35,8 @@
   &__bottom {
     background-color: $font-accent-color;
     height: 40px;
-    padding: 10px;
-    text-align: center;
+    padding: 10px 50px;
+    text-align: left;
   }
 }
 
@@ -49,11 +49,6 @@
       margin: 10px 0;
       &-copyright {
         display: block;
-      }
-    }
-    &__bottom {
-      &-copyright {
-        display: none;
       }
     }
   }

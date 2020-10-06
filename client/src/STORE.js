@@ -9,7 +9,7 @@ export default {
       client_company: "Doe Enterprises",
       client_phone: 3035551212,
       max_team_members: 5,
-      status: "new",
+      status: "open vote",
       tech_stack: ["React", "Python"],
     },
     {
@@ -21,7 +21,7 @@ export default {
       client_company: "Doe Enterprises",
       client_phone: 3035551212,
       max_team_members: 5,
-      status: "dev",
+      status: "active",
       tech_stack: ["React", "PHP"],
     },
     {
@@ -33,7 +33,7 @@ export default {
       client_company: "Doe Enterprises",
       client_phone: 3035551212,
       max_team_members: 5,
-      status: "open",
+      status: "open vote",
       tech_stack: ["COBOL", "CICS"],
     },
     {
@@ -45,7 +45,7 @@ export default {
       client_company: "Doe Enterprises",
       client_phone: 3035551212,
       max_team_members: 5,
-      status: "complete",
+      status: "completed",
       tech_stack: ["COBOL", "CICS"],
     },
     {
@@ -57,7 +57,7 @@ export default {
       client_company: "Doe Enterprises",
       client_phone: 3035551212,
       max_team_members: 5,
-      status: "new",
+      status: "sign up",
       tech_stack: ["React", "Python"],
     },
     {
@@ -69,7 +69,7 @@ export default {
       client_company: "Doe Enterprises",
       client_phone: 3035551212,
       max_team_members: 5,
-      status: "new",
+      status: "sign up",
       tech_stack: ["React", "Python"],
     },
     {
@@ -81,7 +81,7 @@ export default {
       client_company: "Doe Enterprises",
       client_phone: 3035551212,
       max_team_members: 5,
-      status: "new",
+      status: "sign up",
       tech_stack: ["React", "Python"],
     },
     {
@@ -93,7 +93,7 @@ export default {
       client_company: "Doe Enterprises",
       client_phone: 3035551212,
       max_team_members: 5,
-      status: "open",
+      status: "open vote",
       tech_stack: ["COBOL", "CICS"],
     },
     {
@@ -105,7 +105,7 @@ export default {
       client_company: "Doe Enterprises",
       client_phone: 3035551212,
       max_team_members: 5,
-      status: "open",
+      status: "open vote",
       tech_stack: ["COBOL", "CICS"],
     },
     {
@@ -117,7 +117,7 @@ export default {
       client_company: "Doe Enterprises",
       client_phone: 3035551212,
       max_team_members: 5,
-      status: "open",
+      status: "open vote",
       tech_stack: ["COBOL", "CICS"],
     },
   ],

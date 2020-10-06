@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { GlobalContext } from "../../Context/GlobalContext";
-import SearchIcon from '../Images/search.svg';
+import SearchIcon from "../Images/search.svg";
 
 export default function Search() {
   const { search, setSearch } = useContext(GlobalContext);
@@ -22,8 +22,9 @@ export default function Search() {
         type="search"
         value={searchString}
         onChange={(e) => handleChange(e.target.value)}
+        placeholder="search by keyword, tech stack or project status"
       />
-      <img src={SearchIcon} alt='Search' />
+      <i className="search__input-icon"></i>
     </div>
   );
 }

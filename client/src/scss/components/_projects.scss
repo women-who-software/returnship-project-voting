@@ -6,12 +6,21 @@
     font-weight: $font-weight-bold;
   }
   &__about {
+    &-title {
+      font-weight: $font-weight-semi-bold;
+    }
+    
     & ol {
       list-style-position: inside;
       & li {
         margin-top: 10px;
       }
     }
+  }
+
+  &__search {
+   display: flex;
+   justify-content: flex-end;
   }
 }
 
