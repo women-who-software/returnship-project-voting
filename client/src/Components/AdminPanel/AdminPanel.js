@@ -18,20 +18,13 @@ export default function AdminPanel() {
   const getProjects = projects.map((projects) => (
     <div className="projects__items-project card" key={projects.project_id}>
       <div className="projects__items-project-name">
-        {projects.project_name}
-      </div>
-      <div className="projects__items-short-desc">{projects.short_desc}</div>
-      <div className="projects__items-status">
-        <span className="strong">Status: </span>
-        {projects.status}
-      </div>
-      <div className="projects__items-more">
-        {/*?? TODO - Change the route to EditProjectDetailsPage */}
         <NavLink to={`/projects/${projects.project_id}`}>
-          <button className="small-button">More Details</button>
+          {projects.project_name}
         </NavLink>
       </div>
-
+      <div className="projects__items-short-desc">{projects.short_desc}</div>
+      <div className="projects__items-status">{projects.status}</div>
+      <div className="projects__items-status">{projects.date}</div>
       {/* row 5 col */}
     </div>
   ));

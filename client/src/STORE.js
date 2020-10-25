@@ -11,6 +11,7 @@ export default {
       max_team_members: 5,
       status: "new-members",
       tech_stack: "React, Python",
+      date: "10/20/2020",
     },
     {
       project_id: 2,
@@ -23,6 +24,7 @@ export default {
       max_team_members: 5,
       status: "in-progress",
       tech_stack: "React, PHP",
+      date: "10/20/2020",
     },
     {
       project_id: 3,
@@ -35,6 +37,7 @@ export default {
       max_team_members: 5,
       status: "open",
       tech_stack: "COBOL, CICS",
+      date: "10/20/2020",
     },
   ],
 };

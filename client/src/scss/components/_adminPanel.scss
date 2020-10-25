@@ -19,26 +19,26 @@ $small-button-bg: #d6c9c9;
   padding: 20px;
   background-color: $card-bg;
   border-radius: 5px;
-  width: 50rem;
-  height: 10rem;
+  width: 80vw;
+  height: 6rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row !important;
+  color: #707070;
+  justify-content: space-between !important;
+}
+a {
+  color: #707070;
+  text-decoration-color: #707070;
 }
 .projects__items-project {
   div {
     margin: 5px 0;
   }
-  .projects__items-project-name {
-    font-weight: 700;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  .projects__items-status {
-    display: inline-block;
-  }
-  .projects__items-more {
-    display: block;
-  }
+}
+.projects__items-project-name a {
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #707070;
 }
 .row {
   margin-right: 0 !important;
@@ -107,7 +107,7 @@ $small-button-bg: #d6c9c9;
   justify-content: space-between;
   // left: -39rem;
   // width: 70vw;
-  margin-left: 6rem !important;
+  margin-left: 1rem !important;
   margin-top: 5rem;
 }
 
@@ -162,6 +162,7 @@ a.tool-btn {
   // padding-right: 15rem;
   padding-left: 1rem;
   font-size: 1.2rem;
+  justify-content: space-between !important;
 }
 
 //! Media Queries
