@@ -107,7 +107,7 @@ $small-button-bg: #d6c9c9;
   justify-content: space-between;
   // left: -39rem;
   // width: 70vw;
-  margin-left: 12rem !important;
+  margin-left: 6rem !important;
   margin-top: 5rem;
 }
 
@@ -151,9 +151,17 @@ a.tool-btn {
 // Table Header
 .table-header {
   background-color: #e0e5f1;
-  width: 70vw !important;
-  margin-left: 12rem !important;
+  width: 84vw !important;
+  height: 5rem;
+  margin-left: 5.5rem !important;
   margin-top: 2.5rem;
+  align-items: center;
+  font-weight: 550;
+  color: #434447;
+  // margin-left: 5.6rem;
+  // padding-right: 15rem;
+  padding-left: 1rem;
+  font-size: 1.2rem;
 }
 
 //! Media Queries
