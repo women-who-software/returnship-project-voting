@@ -3,69 +3,29 @@ $font-color: #37393a;
 $bg-nav: #d6c9c9;
 $bg-button-hover: #77b6ea;
 $bg-button: #c7d3dd;
-$card-border: #37393a;
-$card-bg: #c7d3dd;
+$card-border: #d2d3d5;
+$card-bg: #fff;
 $small-button-bg: #d6c9c9;
 
-// .admin-container {
-//   width: 150%;
+// Project Card Styling
+// .projects__items-project.card {
+//   width: 50rem;
+//   display: flex;
+//   flex-direction: column;
+//   margin-left: 20rem;
 // }
-
-.admin-panel {
-  padding-right: 15px;
-  padding-left: 15px;
-  left: -39rem;
-}
-
-.admin-btn {
-  border: 1px solid #42213d;
-  padding: 0.4rem;
-  background-color: $bg-nav;
-  color: black;
-  // width: auto;
-  // height: 1.3rem;
-}
-.admin-btn:hover {
-  border: 1px solid black;
-  padding: 0.5rem;
-  background-color: #683257;
-  color: white;
-  text-decoration: none;
-}
-
-.strong {
-  font-weight: bold;
-}
-
-.header {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
 .card {
   border: 1px solid $card-border;
   padding: 20px;
   margin: 5px 0;
   background-color: $card-bg;
   border-radius: 5px;
+  width: 50rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rem;
 }
-
-.small-button {
-  background-color: $small-button-bg;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 125px;
-  height: 2em;
-  &:hover {
-    background-color: $bg-button-hover;
-  }
-}
-
-.projects {
-  margin: 20px 50px 20px 50px;
-}
-
 .projects__items-project {
   div {
     margin: 5px 0;
@@ -86,8 +46,33 @@ $small-button-bg: #d6c9c9;
   margin-right: 0 !important;
 }
 
-// SideBar Col
+.strong {
+  font-weight: bold;
+}
 
+.header {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.small-button {
+  background-color: $small-button-bg;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 125px;
+  height: 2em;
+  &:hover {
+    background-color: $bg-button-hover;
+  }
+}
+
+// TODO: Consider Removal
+// .projects {
+//   margin: 20px 50px 20px 50px;
+// }
+
+// SideBar Col
 // .sideBar-component {
 //   width: 20rem !important;
 // }
@@ -96,6 +81,80 @@ $small-button-bg: #d6c9c9;
 //   padding-right: 0 !important;
 //   width: 10rem !important;
 // }
+
+// -------------------
+// Admin Overall
+.admin-panel {
+  // padding-right: 15px;
+  // padding-left: 15px;
+  left: -29rem;
+  width: 80vw !important;
+}
+.admin-container {
+  background-color: white;
+  width: 100%;
+}
+// // Toolbar
+// .toolbar {
+
+// }
+
+// Toolbar
+.toolbar {
+  display: flex;
+  background-color: #fff;
+  width: 70vw !important;
+  justify-content: space-between;
+  // left: -39rem;
+  // width: 70vw;
+  margin-left: 12rem !important;
+  margin-top: 5rem;
+}
+
+// Tool-Btn
+// html body div#root main.main div.row.admin-container div.col.admin-panel div.row.toolbar div.col a.tool-btn
+a.tool-btn {
+  padding: 0.7rem 2.5rem 0.7rem 2.5rem;
+  border-radius: 10px;
+  // border: 1px black solid;
+  // width: 5rem;
+}
+
+// div.row:nth-child(1) > div:nth-child(1) > a:nth-child(1) {
+//   color: black;
+// }
+
+// Buttons
+.bulk-btn {
+  padding: 0.7rem 3.7rem 0.7rem 2.5rem !important;
+  border: 1px #707070 solid;
+  color: black;
+}
+.apply-btn {
+  border: 1px #434447 solid;
+  background-color: #dde2e5;
+  color: black;
+  margin-left: -5rem;
+}
+.projects-btn {
+  border: 1px #000000 solid;
+  background-color: #d7154a;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.chevronDownElement {
+  padding-right: 5rem;
+  margin-left: -2.9rem !important;
+}
+
+// Table Header
+.table-header {
+  background-color: #e0e5f1;
+  width: 70vw !important;
+  margin-left: 12rem !important;
+  margin-top: 2.5rem;
+}
 
 //! Media Queries
 @media (min-width: 540px) {

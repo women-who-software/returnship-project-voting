@@ -7,15 +7,13 @@ import AdminPanelHeader from "../AdminPanelHeader/AdminPanelHeader";
 import SideBar from "../SideBar/SideBar";
 import { GlobalContext } from "../../Context/GlobalContext";
 
-// Import ReactBootstrap Components
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Nav from "react-bootstrap/Nav";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function AdminPanel() {
   //?? TODO - Move `project` into a separate component
   const { projects } = useContext(GlobalContext);
+  const chevronDownElement = <FontAwesomeIcon icon={faChevronDown} />;
 
   const getProjects = projects.map((projects) => (
     <div className="projects__items-project card" key={projects.project_id}>
@@ -33,41 +31,46 @@ export default function AdminPanel() {
           <button className="small-button">More Details</button>
         </NavLink>
       </div>
+
+      {/* row 5 col */}
     </div>
   ));
   return (
     <>
       <AdminPanelHeader />
-      {/* <Container className="admin"> */}
-      {/* <Row>
-        <Col className="sideBar">
-          <SideBar />
-        </Col>
-        <Col className="admin-panel">
-          <Row className="d-flex justify-content-end">
-            <a href="" className="admin-btn">
-              Add New Projects
-            </a>
-          </Row>
-          <Row>
-            <Col>{getProjects}</Col>
-          </Row>
-        </Col>
-      </Row> */}
-      {/* </Container> */}
       <div className="row admin-container">
         <div className="col sideBar">
           <SideBar className="sideBar-component" />
         </div>
         <div className="col admin-panel">
-          <div className="row d-flex justify-content-end">
-            <a href="" className="admin-btn">
-              Add New Projects
-            </a>
+          <div className="row toolbar">
+            {/* <div className="row d-flex justify-content-end"> */}
+            <div className="col">
+              <a role="button" href="#" className="tool-btn bulk-btn">
+                Bulk Actions
+              </a>
+              <span className="chevronDownElement">{chevronDownElement}</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div className="col">
+              <a role="button" href="#" className="tool-btn apply-btn">
+                Apply
+              </a>
+            </div>
+            <div className="col">
+              <a role="button" href="#" className="tool-btn projects-btn">
+                Add New Projects
+              </a>
+            </div>
           </div>
-          <div className="row">
-            <div className="col">{getProjects}</div>
+          <div className="row table-header">
+            <div className="col">Project</div>
+            <div className="col">Vote</div>
+            <div className="col">Sign Up</div>
+            <div className="col">Status</div>
+            <div className="col">Date</div>
           </div>
+          <div className="col projectCards">{getProjects}</div>
         </div>
       </div>
     </>

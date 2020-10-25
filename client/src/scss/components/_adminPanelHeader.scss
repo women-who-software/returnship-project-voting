@@ -1,41 +1,49 @@
+
 .admin {
   padding: 0 !important;
 }
 .admin-header {
   &--container {
     background-color: #262e3d;
-    height: 4.75rem;
+    height: 7rem;
+    display: flex;
     line-height: 0px;
   }
   &--container a {
     color: #58bacc !important;
     font-family: $font-body;
   }
-
   &--icon {
     height: 1.5rem;
-    padding-right: 0.75rem;
+    padding-right: 0.5rem;
+    margin: 0.5rem 0.3rem 0 1.2rem;
   }
   &--brand {
     font-size: 1rem !important;
+    align-items: flex-end !important;
   }
-  &--sub-heading {
-    padding-left: 2.8rem;
+  &--heading {
+    margin-top: 25rem !important;
     text-transform: uppercase;
+    font-weight: 525;
   }
   &--nav-link,
   a {
     font-size: 0.8rem !important;
-    text-transform: uppercase;
     color: whitesmoke !important;
+    font-weight: 600;
+    padding-right: 5rem;
   }
 }
 
-#admin-header--home-icon {
-  padding: 0;
-  margin: 0.5rem 1rem 0 0;
-}
+// .admin-header--home-icon {
+//   padding: 0;
+//   margin: 0.5rem 0.3rem 0 0.5;
+// }
 // #admin-header--profile-icon {
 //   fill: #58bacc;
 // }
 
+.row {
+  width: 90vw;
+}

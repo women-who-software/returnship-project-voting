@@ -14,19 +14,16 @@ export default function AdminPanelHeader() {
             src="https://github.com/wwcodecolorado/returnship-project-voting/blob/kl-feature12-admin-panel-redesign/client/assets/icons/Home.png?raw=true"
             alt="Home Icon"
             className="admin-header--icon"
-            id="admin-header--home-icon"
           />
-          Woman Who Code Boulder / Denver
-          <br />
-          <span className="admin-header--sub-heading">Career Returnship</span>
+          <span className="admin-header--heading">Career Returnship</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="">
             <Nav.Link href="/" className="">
               <img
-                src="https://raw.githubusercontent.com/wwcodecolorado/returnship-project-voting/95131d763e19fd80be8df4cff037076b6ea20b09/client/assets/icons/Profile.svg"
-                alt="Circular Profile Icon"
+                src="https://github.com/wwcodecolorado/returnship-project-voting/blob/kl-feature12-admin-panel-redesign/client/assets/icons/login%20icon.png?raw=true"
+                alt="Profile Icon"
                 className="admin-header--icon"
                 id="admin-header--profile-icon"
               />
