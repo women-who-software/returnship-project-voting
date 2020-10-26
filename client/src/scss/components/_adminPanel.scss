@@ -1,3 +1,6 @@
+//!
+//! CSS Variables
+
 $bg: #e8eef2;
 $font-color: #37393a;
 $bg-nav: #d6c9c9;
@@ -7,7 +10,20 @@ $card-border: #d2d3d5;
 $card-bg: #fff;
 $small-button-bg: #d6c9c9;
 
-// Project Card Styling
+// Admin Overall
+.admin-panel {
+  // padding-right: 15px;
+  // padding-left: 15px;
+  left: -30rem;
+  // width: 75vw !important;
+}
+.admin-container {
+  background-color: white;
+  // width: 90%;
+  margin-left: 0.2rem !important;
+}
+//! Project Card Styling
+
 // .projects__items-project.card {
 //   width: 50rem;
 //   display: flex;
@@ -24,7 +40,9 @@ $small-button-bg: #d6c9c9;
   display: flex;
   flex-direction: row !important;
   color: #707070;
-  justify-content: space-between !important;
+  justify-content: space-around !important;
+  margin-left: 1.8rem !important;
+  font-family: $font-body;
 }
 a {
   color: #707070;
@@ -36,70 +54,43 @@ a {
   }
 }
 .projects__items-project-name a {
-  font-weight: 700;
-  font-size: 1.2em;
+  // font-weight: 700;
+  font-size: 1em;
   color: #707070;
+  margin: -4.1rem;
+  display: inline-block;
+  width: 11rem;
+}
+
+.projects__items-vote {
+  width: 2rem;
+}
+.projects__items-status {
+  width: 8rem;
+}
+.projects__items-sign_up {
+  width: 5.5rem;
+}
+.projects__items-date {
+  width: 7rem;
 }
 .row {
   margin-right: 0 !important;
-  width: 100% !important;
+  width: 98% !important;
 }
 
 .strong {
   font-weight: bold;
 }
 
-.header {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.small-button {
-  background-color: $small-button-bg;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 125px;
-  height: 2em;
-  &:hover {
-    background-color: $bg-button-hover;
-  }
-}
-
-// TODO: Consider Removal
-// .projects {
-//   margin: 20px 50px 20px 50px;
+// .header {
+//   font-size: 1.5em;
+//   font-weight: bold;
+//   margin-bottom: 20px;
 // }
-
-// SideBar Col
-// .sideBar-component {
-//   width: 20rem !important;
-// }
-
-// div.sideBar.col {
-//   padding-right: 0 !important;
-//   width: 10rem !important;
-// }
-
 // -------------------
-// Admin Overall
-.admin-panel {
-  // padding-right: 15px;
-  // padding-left: 15px;
-  left: -29rem;
-  width: 80vw !important;
-}
-.admin-container {
-  background-color: white;
-  width: 100%;
-  margin-left: 0.2rem !important;
-}
-// // Toolbar
-// .toolbar {
 
-// }
-
-// Toolbar
+//! Toolbar
 .toolbar {
   display: flex;
   background-color: #fff;
@@ -107,14 +98,14 @@ a {
   justify-content: space-between;
   // left: -39rem;
   // width: 70vw;
-  margin-left: 1rem !important;
+  margin-left: 3.5rem !important;
   margin-top: 5rem;
 }
 
-// Tool-Btn
+//! Tool-Btn
 // html body div#root main.main div.row.admin-container div.col.admin-panel div.row.toolbar div.col a.tool-btn
 a.tool-btn {
-  padding: 0.7rem 2.5rem 0.7rem 2.5rem;
+  padding: 0.7rem 2.1rem 0.7rem 2.1rem;
   border-radius: 10px;
   // border: 1px black solid;
   // width: 5rem;
@@ -124,9 +115,9 @@ a.tool-btn {
 //   color: black;
 // }
 
-// Buttons
+//! Buttons
 .bulk-btn {
-  padding: 0.7rem 3.7rem 0.7rem 2.5rem !important;
+  padding: 0.7rem 3rem 0.7rem 1.5rem !important;
   border: 1px #707070 solid;
   color: black;
 }
@@ -145,15 +136,15 @@ a.tool-btn {
 
 .chevronDownElement {
   padding-right: 5rem;
-  margin-left: -2.9rem !important;
+  margin-left: -2.4rem !important;
 }
 
-// Table Header
+//! Table Header
 .table-header {
   background-color: #e0e5f1;
-  width: 82vw !important;
+  width: 81vw !important;
   height: 5rem;
-  margin-left: 0.34rem !important;
+  margin-left: 2.8rem !important;
   margin-top: 2.5rem;
   align-items: center;
   font-weight: 550;
@@ -164,6 +155,21 @@ a.tool-btn {
   font-size: 1.2rem;
   justify-content: space-between !important;
 }
+
+.table-col {
+  margin: 0rem 5.7rem 0rem 0rem;
+}
+
+// .small-button {
+//   background-color: $small-button-bg;
+//   border-radius: 5px;
+//   font-size: 16px;
+//   width: 125px;
+//   height: 2em;
+//   &:hover {
+//     background-color: $bg-button-hover;
+//   }
+// }
 
 //! Media Queries
 @media (min-width: 540px) {

@@ -17,15 +17,17 @@ export default function AdminPanel() {
 
   const getProjects = projects.map((projects) => (
     <div className="projects__items-project card" key={projects.project_id}>
-      <div className="projects__items-project-name">
+      <div className="projects__items-project-name table-col">
         <NavLink to={`/projects/${projects.project_id}`}>
           {projects.project_name}
         </NavLink>
       </div>
-      <div className="projects__items-short-desc">{projects.short_desc}</div>
-      <div className="projects__items-status">{projects.status}</div>
-      <div className="projects__items-status">{projects.date}</div>
-      {/* row 5 col */}
+      <div className="projects__items-vote table-col">{projects.vote}</div>
+      <div className="projects__items-sign_up table-col">
+        {projects.sign_up}
+      </div>
+      <div className="projects__items-status table-col">{projects.status}</div>
+      <div className="projects__items-date table-col">{projects.date}</div>
     </div>
   ));
   return (
@@ -57,11 +59,13 @@ export default function AdminPanel() {
             </div>
           </div>
           <div className="row table-header">
-            <div className="col">Project</div>
-            <div className="col">Vote</div>
-            <div className="col">Sign Up</div>
-            <div className="col">Status</div>
-            <div className="col">Date</div>
+            <div className="projects__items-project-name table-col">
+              Project
+            </div>
+            <div className="projects__items-vote table-col">Vote</div>
+            <div className="projects__items-sign_up table-col">Sign Up</div>
+            <div className="projects__items-status table-col">Status</div>
+            <div className="projects__items-date table-col">Date</div>
           </div>
           <div className="col projectCards">{getProjects}</div>
         </div>
