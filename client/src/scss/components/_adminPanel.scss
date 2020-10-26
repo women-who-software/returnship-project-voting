@@ -23,13 +23,6 @@ $small-button-bg: #d6c9c9;
   margin-left: 0.2rem !important;
 }
 //! Project Card Styling
-
-// .projects__items-project.card {
-//   width: 50rem;
-//   display: flex;
-//   flex-direction: column;
-//   margin-left: 20rem;
-// }
 .card {
   border: 1px solid $card-border;
   padding: 20px;
@@ -41,6 +34,7 @@ $small-button-bg: #d6c9c9;
   flex-direction: row !important;
   color: #707070;
   justify-content: space-around !important;
+  align-items: center;
   margin-left: 1.8rem !important;
   font-family: $font-body;
 }
@@ -83,11 +77,10 @@ a {
   font-weight: bold;
 }
 
-// .header {
-//   font-size: 1.5em;
-//   font-weight: bold;
-//   margin-bottom: 20px;
-// }
+.project_checkbox {
+  margin-left: -3.5rem;
+  margin-right: -2.5rem;
+}
 // -------------------
 
 //! Toolbar
@@ -153,23 +146,29 @@ a.tool-btn {
   // padding-right: 15rem;
   padding-left: 1rem;
   font-size: 1.2rem;
-  justify-content: space-between !important;
+  justify-content: flex-start;
 }
 
-.table-col {
-  margin: 0rem 5.7rem 0rem 0rem;
+.header-name {
+  padding-right: 9rem;
+  width: max-content;
 }
-
-// .small-button {
-//   background-color: $small-button-bg;
-//   border-radius: 5px;
-//   font-size: 16px;
-//   width: 125px;
-//   height: 2em;
-//   &:hover {
-//     background-color: $bg-button-hover;
-//   }
-// }
+.header-vote {
+  padding-left: 2rem;
+  width: max-content;
+}
+.header-sign_up {
+  padding-left: 7rem;
+  width: max-content;
+}
+.header-status {
+  padding-left: 9rem;
+  width: max-content;
+}
+.header-date {
+  padding-left: 11rem;
+  width: max-content;
+}
 
 //! Media Queries
 @media (min-width: 540px) {
