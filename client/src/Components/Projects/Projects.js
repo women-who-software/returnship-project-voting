@@ -8,7 +8,9 @@ export default function Projects() {
 
   const getProjects = projects.map((projects) => (
     <div className="projects__items-project card" key={projects.project_id}>
-      <div className="projects__items-project-name">{projects.project_name}</div>
+      <div className="projects__items-project-name">
+        {projects.project_name}
+      </div>
       <div className="projects__items-short-desc">{projects.short_desc}</div>
       <div className="projects__items-status">
         <span className="strong">Status: </span>

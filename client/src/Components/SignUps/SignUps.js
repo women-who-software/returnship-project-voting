@@ -65,7 +65,7 @@ export default function SignUps() {
       [event.target.name]: {
         checked: event.target.checked,
         id: event.target.value,
-      }
+      },
     });
     setProjectedTouched(true);
   };
@@ -77,7 +77,12 @@ export default function SignUps() {
     console.log("name", name);
     console.log("github", github);
     console.log("email", email);
-    console.log('selected', Object.keys(selectedProjects).filter(key => selectedProjects[key].checked))
+    console.log(
+      "selected",
+      Object.keys(selectedProjects).filter(
+        (key) => selectedProjects[key].checked
+      )
+    );
 
     history.push("/projects");
   };

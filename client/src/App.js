@@ -1,13 +1,19 @@
+// Import React Components
 import React, { useState, useEffect, useContext } from "react";
 import { Route, Switch } from "react-router-dom";
-import { GlobalContext } from "./Context/GlobalContext";
+
+// Import Custom Components
 import Landing from "./Components/Landing/Landing";
+
+import AdminPage from "./Components/AdminPage/AdminPage";
 import Projects from "./Components/Projects/Projects";
 import ProjectDetails from "./Components/Projects/ProjectDetails";
 import Voting from "./Components/Voting/Voting";
 import SignUps from "./Components/SignUps/SignUps";
 import Footer from "./Components/Footer/Footer";
 import STORE from "./STORE";
+// State Management
+import { GlobalContext } from "./Context/GlobalContext";
 
 export default function App() {
   const [hasError, setHasError] = useState("");
@@ -23,6 +29,7 @@ export default function App() {
         {hasError && <p className="red">There was an error</p>}
         <Switch>
           <Route exact path="/" component={Landing} />
+          <Route exact path="/admin" component={AdminPage} />
           <Route
             exact
             path="/projects"
