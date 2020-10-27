@@ -92,7 +92,7 @@ def vote():
        db.session.add(project)
        db.session.commit()
        return redirect('/api/projects')
-    except Exception as e:
+   except Exception as e:
        print(e)
        return "Nothing here. Try add the project again."
 
