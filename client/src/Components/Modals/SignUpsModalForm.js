@@ -160,7 +160,7 @@ export default function SignUpsModalForm(props) {
   // Project Options
   const projectOptions = [];
   projects.map((project) => {
-    if (project.status === "new-members") {
+    if (project.status === "sign up") {
       projectOptions.push({
         key: project.project_id,
         name: project.project_name,

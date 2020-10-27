@@ -139,7 +139,7 @@ export default function VotingModalForm(props) {
   // Project Options
   const projectOptions = [];
   projects.map((project) => {
-    if (project.status === "open") {
+    if (project.status === "open vote") {
       projectOptions.push({
         key: project.project_id,
         name: project.project_name,
