@@ -18,7 +18,12 @@ export default function AdminPanel() {
   const getProjects = projects.map((projects) => (
     <div className="projects__items-project card" key={projects.project_id}>
       {/* TODO: Create method function for checkbox action */}
-      <input type="checkbox" name="select_checkbox" className='project_checkbox' id=""/>
+      <input
+        type="checkbox"
+        name="select_checkbox"
+        className="project_checkbox"
+        id=""
+      />
       <div className="projects__items-project-name table-col">
         <NavLink to={`/projects/${projects.project_id}`}>
           {projects.project_name}
@@ -36,7 +41,7 @@ export default function AdminPanel() {
     <>
       <AdminPanelHeader />
       <div className="row admin-container">
-        <div className="col sideBar">
+        <div className="sideBar">
           <SideBar className="sideBar-component" />
         </div>
         <div className="col admin-panel">
@@ -62,21 +67,11 @@ export default function AdminPanel() {
             </div>
           </div>
           <div className="row table-header">
-            <div className="projects__items-project-name table-col header-name">
-              Project
-            </div>
-            <div className="projects__items-vote table-col header-vote">
-              Vote
-            </div>
-            <div className="projects__items-sign_up table-col header-sign_up">
-              Sign Up
-            </div>
-            <div className="projects__items-status table-col header-status">
-              Status
-            </div>
-            <div className="projects__items-date table-col header-date">
-              Date
-            </div>
+            <div className="header-name">Project</div>
+            <div className="header-vote">Vote</div>
+            <div className="header-sign_up">Sign Up</div>
+            <div className="header-status">Status</div>
+            <div className="header-date">Date</div>
           </div>
           <div className="col projectCards">{getProjects}</div>
         </div>

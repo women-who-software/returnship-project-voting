@@ -4,18 +4,12 @@ import { NavLink } from "react-router-dom";
 
 const SideBar = () => (
   <>
-    <div className="col sideBar--container">
+    <div className="sideBar--container">
       <div className="sideBar--row">
         <div className="sideBar--col">
           <ul>
             <li>
               <NavLink className="sideBar--link" exact to="/admin">
-                {/* <img
-              src="../../../assets/icons/copy-archives1.svg"
-              alt="Archives Icon"
-              className="admin-header--icon"
-              id="admin-header--archives-icon"
-            /> */}
                 <img
                   src="https://github.com/wwcodecolorado/returnship-project-voting/blob/kl-feature12-admin-panel-redesign/client/assets/icons/archives.png?raw=true"
                   alt="Archives Icon"
