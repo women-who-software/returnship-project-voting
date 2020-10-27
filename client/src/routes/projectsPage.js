@@ -43,9 +43,9 @@ export default function ProjectsPage() {
             </li>
           </ol>
         </div>
+        <Projects />
       </div>
 
-      <Projects />
       <Footer />
     </section>
   );
