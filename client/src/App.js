@@ -1,16 +1,15 @@
 // Import React Components
 import React, { useState, useEffect, useContext } from "react";
 import { Route, Switch } from "react-router-dom";
-
+import AboutPage from "./routes/aboutPage";
+import ProjectsPage from "./routes/projectsPage";
 // Import Custom Components
 import AdminPanel from "./Components/AdminPanel/AdminPanel";
-import Footer from "./Components/Footer/Footer";
-import AboutPage from "./routes/aboutPage";
 // import Login from "./Components/Login/Login";
-import ProjectsPage from "./routes/projectsPage";
 import STORE from "./STORE";
 // State Management
 import { GlobalContext } from "./Context/GlobalContext";
+import NotFound from "./routes/notFoundPage";
 
 export default function App() {
   const [hasError, setHasError] = useState("");
@@ -28,6 +27,7 @@ export default function App() {
           <Route exact path="/" component={AboutPage} />
           {/* <Route exact path="/login" component={Login} /> */}
           <Route exact path="/projects" component={ProjectsPage} />
+          <Route component={NotFound} />
           <Route exact path="/admin" component={AdminPanel} />
         </Switch>
         {/* <Route path="/" component={Footer} /> */}

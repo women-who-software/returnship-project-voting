@@ -1,26 +1,46 @@
 .projects {
   padding: 10px 20px;
-  margin: 20px;
-  min-height: calc(86vh - 100px);
 
   &__header {
-    font-size: $font-size-header;
+    font-size: $font-size-large;
     font-weight: $font-weight-bold;
   }
   &__about {
-    &-header {
-      font-size: $font-size-sub-header;
-      font-weight: $font-weight-bold;
+    &-title {
+      font-weight: $font-weight-semi-bold;
     }
-
+    
     & ol {
       list-style-position: inside;
+      & li {
+        margin-top: 10px;
+      }
     }
+  }
+
+  &__search {
+   display: flex;
+   justify-content: flex-end;
   }
 }
 
 @media (min-width: 700px) {
   .projects {
     padding: 20px 110px;
+  
+    &__header {
+      font-size: $font-size-xlarge;
+      font-weight: $font-weight-bold;
+    }
+    &__about {
+      &-header {
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+      }
+  
+      & ol {
+        list-style-position: inside;
+      }
+    }
   }
 }

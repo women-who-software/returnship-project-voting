@@ -1,0 +1,65 @@
+.form {
+  margin: 10px;
+
+  & h1 {
+    font-size: $font-size-med;
+    text-align: center;
+  }
+  &__about {
+    font-size: $font-size-small;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &__form {
+    margin-left: 20px;
+  }
+
+  & input[type="checkbox"] {
+    margin-right: 10px;
+  }
+
+  &__input-label {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: $font-size-small;
+  }
+
+  &__input-input {
+    border: 2px solid $card-border;
+    border-radius: 10px;
+    line-height: 2em;
+    padding: 5px;
+    width: 250px;
+  }
+
+  &__submit {
+    margin-top: 20px;
+    text-align: center;
+    & button {
+      width: 185px;
+      height: 40px;
+      background-color: $text-nav;
+      color: white;
+      border-radius: 5px;
+      &:hover {
+        background-color: $text-nav-hover;
+        color: $font-color;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+}
+
+@media (min-width: 940px) {
+  .form {
+    margin: 30px 50px;
+
+    &__submit {
+      text-align: center;
+    }
+  }
+}

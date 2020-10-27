@@ -1,76 +1,80 @@
 import React from "react";
 import StatusOpen from "../Images/project-open.svg";
-import StatusDev from "../Images/project-accepting-new.svg";
-import ReactTooltip from "react-tooltip";
+import StatusNew from "../Images/project-accepting-new.svg";
+import StatusDev from "../Images/project-in-development.png";
+import StatusCompleted from "../Images/project-completed.svg";
 
 export default function Accordion({ project, children }) {
   const [isOpen, setOpen] = React.useState(false);
 
-  const getStatusIcon = () => {
-    switch (project.status) {
-      case "open":
-        return StatusOpen;
+  const getStatusImage = (status) => {
+    let statusImage = "";
+    let statusText = "";
 
-      case "in-progress":
-        return StatusDev;
+    switch (status) {
+      case "open vote":
+        statusImage = StatusOpen;
+        statusText = "Open Vote";
+        break;
 
-      case "new-members":
-        return StatusOpen;
+      case "sign up":
+        statusImage = StatusNew;
+        statusText = "Sign Up";
+        break;
 
-      default:
-        return StatusOpen;
-    }
-  };
+      case "active":
+        statusImage = StatusDev;
+        statusText = "Active";
+        break;
 
-  const getStatusText = () => {
-    switch (project.status) {
-      case "open":
-        return "Open";
-
-      case "in-progress":
-        return "In progress";
-
-      case "new-members":
-        return "New";
+      case "completed":
+        statusImage = StatusCompleted;
+        statusText = "Completed";
+        break;
 
       default:
-        return "Open";
+        statusImage = "";
+        break;
     }
+
+    return (
+      <>
+        <img src={statusImage} alt={statusText} />
+        {statusText}
+      </>
+    );
   };
+
+  // ClassNames
+  let titleOpen = isOpen ? "open" : "";
+  let projectDev =
+    project.status === "active" ? "accordion__title-project-dev" : "";
+  let projectComplete =
+    project.status === "completed" ? "accordion__title-project-complete" : "";
 
   return (
-    <>
-      <ReactTooltip
-        id="projectStatus"
-        type="light"
-        className="accordion__title-tooltip"
-        effect="solid"
-        getContent={(dataTip) => `${dataTip}`}
-      />
-      <div className="accordion__wrapper">
-        <div
-          className={`accordion__title ${isOpen ? "open" : ""}`}
-          onClick={() => setOpen(!isOpen)}
-        >
+    <div className="accordion__wrapper">
+      <div
+        className={`
+        accordion__title ${titleOpen} 
+        ${projectDev}
+        ${projectComplete}
+        `}
+        onClick={() => setOpen(!isOpen)}
+      >
+        <div>
           <div>
-            <div>Project: {project.project_name}</div>
-            <div className="accordion__title-sub">
-              <span className="accordion__title-sub-header">Status</span>
-              <img
-                src={getStatusIcon()}
-                alt={project.project_name}
-                data-tip={getStatusText()}
-                data-for="projectStatus"
-              />
-            </div>
+            Project:{" "}
+            <span className="accordion__title-project">
+              {project.project_name}
+            </span>
           </div>
-          <div className="accordion__title-more">
-            More details
+          <div className="accordion__title-status">
+            <span className="accordion__title-status-title">Status</span>
+            {"\u00a0"} {getStatusImage(project.status)}
           </div>
         </div>
-        <div className={`accordion__item ${!isOpen ? "collapsed" : ""}`}>
-          <div className="accordion__content">{children}</div>
-        </div>
+        <div className="accordion__title-more">More Details{"\u00a0"}</div>
       </div>
     </>
   );

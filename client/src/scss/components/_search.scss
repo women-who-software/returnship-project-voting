@@ -1,0 +1,35 @@
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border: 1px solid $font-color;
+  border-radius: 5px;
+  width: 280px;
+  
+  &__input-icon {
+    padding: 10px;
+    background-image: url('../../Components/Images/search.svg');
+    background-color: $font-accent-color;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  & input {
+    border: $border-color;
+    outline: none;
+    width: 230px;
+  }
+}
+
+@media (min-width: 450px) {
+  .search {
+    width: 400px;
+    & input {
+      width: 350px;
+    }
+  }
+}

@@ -1,51 +1,54 @@
 .footer {
   & hr {
-    margin: 10px 20px 0 20px;
+    margin: 20px 20px 0 20px;
   }
   &__nav {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 10px 20px;
-    & img {
-      width: 30px;
-      height: auto;
-      margin-right: 20px;
-    }
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 ;
     &-logo {
-      img {
-        width: 30px;
-        margin: 0 10px;
+      & img {
+        width: 20px;
+        height: auto;
+        margin-right: 10px;
+        vertical-align: middle;
       }
     }
-    & a {
-      margin-right: 15px;
-      font-size: 15px;
-    }
     &-link {
-      padding-top: 20px;
+      font-size: $font-size-xsmall;
+      & li {
+        padding: 0 5px;
+      }
+    }
+    &-icons {
+      & a {
+        margin: 0 10px;
+        vertical-align: middle;
+      }
+    }
+    &-copyright {
+      display: none;
     }
   }
-  &__copyright {
-    background-color: $accent;
-    color: $white;
-    font-size: 15px;
-    font-weight: $font-weight-regular;
-    padding: 20px 0 20px 110px;
+  &__bottom {
+    background-color: $font-accent-color;
+    height: 40px;
+    padding: 10px 50px;
+    text-align: left;
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 940px) {
   .footer {
-    & hr {
-      margin: 20px 100px 0 100px;
-    }
-
     &__nav {
-      padding: 10px 50px;
-
-      & img {
-        width: 40px;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 0px 20px;
+      margin: 10px 0;
+      &-copyright {
+        display: block;
       }
     }
   }
