@@ -1,20 +1,40 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import Logo from "../Images/logo.svg";
+import LinkedIn from "../Images/linkedin_logo.svg";
+import Slack from "../Images/slack_logo.svg";
+import Meetup from "../Images/meetup_logo.svg";
 
 export default function Footer() {
-  let copy = "\u00a9";
-  let currentYear = new Date().getFullYear();
-
+  const date = new Date().getFullYear();
   return (
-    <address className="Footer">
-      <div className="Footer__left">
-        <div>Women Who Code is a 501(c)(3) not-for-profit organization</div>
-        <div>EIN 36-4218859</div>
+    <div className="footer">
+      <hr />
+      <div className="footer__nav">
         <div>
-          {copy} {currentYear} Women Who Code
+          <img src={Logo} alt="Career Returnship Logo" />
+        </div>
+        <div className="footer__nav-link">
+          <NavLink to="/">About Us</NavLink>
+          <NavLink to="/projects">Project List</NavLink>
+          <NavLink to="/contact">Contact Us</NavLink>
+          <NavLink to="/">Career Returnship</NavLink>
+          <a href="https://linktr.ee/wwcodecolorado">Women Who Code</a>
+        </div>
+        <div></div>
+        <div className="footer__nav-logo footer__nav-link">
+          <a href="https://www.linkedin.com/showcase/wwcodecolorado/">
+            <img src={LinkedIn} alt="LinkedIn Logo" />
+          </a>
+          
+          <a href="https://www.meetup.com/Women-Who-Code-Boulder-Denver/">
+            <img src={Meetup} alt="Meetup Logo" />
+          </a>
+
+          <img src={Slack} alt="Slack Logo" />
         </div>
       </div>
-      <div className="Footer__spacer"></div>
-      <div className="Footer__socialIcons">Social Media Icons</div>
-    </address>
+      <div className="footer__copyright">Copyright {date}</div>
+    </div>
   );
 }

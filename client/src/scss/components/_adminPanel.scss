@@ -1,0 +1,219 @@
+//! Admin Panel Styling
+
+//! CSS Variables
+$bg: #e8eef2;
+$font-color: #37393a;
+$bg-nav: #d6c9c9;
+$bg-button-hover: #77b6ea;
+$bg-button: #c7d3dd;
+$card-border: #d2d3d5;
+$card-bg: #fff;
+$small-button-bg: #d6c9c9;
+
+// Admin Overall
+.admin-container {
+  background-color: white;
+  // width: 90%;
+  margin-left: 0.2rem !important;
+}
+.row {
+  margin-right: 0 !important;
+  width: 98.7vw !important;
+}
+//! Project Card Styling
+.projectCards {
+  padding: 0 !important;
+  width: 98.7vw !important;
+}
+.card {
+  border: 1px solid $card-border;
+  padding: 20px;
+  background-color: $card-bg;
+  border-radius: 5px;
+  width: 81vw;
+  height: 6rem;
+  display: flex;
+  flex-direction: row !important;
+  color: #707070;
+  justify-content: space-around !important;
+  align-items: center;
+  margin-left: 1.8rem !important;
+  font-family: $font-body;
+}
+a {
+  color: #707070;
+  text-decoration-color: #707070;
+}
+.projects__items-project {
+  div {
+    margin: 5px 0;
+  }
+}
+.projects__items-project-name a {
+  // font-weight: 700;
+  font-size: 1em;
+  color: #707070;
+  margin: -4.1rem;
+  display: inline-block;
+  width: 11rem;
+}
+
+.projects__items-vote {
+  width: 2rem;
+}
+.projects__items-status {
+  width: 8rem;
+}
+.projects__items-sign_up {
+  width: 5.5rem;
+}
+.projects__items-date {
+  width: 7rem;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.project_checkbox {
+  margin-left: -3.5rem;
+  margin-right: -4rem;
+}
+// -------------------
+
+//! Toolbar
+.toolbar {
+  display: flex;
+  background-color: #fff;
+  width: 69vw !important;
+  justify-content: space-between;
+  // left: -39rem;
+  // width: 70vw;
+  margin-left: 3.5rem !important;
+  margin-top: 5rem;
+}
+
+//! Tool-Btn
+// html body div#root main.main div.row.admin-container div.col.admin-panel div.row.toolbar div.col a.tool-btn
+a.tool-btn {
+  padding: 0.7rem 2.1rem 0.7rem 2.1rem;
+  border-radius: 10px;
+  // border: 1px black solid;
+  // width: 5rem;
+}
+
+// div.row:nth-child(1) > div:nth-child(1) > a:nth-child(1) {
+//   color: black;
+// }
+
+//! Buttons
+.bulk-btn {
+  padding: 0.7rem 3rem 0.7rem 1.5rem !important;
+  border: 1px #707070 solid;
+  color: black;
+}
+.apply-btn {
+  border: 1px #434447 solid;
+  background-color: #dde2e5;
+  color: black;
+  margin-left: -5rem;
+}
+.projects-btn {
+  border: 1px #000000 solid;
+  background-color: #d7154a;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.chevronDownElement {
+  padding-right: 5rem;
+  margin-left: -2.4rem !important;
+}
+
+//! Table Header
+.table-header {
+  background-color: #e0e5f1;
+  width: 81vw !important;
+  height: 5rem;
+  margin-left: 1.8rem !important;
+  margin-top: 2.5rem;
+  align-items: center;
+  font-weight: 550;
+  color: #434447;
+  font-size: 1.2rem;
+  justify-content: flex-start;
+}
+
+.header-name {
+  padding-left: 2.5rem;
+  padding-right: 9rem;
+  width: max-content;
+}
+.header-vote {
+  padding-left: 3rem;
+  width: max-content;
+}
+.header-sign_up {
+  padding-left: 8.5rem;
+  width: max-content;
+}
+.header-status {
+  padding-left: 10rem;
+  width: max-content;
+}
+.header-date {
+  padding-left: 13rem;
+  width: max-content;
+}
+
+//! Media Queries
+@media (min-width: 540px) {
+  .projectdetails {
+    margin: 20px 50px;
+    padding: 20px;
+  }
+
+  .projects__items-more {
+    float: right;
+  }
+}
+@media (min-width: 2560px) {
+  .header-name {
+    padding-left: 7rem;
+    padding-right: 9rem;
+    width: max-content;
+  }
+  .header-vote {
+    padding-left: 3rem;
+    width: max-content;
+  }
+  .header-sign_up {
+    padding-left: 8.5rem;
+    width: max-content;
+  }
+  .header-status {
+    padding-left: 10rem;
+    width: max-content;
+  }
+  .header-date {
+    padding-left: 13rem;
+    width: max-content;
+  }
+  .project_checkbox {
+    margin-left: -8.5rem;
+    margin-right: -251px;
+  }
+  .projects__items-vote {
+    width: 2rem;
+    margin-right: -25px;
+  }
+  .projects__items-status {
+    width: 8rem;
+  }
+  .projects__items-sign_up {
+    width: 5.5rem;
+  }
+  .projects__items-date {
+    width: 7rem;
+  }
+}

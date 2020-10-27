@@ -3,14 +3,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { Route, Switch } from "react-router-dom";
 
 // Import Custom Components
-import Landing from "./Components/Landing/Landing";
-
-import AdminPage from "./Components/AdminPage/AdminPage";
-import Projects from "./Components/Projects/Projects";
-import ProjectDetails from "./Components/Projects/ProjectDetails";
-import Voting from "./Components/Voting/Voting";
-import SignUps from "./Components/SignUps/SignUps";
+import AdminPanel from "./Components/AdminPanel/AdminPanel";
 import Footer from "./Components/Footer/Footer";
+import AboutPage from "./routes/aboutPage";
+// import Login from "./Components/Login/Login";
+import ProjectsPage from "./routes/projectsPage";
 import STORE from "./STORE";
 // State Management
 import { GlobalContext } from "./Context/GlobalContext";
@@ -25,33 +22,15 @@ export default function App() {
 
   return (
     <React.Fragment>
-      <main className="App">
+      <main className="main">
         {hasError && <p className="red">There was an error</p>}
         <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/admin" component={AdminPage} />
-          <Route
-            exact
-            path="/projects"
-            component={() => <Projects projects={projects} />}
-          />
-          <Route
-            exact
-            path="/projects/:project_id"
-            component={(routeProps) => (
-              <ProjectDetails
-                project={projects.find(
-                  (project) =>
-                    project.project_id ===
-                    Number(routeProps.match.params.project_id)
-                )}
-              />
-            )}
-          />
-          <Route exact path="/voting" component={Voting} />
-          <Route exact path="/signups" component={SignUps} />
+          <Route exact path="/" component={AboutPage} />
+          {/* <Route exact path="/login" component={Login} /> */}
+          <Route exact path="/projects" component={ProjectsPage} />
+          <Route exact path="/admin" component={AdminPanel} />
         </Switch>
-        <Route path="/" component={Footer} />
+        {/* <Route path="/" component={Footer} /> */}
       </main>
     </React.Fragment>
   );

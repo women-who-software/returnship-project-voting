@@ -1,0 +1,29 @@
+.sideBar {
+  &--container {
+    display: flex;
+    justify-content: flex-start;
+    font-family: $font-body;
+    width: 13rem !important;
+    height: 100vh !important;
+    background-color: #262e3d;
+    padding: 0 !important;
+    margin-left: -18px;
+  }
+  &--link {
+    color: whitesmoke !important;
+  }
+  &--row {
+    flex-direction: row;
+    margin-top: 2.5rem;
+  }
+  &--col {
+    // TODO: Convert background color to active page
+    background-color: #d71549 !important;
+    width: 13rem !important;
+    flex-direction: column;
+  }
+}
+
+.sideBar--col li {
+  padding: 1rem 1rem 1rem 1.2rem;
+}
