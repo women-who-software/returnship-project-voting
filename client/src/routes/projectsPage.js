@@ -3,8 +3,8 @@ import HeaderSmall from "../Components/Header/HeaderSmall";
 import Nav from "../Components/Nav/Nav";
 import Projects from "../Components/Projects/Projects";
 import Footer from "../Components/Footer/Footer";
-import Search from '../Components/Search/Search';
-import { GlobalContext } from '../Context/GlobalContext';
+import Search from "../Components/Search/Search";
+import { GlobalContext } from "../Context/GlobalContext";
 
 export default function ProjectsPage() {
   const { search, setSearch } = useContext(GlobalContext);
@@ -22,7 +22,9 @@ export default function ProjectsPage() {
         <h1 className="projects__header">Project List:</h1>
 
         <div className="projects__about">
-          <div className="projects__about-title">How to be involved in WWC Returnship:</div>
+          <div className="projects__about-title">
+            How to be involved in WWC Returnship:
+          </div>
           <ol>
             <li>Read about Projects and details.</li>
             <li>

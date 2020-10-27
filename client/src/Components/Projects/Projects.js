@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { GlobalContext } from "../../Context/GlobalContext";
 import Accordion from "../Accordion/Accordion";
 import useToggle from "../Hooks/useToggle";
 import Modal from "../Modals/Modal";
 import VotingModalForm from "../Modals/VotingModalForm";
 import SignUpsModalForm from "../Modals/SignUpsModalForm";
-
 
 export default function Projects() {
   const { projects, search } = useContext(GlobalContext);
@@ -102,7 +101,13 @@ export default function Projects() {
   return (
     <>
       <div className="accordion">
-        {getProjects.length > 0 ? getProjects : <div className="accordion__noresults">Sorry, no results were found.</div>}
+        {getProjects.length > 0 ? (
+          getProjects
+        ) : (
+          <div className="accordion__noresults">
+            Sorry, no results were found.
+          </div>
+        )}
       </div>
 
       {openVoting && (

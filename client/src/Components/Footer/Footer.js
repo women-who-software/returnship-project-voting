@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../Images/logo.svg";
+import Logo from "../Images/Logo.svg";
 import Github from "../Images/github_logo.svg";
 import Slack from "../Images/slack_logo.svg";
 import Meetup from "../Images/meetup_logo.svg";

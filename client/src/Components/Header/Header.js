@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import MenuClosed from "../Images/hamburger-closed.svg";
 import MenuOpen from "../Images/hamburger-open.svg";
-import Logo from "../Images/logo.svg";
+import Logo from "../Images/Logo.svg";
 import NavSmall from "../Nav/NavSmall";
 
 export default function HeaderPage() {

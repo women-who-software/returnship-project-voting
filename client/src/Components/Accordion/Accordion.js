@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import StatusOpen from "../Images/project-open.svg";
 import StatusNew from "../Images/project-accepting-new.svg";
 import StatusDev from "../Images/project-in-development.png";
 import StatusCompleted from "../Images/project-completed.svg";
 
 export default function Accordion({ project, children }) {
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   const getStatusImage = (status) => {
     let statusImage = "";

@@ -66,8 +66,8 @@ export default function VotingModalForm(props) {
     console.log("name", name);
 
     validator.validate(email)
-    ? console.log("email", email)
-    : console.log("slack", email);
+      ? console.log("email", email)
+      : console.log("slack", email);
 
     console.log(
       "selected",
@@ -166,9 +166,7 @@ export default function VotingModalForm(props) {
 
       <form onSubmit={handleOnSubmit} className="form__form">
         <div className="form__options">
-          <div className="form__options-label">
-            Pick your top 2:
-          </div>
+          <div className="form__options-label">Pick your top 2:</div>
           <div className="form__options-values">
             {projectOptions.map((item) => (
               <div key={item.key}>
