@@ -1,14 +1,11 @@
 import React, { useContext, useState } from "react";
+import { GlobalContext } from "../../Context/GlobalContext";
 import Accordion from "../Accordion/Accordion";
 import useToggle from "../Hooks/useToggle";
 import Modal from "../Modals/Modal";
 import VotingModalForm from "../Modals/VotingModalForm";
 import SignUpsModalForm from "../Modals/SignUpsModalForm";
-import { GlobalContext } from "../../Context/GlobalContext";
-import useToggle from "../Hooks/useToggle";
-import Modal from "../Modals/Modal";
-import VotingModalForm from "../Modals/VotingModalForm";
-import SignUpsModalForm from "../Modals/SignUpsModalForm";
+
 
 export default function Projects() {
   const { projects, search } = useContext(GlobalContext);
