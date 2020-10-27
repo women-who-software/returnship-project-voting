@@ -53,7 +53,7 @@ export default function AdminPanel() {
               </a>
               {/* TODO: Convert to accordion with options: 1) Edit 2) Move to Trash  */}
               <span className="chevronDownElement">{chevronDownElement}</span>
-              <i class="fas fa-chevron-down"></i>
+              <i className="fas fa-chevron-down"></i>
             </div>
             <div className="col">
               <a role="button" href="#" className="tool-btn apply-btn">
