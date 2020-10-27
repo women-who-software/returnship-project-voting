@@ -27,8 +27,8 @@ export default function App() {
           <Route exact path="/" component={AboutPage} />
           {/* <Route exact path="/login" component={Login} /> */}
           <Route exact path="/projects" component={ProjectsPage} />
-          <Route component={NotFound} />
           <Route exact path="/admin" component={AdminPanel} />
+          <Route component={NotFound} />
         </Switch>
         {/* <Route path="/" component={Footer} /> */}
       </main>
