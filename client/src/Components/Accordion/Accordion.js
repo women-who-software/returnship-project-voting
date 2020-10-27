@@ -76,6 +76,6 @@ export default function Accordion({ project, children }) {
         </div>
         <div className="accordion__title-more">More Details{"\u00a0"}</div>
       </div>
-    </>
+    </div>
   );
 }
