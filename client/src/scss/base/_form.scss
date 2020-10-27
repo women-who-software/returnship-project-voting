@@ -6,7 +6,7 @@
   }
 
   & h1 {
-    font-size: $font-size-sub-header;
+    font-size: $font-size-med;
     font-weight: $font-weight-bold;
     text-align: center;
   }
@@ -53,8 +53,8 @@
       width: 150px;
       height: 32px;
       border-radius: 5px;
-      background-color: $red;
-      color: $white;
+      background-color: $text-nav;
+      color: $bg;
       font-weight: $font-weight-bold;
       border: none;
     }

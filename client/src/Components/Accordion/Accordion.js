@@ -74,7 +74,7 @@ export default function Accordion({ project, children }) {
             {"\u00a0"} {getStatusImage(project.status)}
           </div>
         </div>
-        <div className="accordion__title-more">More Details{"\u00a0"}</div>
+        <div className="accordion__title-more">More Details{"\u00a0"} </div>
       </div>
     </div>
   );
