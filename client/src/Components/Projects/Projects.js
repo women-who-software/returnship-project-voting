@@ -40,7 +40,7 @@ export default function Projects() {
         </div>
         <div className="accordion__content-item">
           <div className="accordion__content-label">
-            Team Members Needed for Project
+            Team Members Needed
           </div>
           <div className="accordion__content-value">
             {project.max_team_members}

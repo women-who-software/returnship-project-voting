@@ -1,11 +1,10 @@
-.nav {
+.nav__large {
   display: none;
 }
 
 .nav__small {
   box-shadow: 0px 4px 4px $shadow-color;
-
-  & .nav__links {
+  & .nav-links {
     & a {
       font-size: $font-size-med;
       line-height: 1.2em;
@@ -31,7 +30,6 @@
     &-admin {
       display: none;
     }
-
     &-button {
       &-admin {
         display: block;
@@ -53,18 +51,17 @@
   .nav__small {
     display: none;
   }
-
-  .nav {
+  
+  .nav__large {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     background-color: $bg;
     box-shadow: 0 3px 6px 0 $shadow-color;
-    padding: 0 50px;
+    padding: 10px 50px;
 
     &__logo {
       padding: 20px;
-
       & img {
         width: 25px;
         height: auto;
@@ -76,15 +73,16 @@
         color: $font-accent-color;
         font-weight: $font-weight-medium;
         &:hover {
-          font-variant: small-caps;
+          color: $font-accent-color;
+          font-weight: $font-weight-medium;
+          text-decoration: none;
         }
       }
     }
-    &__links {
+    & .nav-links {
       display: flex;
       flex-direction: row;
       padding: 30px 20px;
-
       & a {
         font-size: $font-size-small;
         margin: 0 10px;
@@ -99,15 +97,12 @@
       }
       &-nav {
         display: flex;
-
         & a {
           color: $font-color;
           font-weight: $font-weight-bold;
         }
-
         & div {
           position: relative;
-
           & .animate-left {
             color: $text-nav;
             &:after {
@@ -125,6 +120,7 @@
             &:hover {
               color: $font-color;
               text-transform: uppercase;
+              text-decoration: none;
             }
             &:hover:after {
               width: 100%;
@@ -134,7 +130,6 @@
           }
         }
       }
-
       &-button {
         &-admin {
           display: none;
@@ -149,15 +144,6 @@
           cursor: pointer;
         }
       }
-    }
-
-    &-button button {
-      border: none;
-      background-color: $bg;
-      color: $font-color;
-      font-size: $font-size-small;
-      // line-height: 28px; // Removed because it creates an uneven line
-      cursor: pointer;
     }
   }
 }

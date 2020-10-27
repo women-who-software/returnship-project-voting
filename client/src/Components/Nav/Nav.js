@@ -5,12 +5,15 @@ import NavLinks from "./NavLinks";
 
 export default function Nav() {
   return (
-    <nav className="nav">
-      <div className="nav__logo">
+    <nav className="nav__large">
+      
+      <div className="nav__large-logo">
         <img src={Logo} alt="Career Returnship Logo" />
         <NavLink to="/">CAREER RETURNSHIP</NavLink>
       </div>
+
       <div className="spacer" />
+
       <NavLinks />
     </nav>
   );

@@ -4,7 +4,7 @@ import MenuClosed from "../Images/hamburger-closed.svg";
 import MenuOpen from "../Images/hamburger-open.svg";
 import NavSmall from "../Nav/NavSmall";
 
-export default function LandingPage() {
+export default function HeaderSmall() {
   const [openMenu, setOpenMenu] = useState(false);
 
   const handleHamburgerClick = () => {

@@ -5,13 +5,11 @@ import MenuOpen from "../Images/hamburger-open.svg";
 import Logo from "../Images/Logo.svg";
 import NavSmall from "../Nav/NavSmall";
 
-export default function HeaderPage() {
+export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
-
   const handleHamburgerClick = () => {
     setOpenMenu(!openMenu);
   };
-
   return (
     <>
       <div className="header">
@@ -22,10 +20,14 @@ export default function HeaderPage() {
           <div className="header__image">
             <img src={Logo} alt="Career Returnship Logo" />
           </div>
-          <NavLink to="/" className="header__title-career" style={{color: '#58bacc'}}>CAREER RETURNSHIP</NavLink>
-
+          <NavLink
+            to="/"
+            className="header__title-career"
+            style={{ color: "#58bacc" }}
+          >
+            CAREER RETURNSHIP
+          </NavLink>
           <div className="header__spacer"></div>
-
           <div className="header__hamburger">
             <img
               src={openMenu ? MenuOpen : MenuClosed}

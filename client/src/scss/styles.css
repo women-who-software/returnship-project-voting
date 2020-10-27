@@ -240,7 +240,7 @@ button {
   }
 }
 
-.nav {
+.nav__large {
   display: none;
 }
 
@@ -249,13 +249,13 @@ button {
           box-shadow: 0px 4px 4px #e1e1e1;
 }
 
-.nav__small .nav__links a {
+.nav__small .nav-links a {
   font-size: 18px;
   line-height: 1.2em;
   margin: 0 10px;
 }
 
-.nav__small .nav__links-nav {
+.nav__small .nav-links-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -265,31 +265,31 @@ button {
           flex-direction: column;
 }
 
-.nav__small .nav__links-nav a {
+.nav__small .nav-links-nav a {
   font-size: 18px;
   line-height: 1.2em;
   font-weight: 700;
   color: #D71549;
 }
 
-.nav__small .nav__links-nav div {
+.nav__small .nav-links-nav div {
   padding: 5px;
   border-bottom: 1px solid #D6C9C9;
 }
 
-.nav__small .nav__links-nav div:hover {
+.nav__small .nav-links-nav div:hover {
   background-color: #E0E5F1;
 }
 
-.nav__small .nav__links-admin {
+.nav__small .nav-links-admin {
   display: none;
 }
 
-.nav__small .nav__links-button-admin {
+.nav__small .nav-links-button-admin {
   display: block;
 }
 
-.nav__small .nav__links-button button {
+.nav__small .nav-links-button button {
   border: none;
   background-color: transparent;
   color: #D71549;
@@ -303,7 +303,7 @@ button {
   .nav__small {
     display: none;
   }
-  .nav {
+  .nav__large {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -315,26 +315,28 @@ button {
     background-color: #FFFFFF;
     -webkit-box-shadow: 0 3px 6px 0 #e1e1e1;
             box-shadow: 0 3px 6px 0 #e1e1e1;
-    padding: 0 50px;
+    padding: 10px 50px;
   }
-  .nav__logo {
+  .nav__large__logo {
     padding: 20px;
   }
-  .nav__logo img {
+  .nav__large__logo img {
     width: 25px;
     height: auto;
     margin-right: 20px;
     padding: 10px 0;
     vertical-align: middle;
   }
-  .nav__logo a {
+  .nav__large__logo a {
     color: #58bacc;
     font-weight: 500;
   }
-  .nav__logo a:hover {
-    font-variant: small-caps;
+  .nav__large__logo a:hover {
+    color: #58bacc;
+    font-weight: 500;
+    text-decoration: none;
   }
-  .nav__links {
+  .nav__large .nav-links {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -344,34 +346,34 @@ button {
             flex-direction: row;
     padding: 30px 20px;
   }
-  .nav__links a {
+  .nav__large .nav-links a {
     font-size: 15px;
     margin: 0 10px;
   }
-  .nav__links-admin {
+  .nav__large .nav-links-admin {
     margin-left: 100px;
   }
-  .nav__links-admin img {
+  .nav__large .nav-links-admin img {
     vertical-align: middle;
     width: 30px;
     height: auto;
   }
-  .nav__links-nav {
+  .nav__large .nav-links-nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .nav__links-nav a {
+  .nav__large .nav-links-nav a {
     color: #000000;
     font-weight: 700;
   }
-  .nav__links-nav div {
+  .nav__large .nav-links-nav div {
     position: relative;
   }
-  .nav__links-nav div .animate-left {
+  .nav__large .nav-links-nav div .animate-left {
     color: #D71549;
   }
-  .nav__links-nav div .animate-left:after {
+  .nav__large .nav-links-nav div .animate-left:after {
     content: "";
     position: absolute;
     width: 0;
@@ -383,32 +385,26 @@ button {
     transition: width 0.5s ease;
     -webkit-transition: width 0.5s ease;
   }
-  .nav__links-nav div .animate-left:hover {
+  .nav__large .nav-links-nav div .animate-left:hover {
     color: #000000;
     text-transform: uppercase;
+    text-decoration: none;
   }
-  .nav__links-nav div .animate-left:hover:after {
+  .nav__large .nav-links-nav div .animate-left:hover:after {
     width: 100%;
     left: 0;
     background: #000;
   }
-  .nav__links-button-admin {
+  .nav__large .nav-links-button-admin {
     display: none;
   }
-  .nav__links-button button {
+  .nav__large .nav-links-button button {
     border: none;
     background-color: #FFFFFF;
     color: #000000;
     font-size: 15px;
     font-weight: 700;
     line-height: 1.2em;
-    cursor: pointer;
-  }
-  .nav-button button {
-    border: none;
-    background-color: #FFFFFF;
-    color: #000000;
-    font-size: 15px;
     cursor: pointer;
   }
 }
@@ -582,7 +578,7 @@ button {
   vertical-align: 40%;
 }
 
-.accordion__title .accordion__noresults {
+.accordion__noresults {
   color: #000000;
   font-weight: 600;
   border: 1px solid #DDE2E5;
@@ -590,7 +586,7 @@ button {
   border-radius: 10px;
 }
 
-.accordion__title .accordion__content {
+.accordion__content {
   font-weight: 400;
   font-size: 15px;
   padding: 10px 10px;
@@ -610,7 +606,7 @@ button {
           flex-direction: column;
 }
 
-.accordion__title .accordion__content-line {
+.accordion__content-line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -620,35 +616,35 @@ button {
           flex-direction: column;
 }
 
-.accordion__title .accordion__content-item {
+.accordion__content-item {
   border-bottom: 1px solid #D2D3D5;
 }
 
-.accordion__title .accordion__content-item, .accordion__title .accordion__content-desc {
+.accordion__content-item, .accordion__content-desc {
   margin: 10px;
 }
 
-.accordion__title .accordion__content-label, .accordion__title .accordion__content-desc-label {
+.accordion__content-label, .accordion__content-desc-label {
   width: 300px;
   font-weight: 700;
 }
 
-.accordion__title .accordion__content-value {
+.accordion__content-value {
   text-align: right;
   padding-right: 10px;
 }
 
-.accordion__title .accordion__content-desc-label {
+.accordion__content-desc-label {
   width: 100%;
   border-bottom: 1px solid #D2D3D5;
 }
 
-.accordion__title .accordion__content-desc-value {
+.accordion__content-desc-value {
   padding: 20px;
   background-color: #EFF1F7;
 }
 
-.accordion__title .accordion__content-button {
+.accordion__content-button {
   margin: 20px auto;
   border: 1px solid #D2D3D5;
   border-radius: 5px;
@@ -660,41 +656,41 @@ button {
   padding: 10px 5px;
 }
 
-.accordion__title .accordion__content-button:hover {
+.accordion__content-button:hover {
   color: #58bacc;
 }
 
-.accordion__title .accordion__content-button a {
+.accordion__content-button a {
   color: #D71549;
 }
 
-.accordion__title .accordion__content-button a:hover {
+.accordion__content-button a:hover {
   color: #58bacc;
 }
 
 @media (min-width: 700px) {
-  .accordion__title .accordion {
+  .accordion {
     margin: 0 100px;
   }
-  .accordion__title .accordion__title {
+  .accordion__title {
     padding: 30px 80px;
     font-size: 18px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .accordion__title .accordion__title-project {
+  .accordion__title-project {
     font-weight: 700;
   }
-  .accordion__title .accordion__title-status img {
+  .accordion__title-status img {
     margin-right: 10px;
     vertical-align: middle;
     width: 30px;
   }
-  .accordion__title .accordion__title-status-title {
+  .accordion__title-status-title {
     margin-right: 15px;
   }
-  .accordion__title .accordion__content {
+  .accordion__content {
     padding: 30px 80px;
   }
 }
@@ -727,6 +723,7 @@ button {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 700px) {
@@ -1251,7 +1248,7 @@ a.tool-btn {
   }
 }
 
-.nav {
+.nav__large {
   display: none;
 }
 
@@ -1260,13 +1257,13 @@ a.tool-btn {
           box-shadow: 0px 4px 4px #e1e1e1;
 }
 
-.nav__small .nav__links a {
+.nav__small .nav-links a {
   font-size: 18px;
   line-height: 1.2em;
   margin: 0 10px;
 }
 
-.nav__small .nav__links-nav {
+.nav__small .nav-links-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1276,31 +1273,31 @@ a.tool-btn {
           flex-direction: column;
 }
 
-.nav__small .nav__links-nav a {
+.nav__small .nav-links-nav a {
   font-size: 18px;
   line-height: 1.2em;
   font-weight: 700;
   color: #D71549;
 }
 
-.nav__small .nav__links-nav div {
+.nav__small .nav-links-nav div {
   padding: 5px;
   border-bottom: 1px solid #d6c9c9;
 }
 
-.nav__small .nav__links-nav div:hover {
+.nav__small .nav-links-nav div:hover {
   background-color: #E0E5F1;
 }
 
-.nav__small .nav__links-admin {
+.nav__small .nav-links-admin {
   display: none;
 }
 
-.nav__small .nav__links-button-admin {
+.nav__small .nav-links-button-admin {
   display: block;
 }
 
-.nav__small .nav__links-button button {
+.nav__small .nav-links-button button {
   border: none;
   background-color: transparent;
   color: #D71549;
@@ -1314,7 +1311,7 @@ a.tool-btn {
   .nav__small {
     display: none;
   }
-  .nav {
+  .nav__large {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1326,26 +1323,28 @@ a.tool-btn {
     background-color: #e8eef2;
     -webkit-box-shadow: 0 3px 6px 0 #e1e1e1;
             box-shadow: 0 3px 6px 0 #e1e1e1;
-    padding: 0 50px;
+    padding: 10px 50px;
   }
-  .nav__logo {
+  .nav__large__logo {
     padding: 20px;
   }
-  .nav__logo img {
+  .nav__large__logo img {
     width: 25px;
     height: auto;
     margin-right: 20px;
     padding: 10px 0;
     vertical-align: middle;
   }
-  .nav__logo a {
+  .nav__large__logo a {
     color: #58bacc;
     font-weight: 500;
   }
-  .nav__logo a:hover {
-    font-variant: small-caps;
+  .nav__large__logo a:hover {
+    color: #58bacc;
+    font-weight: 500;
+    text-decoration: none;
   }
-  .nav__links {
+  .nav__large .nav-links {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1355,34 +1354,34 @@ a.tool-btn {
             flex-direction: row;
     padding: 30px 20px;
   }
-  .nav__links a {
+  .nav__large .nav-links a {
     font-size: 15px;
     margin: 0 10px;
   }
-  .nav__links-admin {
+  .nav__large .nav-links-admin {
     margin-left: 100px;
   }
-  .nav__links-admin img {
+  .nav__large .nav-links-admin img {
     vertical-align: middle;
     width: 30px;
     height: auto;
   }
-  .nav__links-nav {
+  .nav__large .nav-links-nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .nav__links-nav a {
+  .nav__large .nav-links-nav a {
     color: #37393a;
     font-weight: 700;
   }
-  .nav__links-nav div {
+  .nav__large .nav-links-nav div {
     position: relative;
   }
-  .nav__links-nav div .animate-left {
+  .nav__large .nav-links-nav div .animate-left {
     color: #D71549;
   }
-  .nav__links-nav div .animate-left:after {
+  .nav__large .nav-links-nav div .animate-left:after {
     content: "";
     position: absolute;
     width: 0;
@@ -1394,32 +1393,26 @@ a.tool-btn {
     transition: width 0.5s ease;
     -webkit-transition: width 0.5s ease;
   }
-  .nav__links-nav div .animate-left:hover {
+  .nav__large .nav-links-nav div .animate-left:hover {
     color: #37393a;
     text-transform: uppercase;
+    text-decoration: none;
   }
-  .nav__links-nav div .animate-left:hover:after {
+  .nav__large .nav-links-nav div .animate-left:hover:after {
     width: 100%;
     left: 0;
     background: #000;
   }
-  .nav__links-button-admin {
+  .nav__large .nav-links-button-admin {
     display: none;
   }
-  .nav__links-button button {
+  .nav__large .nav-links-button button {
     border: none;
     background-color: #e8eef2;
     color: #37393a;
     font-size: 15px;
     font-weight: 700;
     line-height: 1.2em;
-    cursor: pointer;
-  }
-  .nav-button button {
-    border: none;
-    background-color: #e8eef2;
-    color: #37393a;
-    font-size: 15px;
     cursor: pointer;
   }
 }
@@ -1593,7 +1586,7 @@ a.tool-btn {
   vertical-align: 40%;
 }
 
-.accordion__title .accordion__noresults {
+.accordion__noresults {
   color: #37393a;
   font-weight: 600;
   border: 1px solid #DDE2E5;
@@ -1601,7 +1594,7 @@ a.tool-btn {
   border-radius: 10px;
 }
 
-.accordion__title .accordion__content {
+.accordion__content {
   font-weight: 400;
   font-size: 15px;
   padding: 10px 10px;
@@ -1621,7 +1614,7 @@ a.tool-btn {
           flex-direction: column;
 }
 
-.accordion__title .accordion__content-line {
+.accordion__content-line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1631,35 +1624,35 @@ a.tool-btn {
           flex-direction: column;
 }
 
-.accordion__title .accordion__content-item {
+.accordion__content-item {
   border-bottom: 1px solid #d2d3d5;
 }
 
-.accordion__title .accordion__content-item, .accordion__title .accordion__content-desc {
+.accordion__content-item, .accordion__content-desc {
   margin: 10px;
 }
 
-.accordion__title .accordion__content-label, .accordion__title .accordion__content-desc-label {
+.accordion__content-label, .accordion__content-desc-label {
   width: 300px;
   font-weight: 700;
 }
 
-.accordion__title .accordion__content-value {
+.accordion__content-value {
   text-align: right;
   padding-right: 10px;
 }
 
-.accordion__title .accordion__content-desc-label {
+.accordion__content-desc-label {
   width: 100%;
   border-bottom: 1px solid #d2d3d5;
 }
 
-.accordion__title .accordion__content-desc-value {
+.accordion__content-desc-value {
   padding: 20px;
   background-color: #EFF1F7;
 }
 
-.accordion__title .accordion__content-button {
+.accordion__content-button {
   margin: 20px auto;
   border: 1px solid #d2d3d5;
   border-radius: 5px;
@@ -1671,41 +1664,41 @@ a.tool-btn {
   padding: 10px 5px;
 }
 
-.accordion__title .accordion__content-button:hover {
+.accordion__content-button:hover {
   color: #58bacc;
 }
 
-.accordion__title .accordion__content-button a {
+.accordion__content-button a {
   color: #D71549;
 }
 
-.accordion__title .accordion__content-button a:hover {
+.accordion__content-button a:hover {
   color: #58bacc;
 }
 
 @media (min-width: 700px) {
-  .accordion__title .accordion {
+  .accordion {
     margin: 0 100px;
   }
-  .accordion__title .accordion__title {
+  .accordion__title {
     padding: 30px 80px;
     font-size: 18px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .accordion__title .accordion__title-project {
+  .accordion__title-project {
     font-weight: 700;
   }
-  .accordion__title .accordion__title-status img {
+  .accordion__title-status img {
     margin-right: 10px;
     vertical-align: middle;
     width: 30px;
   }
-  .accordion__title .accordion__title-status-title {
+  .accordion__title-status-title {
     margin-right: 15px;
   }
-  .accordion__title .accordion__content {
+  .accordion__content {
     padding: 30px 80px;
   }
 }
@@ -1738,6 +1731,7 @@ a.tool-btn {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 700px) {

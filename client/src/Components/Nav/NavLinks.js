@@ -20,30 +20,30 @@ export default function Nav() {
 
   return (
     <>
-      <div className="nav__links">
-        <div className="nav__links-nav">
+      <div className="nav-links">
+        <div className="nav-links-nav">
           <div>
             <NavLink to="/projects" className="animate-left">
               Project List
             </NavLink>
           </div>
-          <div className="nav__links-button">
+          <div className="nav-links-button">
             <button onClick={() => setOpenVoting()} className="animate-left">
               Vote on Projects
             </button>
           </div>
-          <div className="nav__links-button">
+          <div className="nav-links-button">
             <button onClick={() => setOpenSignUps()} className="animate-left">
               Sign Up for Projects
             </button>
           </div>
-          <div className="nav__links-button-admin">
+          <div className="nav-links-button-admin">
             <NavLink to="/admin" className="animate-left">
               Admin
             </NavLink>
           </div>
         </div>
-        <div className="nav__links-admin">
+        <div className="nav-links-admin">
           <img src={AdminLogo} alt="Admin Button" />
           <NavLink to="/admin">ADMIN</NavLink>
         </div>
