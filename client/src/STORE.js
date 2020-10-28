@@ -11,9 +11,9 @@ export default {
       max_team_members: 5,
       status: "open vote",
       tech_stack: ["React", "Python"],
-      date: "10/20/2020",
-      vote: 0,
       sign_up: 0,
+      vote: 0,
+      date: "10/20/2020",
     },
     {
       project_id: 2,
@@ -42,8 +42,8 @@ export default {
       status: "open vote",
       tech_stack: ["COBOL", "CICS"],
       sign_up: 2,
-      date: "10/20/2020",
       vote: 4,
+      date: "10/20/2020",
     },
     {
       project_id: 4,
@@ -56,6 +56,9 @@ export default {
       max_team_members: 5,
       status: "completed",
       tech_stack: ["COBOL", "CICS"],
+      sign_up: 2,
+      vote: 4,
+      date: "10/20/2020",
     },
     {
       project_id: 5,
@@ -68,6 +71,9 @@ export default {
       max_team_members: 5,
       status: "sign up",
       tech_stack: ["React", "Python"],
+      sign_up: 2,
+      vote: 4,
+      date: "10/20/2020",
     },
     {
       project_id: 6,
@@ -80,6 +86,9 @@ export default {
       max_team_members: 5,
       status: "sign up",
       tech_stack: ["React", "Python"],
+      sign_up: 2,
+      vote: 4,
+      date: "10/20/2020",
     },
     {
       project_id: 7,
@@ -92,6 +101,9 @@ export default {
       max_team_members: 5,
       status: "sign up",
       tech_stack: ["React", "Python"],
+      sign_up: 2,
+      vote: 4,
+      date: "10/20/2020",
     },
     {
       project_id: 8,
@@ -104,6 +116,9 @@ export default {
       max_team_members: 5,
       status: "open vote",
       tech_stack: ["COBOL", "CICS"],
+      sign_up: 2,
+      vote: 4,
+      date: "10/20/2020",
     },
     {
       project_id: 9,
@@ -116,6 +131,9 @@ export default {
       max_team_members: 5,
       status: "open vote",
       tech_stack: ["COBOL", "CICS"],
+      sign_up: 2,
+      vote: 4,
+      date: "10/20/2020",
     },
     {
       project_id: 10,
@@ -128,6 +146,9 @@ export default {
       max_team_members: 5,
       status: "open vote",
       tech_stack: ["COBOL", "CICS"],
+      sign_up: 2,
+      vote: 4,
+      date: "10/20/2020",
     },
   ],
 };
