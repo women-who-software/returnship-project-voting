@@ -1,3 +1,5 @@
-node_modules
-returnship-project-voting/.idea
-returnship-project-voting/venv
+api/.idea/workspace.xml
+api/project.db
+api/__pycache__/__init__.cpython-37.pyc
+api/__pycache__/app.cpython-37.pyc
+api/__pycache__/models.cpython-37.pyc
