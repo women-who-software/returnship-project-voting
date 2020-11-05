@@ -20,7 +20,7 @@ export default function AdminPanelHeader() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="">
-            <Nav.Link href="/" className="">
+            <Nav.Link href="/admin" className="">
               <img
                 src="https://github.com/wwcodecolorado/returnship-project-voting/blob/master/client/assets/icons/login%20icon.png?raw=true"
                 alt="Profile Icon"
