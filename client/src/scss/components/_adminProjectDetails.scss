@@ -1,0 +1,12 @@
+.admin_project_details {
+  display: flex;
+  flex-direction: row;
+
+  &__container {
+    background-color: grey; // Remove
+    flex-direction: column;
+    width: 85.2vw;
+    height: 100vh;
+    float: right;
+  }
+}

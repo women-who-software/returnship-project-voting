@@ -12,11 +12,13 @@ export default function AdminProjectDetails(props) {
   return (
     <>
       <AdminPanelHeader />
-      <div className="row">
-        <div className="col">
+      <div className="sideBar__row admin_project_details">
+        <div className="sideBar__col">
           <SideBar />
         </div>
-        <div className="col">Hello World</div>
+        <div className="sideBar__col admin_project_details__container">
+          Hello World
+        </div>
       </div>
     </>
   );
