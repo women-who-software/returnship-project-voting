@@ -3,7 +3,8 @@ export default {
     {
       project_id: 1,
       project_name: "Career Returnship App",
-      project_desc: "This is a really long description for Project 1",
+      project_desc:
+        "This is a really long description for Project 1. Lorem ipsum dolor sit amet, sit illud posse porro at, ex has regione sententiae, adhuc habemus vis in. Eos id suas moderatius, in vero mutat omnesque sed, ex graeci fabulas ius. Aeque tation appellantur ad nec, cum reque congue te. Ei nec aeque dicunt, per te sale indoctum mnesarchum. Mea lucilius disputando cu.",
       client_name: "John Doe",
       client_email: "johndoe@gmail.com",
       client_company: "Doe Enterprises",
@@ -14,13 +15,16 @@ export default {
       sign_up: 0,
       vote: 0,
       date: "10/20/2020",
+      members_voted: "[{name: Jane Doe, contact_info: janedoe@gmail.com}]",
+      members_signed_up: "[{name: Jane Doe, contact_info: janedoe@gmail.com}]",
     },
     {
       project_id: 2,
       project_name: "ProjectHub App",
-      project_desc: "This is a really long description for Project 2",
-      client_name: "John Doe",
-      client_email: "johndoe@gmail.com",
+      project_desc:
+        "This is a really long description for Project 2. Causae ornatus epicuri cu ius. Et nam purto deterruisset, quo mediocrem expetenda theophrastus ea. Usu in quod libris ocurreret, everti suscipit ex qui. In harum legimus repudiandae pro, qui ea alia elit maiorum, vix no soluta adolescens.",
+      client_name: "Steve Madden",
+      client_email: "steve_madden@gmail.com",
       client_company: "Doe Enterprises",
       client_phone: "3035551212",
       max_team_members: 5,
@@ -33,9 +37,10 @@ export default {
     {
       project_id: 3,
       project_name: "Delish App",
-      project_desc: "This is a really long description for Project 3",
-      client_name: "John Doe",
-      client_email: "johndoe@gmail.com",
+      project_desc:
+        "This is a really long description for Project 3. Causae ornatus epicuri cu ius. Et nam purto deterruisset, quo mediocrem expetenda theophrastus ea. Usu in quod libris ocurreret, everti suscipit ex qui. In harum legimus repudiandae pro, qui ea alia elit maiorum, vix no soluta adolescens.",
+      client_name: "Sally White",
+      client_email: "sally_white@gmail.com",
       client_company: "Doe Enterprises",
       client_phone: "3035551212",
       max_team_members: 5,
@@ -48,7 +53,8 @@ export default {
     {
       project_id: 4,
       project_name: "Special App",
-      project_desc: "This is a really long description for Project 4",
+      project_desc:
+        "This is a really long description for Project 4. Causae ornatus epicuri cu ius. Et nam purto deterruisset, quo mediocrem expetenda theophrastus ea. Usu in quod libris ocurreret, everti suscipit ex qui. In harum legimus repudiandae pro, qui ea alia elit maiorum, vix no soluta adolescens.",
       client_name: "John Doe",
       client_email: "johndoe@gmail.com",
       client_company: "Doe Enterprises",
@@ -63,7 +69,8 @@ export default {
     {
       project_id: 5,
       project_name: "New Project 5",
-      project_desc: "This is a really long description for Project 5",
+      project_desc:
+        "This is a really long description for Project 5. Causae ornatus epicuri cu ius. Et nam purto deterruisset, quo mediocrem expetenda theophrastus ea. Usu in quod libris ocurreret, everti suscipit ex qui. In harum legimus repudiandae pro, qui ea alia elit maiorum, vix no soluta adolescens.",
       client_name: "John Doe",
       client_email: "johndoe@gmail.com",
       client_company: "Doe Enterprises",
@@ -78,7 +85,8 @@ export default {
     {
       project_id: 6,
       project_name: "New Project 6",
-      project_desc: "This is a really long description for Project 6",
+      project_desc:
+        "This is a really long description for Project 6. Causae ornatus epicuri cu ius. Et nam purto deterruisset, quo mediocrem expetenda theophrastus ea. Usu in quod libris ocurreret, everti suscipit ex qui. In harum legimus repudiandae pro, qui ea alia elit maiorum, vix no soluta adolescens.",
       client_name: "John Doe",
       client_email: "johndoe@gmail.com",
       client_company: "Doe Enterprises",
@@ -93,7 +101,8 @@ export default {
     {
       project_id: 7,
       project_name: "New Project 7",
-      project_desc: "This is a really long description for Project 7",
+      project_desc:
+        "This is a really long description for Project 7. Causae ornatus epicuri cu ius. Et nam purto deterruisset, quo mediocrem expetenda theophrastus ea. Usu in quod libris ocurreret, everti suscipit ex qui. In harum legimus repudiandae pro, qui ea alia elit maiorum, vix no soluta adolescens.",
       client_name: "John Doe",
       client_email: "johndoe@gmail.com",
       client_company: "Doe Enterprises",
@@ -108,7 +117,8 @@ export default {
     {
       project_id: 8,
       project_name: "New Project 8",
-      project_desc: "This is a really long description for Project 8",
+      project_desc:
+        "This is a really long description for Project 8. Causae ornatus epicuri cu ius. Et nam purto deterruisset, quo mediocrem expetenda theophrastus ea. Usu in quod libris ocurreret, everti suscipit ex qui. In harum legimus repudiandae pro, qui ea alia elit maiorum, vix no soluta adolescens.",
       client_name: "John Doe",
       client_email: "johndoe@gmail.com",
       client_company: "Doe Enterprises",
@@ -123,7 +133,8 @@ export default {
     {
       project_id: 9,
       project_name: "New Project 9",
-      project_desc: "This is a really long description for Project 9",
+      project_desc:
+        "This is a really long description for Project 9. Causae ornatus epicuri cu ius. Et nam purto deterruisset, quo mediocrem expetenda theophrastus ea. Usu in quod libris ocurreret, everti suscipit ex qui. In harum legimus repudiandae pro, qui ea alia elit maiorum, vix no soluta adolescens.",
       client_name: "John Doe",
       client_email: "johndoe@gmail.com",
       client_company: "Doe Enterprises",
@@ -138,7 +149,8 @@ export default {
     {
       project_id: 10,
       project_name: "New Project 10",
-      project_desc: "This is a really long description for Project 10",
+      project_desc:
+        "This is a really long description for Project 10. Causae ornatus epicuri cu ius. Et nam purto deterruisset, quo mediocrem expetenda theophrastus ea. Usu in quod libris ocurreret, everti suscipit ex qui. In harum legimus repudiandae pro, qui ea alia elit maiorum, vix no soluta adolescens.",
       client_name: "John Doe",
       client_email: "johndoe@gmail.com",
       client_company: "Doe Enterprises",
