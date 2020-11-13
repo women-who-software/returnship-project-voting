@@ -3,10 +3,12 @@
   flex-direction: row;
 
   &__container {
+    display: flex;
     background-color: grey; // Remove
     flex-direction: column;
     width: 85.2vw;
     height: 100vh;
-    float: right;
+    // float: right;
+
   }
 }

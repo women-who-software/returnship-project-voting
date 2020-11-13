@@ -1,16 +1,27 @@
 .adminEditProjectForm_container {
   background-color: #fff;
   display: flex;
-  flex-direction: column;
-  width: 70vw;
-  place-content: center;
+  // flex-direction: column;
+  // width: 70vw;
+  justify-content: center;
 }
 .adminEditProjectForm_form_row {
+  display: flex;
   flex-direction: row;
-  background-color: palegreen;
+  // background-color: palegreen;
 }
 .adminEditProjectForm_form_col {
   display: flex;
   flex-direction: column;
-  background-color: purple;
+  margin-right: 5.5rem !important;
+  // background-color: purple;
+}
+input {
+  border-radius: 8px;
+  width: 17rem;
+}
+textarea {
+  border-radius: 8px;
+  width: max-content;
+  padding: 2rem 3.5rem;
 }

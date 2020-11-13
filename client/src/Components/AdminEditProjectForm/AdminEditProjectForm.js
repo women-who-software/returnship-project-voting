@@ -55,6 +55,8 @@ const AdminEditProjectForm = (props) => {
                 value={clientEmail.value}
                 // onChange={}
               />
+            </div>
+            <div className="adminEditProjectForm_form_row">
               <div className="adminEditProjectForm_form_col">
                 <label>Company Name</label>
                 <input
@@ -74,21 +76,104 @@ const AdminEditProjectForm = (props) => {
                 />
               </div>
             </div>
-            <div className="adminEditProjectForm_form_row">
-              <div className="adminEditProjectForm_form_col">
-                <label>Project Description</label>
-                <textarea
-                  name="project_desc"
-                  rows="8"
-                  cols="63"
-                  value={projectDesc.value}
-                >
-                  It was a dark and stormy night...
-                </textarea>
+          </div>
+          <div className="adminEditProjectForm_form_row">
+            <div className="adminEditProjectForm_form_col">
+              <label>Project Description</label>
+              <textarea
+                name="project_desc"
+                rows="8"
+                cols="63"
+                value={projectDesc.value}
+              >
+                It was a dark and stormy night...
+              </textarea>
+            </div>
+          </div>
+          {/* Tech Stack */}
+          <div className="adminEditProjectForm_form_row">
+            <div className="adminEditProjectForm_form_col">
+              <div>
+                <input
+                  type="checkbox"
+                  name="langs"
+                  id="langs_python"
+                  value="Python"
+                />
+                <label for="langs_langs_python">Python</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="langs"
+                  id="langs_javascript"
+                  value="JavaScript"
+                />
+                <label for="langs_javascript">JavaScript</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="langs"
+                  id="langs_java"
+                  value="Java"
+                />
+                <label for="langs_java">Java</label>
+              </div>
+            </div>
+            <div className="adminEditProjectForm_form_col">
+              <div>
+                <input type="checkbox" name="langs" id="langs_c#" value="C#" />{" "}
+                <label for="langs_php">C#</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="langs"
+                  id="langs_php"
+                  value="PHP"
+                />{" "}
+                <label for="langs_php">PHP</label>
+              </div>{" "}
+              <div>
+                <input type="checkbox" name="langs" id="langs_" value="C++" />
+                <label for="langs_php">C++</label>
               </div>
             </div>
           </div>
-          {/* </div> */}
+          {/* Project Status */}
+          <div className="adminEditProjectForm_form_row">
+            <div className="adminEditProjectForm_form_col">
+              <div>
+                <input type="checkbox" name="langs" id="langs_c#" value="C#" />
+                <label for="langs_php">Sign Up</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="langs"
+                  id="langs_php"
+                  value="PHP"
+                />{" "}
+                <label for="langs_php">Active</label>
+              </div>
+            </div>
+            <div className="adminEditProjectForm_form_col">
+              <div>
+                <input type="checkbox" name="langs" id="langs_c#" value="C#" />
+                <label for="langs_php">Open Vote</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="langs"
+                  id="langs_php"
+                  value="PHP"
+                />{" "}
+                <label for="langs_php">Completed</label>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </>
