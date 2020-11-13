@@ -1,0 +1,15 @@
+.adminEditProjectForm_container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+}
+.adminEditProjectForm_form_row {
+  flex-direction: row;
+  background-color: palegreen;
+}
+.adminEditProjectForm_form_col {
+  display: flex;
+  flex-direction: column;
+  background-color: purple;
+}
