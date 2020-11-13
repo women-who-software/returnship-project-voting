@@ -41,7 +41,7 @@ export default function ProjectsPage() {
             </li>
             <li>
               In development projects may still accept members.{" "}
-              <strong>contact us</strong> to find out how to get invloved.
+              <strong>contact us</strong> to find out how to get involved.
             </li>
           </ol>
         </div>
