@@ -1,0 +1,20 @@
+.adminEditProjectForm {
+  &__header {
+    background-color: #e0e5f0;
+    width: 76.97rem;
+    height: 7rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &__btn {
+    height: 40px;
+    border-radius: 8px;
+    // margin: 12px 32px;
+    // background-color: #d71549;
+  }
+  &__btn :focus,
+  &__btn:hover {
+    background-color: #d71549;
+    color: whitesmoke;
+  }
+}
