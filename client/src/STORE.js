@@ -15,8 +15,38 @@ export default {
       sign_up: 0,
       vote: 0,
       date: "10/20/2020",
-      members_voted: "[{name: Jane Doe, contact_info: janedoe@gmail.com}]",
-      members_signed_up: "[{name: Jane Doe, contact_info: janedoe@gmail.com}]",
+      table_vote: [
+        {
+          table_vote_id: 1,
+          project_id: 1,
+          voter_name: "Kathy",
+          voter_slack_name: "CodeMeKathy",
+          voter_email: "Kathy@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 1,
+          voter_name: "Kim",
+          voter_slack_name: "KimSlim",
+          voter_email: "Kim@aol.com",
+        },
+      ],
+      table_signup: [
+        {
+          signup_id: 1,
+          project_id: 1,
+          signup_name: "Kathy",
+          signup_github_name: "CodeMeKathy",
+          signup_email: "Kathy@aol.com",
+        },
+        {
+          signup_id: 2,
+          project_id: 1,
+          signup_name: "Kim",
+          signup_github_name: "KimSlim",
+          signup_email: "Kim@aol.com",
+        },
+      ],
     },
     {
       project_id: 2,
@@ -33,6 +63,59 @@ export default {
       sign_up: 3,
       vote: 5,
       date: "10/20/2020",
+      table_vote: [
+        {
+          table_vote_id: 1,
+          project_id: 2,
+          voter_name: "Kathy",
+          voter_slack_name: "Kathy",
+          voter_email: "Kathy@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 2,
+          voter_name: "Kim",
+          voter_slack_name: "Kim",
+          voter_email: "Kim@aol.com",
+        },
+        {
+          table_vote_id: 1,
+          project_id: 3,
+          voter_name: "Kathy",
+          voter_slack_name: "Kathy",
+          voter_email: "Kathy@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 4,
+          voter_name: "Kim",
+          voter_slack_name: "Kim",
+          voter_email: "Kim@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 5,
+          voter_name: "Kim",
+          voter_slack_name: "Kim",
+          voter_email: "Kim@aol.com",
+        },
+      ],
+      table_signup: [
+        {
+          signup_id: 1,
+          project_id: 1,
+          signup_name: "Kathy",
+          signup_github_name: "CodeMeKathy",
+          signup_email: "Kathy@aol.com",
+        },
+        {
+          signup_id: 2,
+          project_id: 1,
+          signup_name: "Kim",
+          signup_github_name: "KimSlim",
+          signup_email: "Kim@aol.com",
+        },
+      ],
     },
     {
       project_id: 3,
@@ -49,6 +132,38 @@ export default {
       sign_up: 2,
       vote: 4,
       date: "10/20/2020",
+      table_vote: [
+        {
+          table_vote_id: 1,
+          project_id: 3,
+          voter_name: "Kathy",
+          voter_slack_name: "Kathy",
+          voter_email: "Kathy@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 3,
+          voter_name: "Kim",
+          voter_slack_name: "Kim",
+          voter_email: "Kim@aol.com",
+        },
+      ],
+      table_signup: [
+        {
+          signup_id: 1,
+          project_id: 1,
+          signup_name: "Kathy",
+          signup_github_name: "CodeMeKathy",
+          signup_email: "Kathy@aol.com",
+        },
+        {
+          signup_id: 2,
+          project_id: 1,
+          signup_name: "Kim",
+          signup_github_name: "KimSlim",
+          signup_email: "Kim@aol.com",
+        },
+      ],
     },
     {
       project_id: 4,
@@ -65,6 +180,38 @@ export default {
       sign_up: 2,
       vote: 4,
       date: "10/20/2020",
+      table_vote: [
+        {
+          table_vote_id: 1,
+          project_id: 4,
+          voter_name: "Kathy",
+          voter_slack_name: "Kathy",
+          voter_email: "Kathy@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 4,
+          voter_name: "Kim",
+          voter_slack_name: "Kim",
+          voter_email: "Kim@aol.com",
+        },
+      ],
+      table_signup: [
+        {
+          signup_id: 1,
+          project_id: 1,
+          signup_name: "Kathy",
+          signup_github_name: "CodeMeKathy",
+          signup_email: "Kathy@aol.com",
+        },
+        {
+          signup_id: 2,
+          project_id: 1,
+          signup_name: "Kim",
+          signup_github_name: "KimSlim",
+          signup_email: "Kim@aol.com",
+        },
+      ],
     },
     {
       project_id: 5,
@@ -81,6 +228,38 @@ export default {
       sign_up: 2,
       vote: 4,
       date: "10/20/2020",
+      table_vote: [
+        {
+          table_vote_id: 1,
+          project_id: 5,
+          voter_name: "Kathy",
+          voter_slack_name: "Kathy",
+          voter_email: "Kathy@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 5,
+          voter_name: "Kim",
+          voter_slack_name: "Kim",
+          voter_email: "Kim@aol.com",
+        },
+      ],
+      table_signup: [
+        {
+          signup_id: 1,
+          project_id: 1,
+          signup_name: "Kathy",
+          signup_github_name: "CodeMeKathy",
+          signup_email: "Kathy@aol.com",
+        },
+        {
+          signup_id: 2,
+          project_id: 1,
+          signup_name: "Kim",
+          signup_github_name: "KimSlim",
+          signup_email: "Kim@aol.com",
+        },
+      ],
     },
     {
       project_id: 6,
@@ -97,6 +276,38 @@ export default {
       sign_up: 2,
       vote: 4,
       date: "10/20/2020",
+      table_vote: [
+        {
+          table_vote_id: 1,
+          project_id: 6,
+          voter_name: "Kathy",
+          voter_slack_name: "Kathy",
+          voter_email: "Kathy@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 6,
+          voter_name: "Kim",
+          voter_slack_name: "Kim",
+          voter_email: "Kim@aol.com",
+        },
+      ],
+      table_signup: [
+        {
+          signup_id: 1,
+          project_id: 1,
+          signup_name: "Kathy",
+          signup_github_name: "CodeMeKathy",
+          signup_email: "Kathy@aol.com",
+        },
+        {
+          signup_id: 2,
+          project_id: 1,
+          signup_name: "Kim",
+          signup_github_name: "KimSlim",
+          signup_email: "Kim@aol.com",
+        },
+      ],
     },
     {
       project_id: 7,
@@ -113,6 +324,38 @@ export default {
       sign_up: 2,
       vote: 4,
       date: "10/20/2020",
+      table_vote: [
+        {
+          table_vote_id: 1,
+          project_id: 7,
+          voter_name: "Kathy",
+          voter_slack_name: "Kathy",
+          voter_email: "Kathy@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 7,
+          voter_name: "Kim",
+          voter_slack_name: "Kim",
+          voter_email: "Kim@aol.com",
+        },
+      ],
+      table_signup: [
+        {
+          signup_id: 1,
+          project_id: 1,
+          signup_name: "Kathy",
+          signup_github_name: "CodeMeKathy",
+          signup_email: "Kathy@aol.com",
+        },
+        {
+          signup_id: 2,
+          project_id: 1,
+          signup_name: "Kim",
+          signup_github_name: "KimSlim",
+          signup_email: "Kim@aol.com",
+        },
+      ],
     },
     {
       project_id: 8,
@@ -129,6 +372,38 @@ export default {
       sign_up: 2,
       vote: 4,
       date: "10/20/2020",
+      table_vote: [
+        {
+          table_vote_id: 1,
+          project_id: 8,
+          voter_name: "Kathy",
+          voter_slack_name: "Kathy",
+          voter_email: "Kathy@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 8,
+          voter_name: "Kim",
+          voter_slack_name: "Kim",
+          voter_email: "Kim@aol.com",
+        },
+      ],
+      table_signup: [
+        {
+          signup_id: 1,
+          project_id: 1,
+          signup_name: "Kathy",
+          signup_github_name: "CodeMeKathy",
+          signup_email: "Kathy@aol.com",
+        },
+        {
+          signup_id: 2,
+          project_id: 1,
+          signup_name: "Kim",
+          signup_github_name: "KimSlim",
+          signup_email: "Kim@aol.com",
+        },
+      ],
     },
     {
       project_id: 9,
@@ -145,6 +420,38 @@ export default {
       sign_up: 2,
       vote: 4,
       date: "10/20/2020",
+      table_vote: [
+        {
+          table_vote_id: 1,
+          project_id: 9,
+          voter_name: "Kathy",
+          voter_slack_name: "Kathy",
+          voter_email: "Kathy@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 9,
+          voter_name: "Kim",
+          voter_slack_name: "Kim",
+          voter_email: "Kim@aol.com",
+        },
+      ],
+      table_signup: [
+        {
+          signup_id: 1,
+          project_id: 1,
+          signup_name: "Kathy",
+          signup_github_name: "CodeMeKathy",
+          signup_email: "Kathy@aol.com",
+        },
+        {
+          signup_id: 2,
+          project_id: 1,
+          signup_name: "Kim",
+          signup_github_name: "KimSlim",
+          signup_email: "Kim@aol.com",
+        },
+      ],
     },
     {
       project_id: 10,
@@ -161,6 +468,38 @@ export default {
       sign_up: 2,
       vote: 4,
       date: "10/20/2020",
+      table_vote: [
+        {
+          table_vote_id: 1,
+          project_id: 10,
+          voter_name: "Kathy",
+          voter_slack_name: "Kathy",
+          voter_email: "Kathy@aol.com",
+        },
+        {
+          table_vote_id: 2,
+          project_id: 10,
+          voter_name: "Kim",
+          voter_slack_name: "Kim",
+          voter_email: "Kim@aol.com",
+        },
+      ],
+      table_signup: [
+        {
+          signup_id: 1,
+          project_id: 1,
+          signup_name: "Kathy",
+          signup_github_name: "CodeMeKathy",
+          signup_email: "Kathy@aol.com",
+        },
+        {
+          signup_id: 2,
+          project_id: 1,
+          signup_name: "Kim",
+          signup_github_name: "KimSlim",
+          signup_email: "Kim@aol.com",
+        },
+      ],
     },
   ],
 };
