@@ -60,9 +60,13 @@ const AdminEditProjectForm = (props) => {
   ));
   return (
     <>
-      <div className="adminEditProjectForm__container">
+      <div
+        className="adminEditProjectForm__container"
+        key={project.project_id}
+        project={project}
+      >
         <FormHeader project={project} />
-        <form action="" className="">
+        <form action="" className="" key={project.project_id}>
           <div className="adminEditProjectForm__form_row">
             <div className="adminEditProjectForm__form_col">
               <label htmlFor="">Contact Name</label>
@@ -201,7 +205,10 @@ const AdminEditProjectForm = (props) => {
               </div>
             </div>
           </div>
-          <div className="member_data__container">
+          <div
+            className="member_data__container"
+            key={project.table_vote.table_vote_id}
+          >
             <div className="adminEditProjectForm__form_row">
               <h3 className="adminEditProjectForm__section_header">
                 Member Data
@@ -212,17 +219,20 @@ const AdminEditProjectForm = (props) => {
                 Team Members Voted
               </span>
             </div>
-            <table>
+            <table key={project.table_vote.table_vote_id}>
               <thead className="adminEditProjectForm__table_header">
-                <th>
-                  <h5>Name</h5>
-                </th>
-                <th>
-                  <h5>Slack Handle || Email</h5>
-                </th>
+                <tr>
+                  <th>
+                    <h5>Name</h5>
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                    <h5>Slack Handle || Email</h5>
+                  </th>
+                </tr>
               </thead>
-              <tbody>
-                {/* <tr>{getMembersVoted}</tr> */}
+              <tbody key={project.table_vote.table_vote_id}>
                 {getMembersVoted}
                 <tr className="adminEditProjectForm__horizontal_line"></tr>
                 {getMembersSignedUp}
@@ -235,15 +245,21 @@ const AdminEditProjectForm = (props) => {
             </div>
             <table>
               <thead className="adminEditProjectForm__table_header">
-                <th>
-                  <h5>Name</h5>
-                </th>
-                <th>
-                  <h5>GitHub Handle</h5>
-                </th>
-                <th>
-                  <h5>Email</h5>
-                </th>
+                <tr>
+                  <th>
+                    <h5>Name</h5>
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                    <h5>GitHub Handle</h5>
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                    <h5>Email</h5>
+                  </th>
+                </tr>
               </thead>
               <tbody>
                 <tr className="adminEditProjectForm__horizontal_line"></tr>
