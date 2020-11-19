@@ -1,7 +1,6 @@
 // Import React Packages
 import React, { useContext } from "react";
 
-
 // Import Custom Components
 import AdminPanelHeader from "../AdminPanelHeader/AdminPanelHeader";
 import SideBar from "../SideBar/SideBar";
@@ -13,20 +12,19 @@ export default function AdminProjectDetails(props) {
   return (
     <>
       <AdminPanelHeader />
-      <div className="sideBar__row admin_project_details">
-        <div className="sideBar__col">
+      <div className="admin_project_details__sideBar_row admin_project_details__container">
+        <div className="admin_project_details__sideBar_col">
           <SideBar />
         </div>
-        <div className="sideBar__col admin_project_details__container">
+        <div className="admin_project_details__sideBar_col admin_project_details__form_container">
           <AdminEditProjectForm
-          project={project}
-          // key={project.project_id} // TODO: Remove?
+            project={project}
+            // key={project.project_id} // TODO: Remove?
           />
         </div>
       </div>
     </>
   );
-  // }
 }
 
 // {/* <section className="">

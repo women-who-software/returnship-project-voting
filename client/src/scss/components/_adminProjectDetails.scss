@@ -1,14 +1,30 @@
-.admin_project_details {
-  display: flex;
-  flex-direction: row;
+// .admin_project_details {
+//   display: flex;
+//   flex-direction: row;
 
+//   &__container {
+//     display: flex;
+//     background-color: grey; // Remove
+//     flex-direction: column;
+//     // width: 85.2%;
+//     height: 100%;
+//     // justify-content: center;
+//     margin: 0 auto;
+//   }
+// }
+
+.admin_project_details {
   &__container {
     display: flex;
-    background-color: grey; // Remove
-    flex-direction: column;
-    width: 85.2vw;
-    height: 100vh;
-    // float: right;
+    flex-direction: row;
 
+    // background-color: grey; // Remove
+    // width: 80%;
+    // float: right;
+  }
+  &__form_container {
+    display: flex;
+    justify-content: center;
+    height: 110%;
   }
 }
