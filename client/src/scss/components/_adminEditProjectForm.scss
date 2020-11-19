@@ -1,27 +1,60 @@
-.adminEditProjectForm_container {
-  background-color: #fff;
-  display: flex;
-  // flex-direction: column;
-  // width: 70vw;
-  justify-content: center;
+.adminEditProjectForm {
+  &__container {
+    // background-color: #fff;
+    // margin: 0 auto;
+    height: 100%;
+  }
+  &__form_row {
+    display: flex;
+    flex-direction: row;
+    // background-color: palegreen;
+  }
+  &__form_col {
+    display: flex;
+    flex-direction: column;
+    // margin-right: 5.5rem !important;
+    // background-color: purple;
+  }
+  &__contact_info {
+    border-radius: 8px;
+    width: 17rem;
+  }
+  &__textarea {
+    border-radius: 8px;
+    width: max-content;
+    padding: 2rem 3.5rem;
+  }
+  &__section_header {
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+  &__section_sub_header {
+    font-size: 14px;
+    line-height: 16px;
+    color: #434447;
+  }
+  &__horizontal_line {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
-.adminEditProjectForm_form_row {
-  display: flex;
-  flex-direction: row;
-  // background-color: palegreen;
+
+table {
+  // background-color: #e0e5f0;
+  width: 76.97rem;
 }
-.adminEditProjectForm_form_col {
-  display: flex;
-  flex-direction: column;
-  margin-right: 5.5rem !important;
-  // background-color: purple;
+thead {
+  background-color: #e0e5f0;
+  color: #434447;
+  // width: 76.97rem;
 }
-input {
-  border-radius: 8px;
-  width: 17rem;
+.members_voted__member_data {
+  border-bottom: 1px solid #0000001a;
+  font-size: 18px;
+  line-height: 48px;
+  color: #434447;
 }
-textarea {
-  border-radius: 8px;
-  width: max-content;
-  padding: 2rem 3.5rem;
+// #2D3748
+.adminEditProjectForm__table_header {
+  border-top: 1px solid #2d3748;
 }

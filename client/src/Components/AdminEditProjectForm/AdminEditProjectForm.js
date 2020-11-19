@@ -1,9 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import { GlobalContext } from "../../Context/GlobalContext";
+import FormHeader from "./FormHeader";
 const AdminEditProjectForm = (props) => {
   const { project } = props; //Passed on project based on user click and project_id
   console.log(project);
 
+  const [projectName, setProjectName] = useState({
+    value: project.project_name,
+    touched: "",
+  });
   const [clientName, setClientName] = useState({
     value: project.client_name || "", //pulls in from temp data
     touched: "",
@@ -26,127 +31,149 @@ const AdminEditProjectForm = (props) => {
     touched: "",
   });
   const [membersVoted, setMembersVoted] = useState({
-    value: project.members_voted,
+    value: project.table_vote,
     touched: "",
   });
   const [membersSignedUp, setMembersSignedUp] = useState({
-    value: project.members_signed_up,
+    value: project.table_signup,
     touched: "",
   });
+  console.log(membersVoted.value[0].voter_name);
 
+  // // Get Members Voted Data
+  const getMembersVoted = membersVoted.value.map((member) => (
+    // console.log(member);
+    <tr key={member.project_id}>
+      <td className="members_voted__member_data">{member.voter_name}</td>
+      <td className="members_voted__member_data">{member.voter_slack_name}</td>
+    </tr>
+  ));
+
+  const getMembersSignedUp = membersSignedUp.value.map((member) => (
+    <tr key={member.project_id}>
+      <td className="members_voted__member_data">{member.signup_name}</td>
+      <td className="members_voted__member_data">
+        {member.signup_github_name}
+      </td>
+      <td className="members_voted__member_data">{member.signup_email}</td>
+    </tr>
+  ));
   return (
     <>
-      <h2>{clientName.value}</h2>
-      <div className="adminEditProjectForm_container">
+      <div className="adminEditProjectForm__container">
+        <FormHeader project={project} />
         <form action="" className="">
-          <div className="adminEditProjectForm_form_row">
-            <div className="adminEditProjectForm_form_col">
-              <label>Contact Name</label>
+          <div className="adminEditProjectForm__form_row">
+            <div className="adminEditProjectForm__form_col">
+              <label htmlFor="">Contact Name</label>
               <input
+                className="adminEditProjectForm__contact_info"
                 type="text"
                 name="client_name"
-                value={clientName.value}
+                defaultValue={clientName.value}
                 // onChange={}
               />
-              <label>Contact Email</label>
+              <label htmlFor="">Contact Email</label>
               <input
+                className="adminEditProjectForm__contact_info"
                 type="text"
                 name="client_email"
-                value={clientEmail.value}
+                defaultValue={clientEmail.value}
                 // onChange={}
               />
             </div>
-            <div className="adminEditProjectForm_form_row">
-              <div className="adminEditProjectForm_form_col">
-                <label>Company Name</label>
+            <div className="adminEditProjectForm__form_row">
+              <div className="adminEditProjectForm__form_col">
+                <label htmlFor="">Company Name</label>
                 <input
+                  className="adminEditProjectForm__contact_info"
                   type="text"
                   name="client_company"
-                  value={clientCompany.value}
+                  defaultValue={clientCompany.value}
                   // onChange={}
                 />
-                <label>
+                <label htmlFor="">
                   Project Start Date <span>xxx-xxx-xxxx</span>
                 </label>
                 <input
+                  className="adminEditProjectForm__contact_info"
                   type="text"
                   name="client_email"
-                  value={startDate.value}
+                  defaultValue={startDate.value}
                   // onChange={}
                 />
               </div>
             </div>
           </div>
-          <div className="adminEditProjectForm_form_row">
-            <div className="adminEditProjectForm_form_col">
-              <label>Project Description</label>
+          <div className="adminEditProjectForm__form_row">
+            <div className="adminEditProjectForm__form_col">
+              <label htmlFor="">Project Description</label>
               <textarea
+                className="adminEditProjectForm__textarea"
                 name="project_desc"
                 rows="8"
                 cols="63"
-                value={projectDesc.value}
-              >
-                It was a dark and stormy night...
-              </textarea>
+                defaultValue={projectDesc.value}
+              ></textarea>
             </div>
           </div>
           {/* Tech Stack */}
-          <div className="adminEditProjectForm_form_row">
-            <div className="adminEditProjectForm_form_col">
+          <div className="adminEditProjectForm__form_row">
+            <div className="adminEditProjectForm__form_col">
               <div>
                 <input
                   type="checkbox"
                   name="langs"
                   id="langs_python"
-                  value="Python"
+                  defaultValue="Python"
                 />
-                <label for="langs_langs_python">Python</label>
+                <label htmlFor="langs_langs_python">Python</label>
               </div>
               <div>
                 <input
                   type="checkbox"
                   name="langs"
                   id="langs_javascript"
-                  value="JavaScript"
+                  defaultValue="JavaScript"
                 />
-                <label for="langs_javascript">JavaScript</label>
+                <label htmlFor="langs_javascript">JavaScript</label>
               </div>
               <div>
                 <input
                   type="checkbox"
                   name="langs"
                   id="langs_java"
-                  value="Java"
+                  defaultValue="Java"
                 />
-                <label for="langs_java">Java</label>
+                <label htmlFor="langs_java">Java</label>
               </div>
             </div>
-            <div className="adminEditProjectForm_form_col">
+            <div className="adminEditProjectForm__form_col">
               <div>
                 <input type="checkbox" name="langs" id="langs_c#" value="C#" />{" "}
-                <label for="langs_php">C#</label>
+                <label htmlFor="langs_php">C#</label>
               </div>
               <div>
                 <input
                   type="checkbox"
                   name="langs"
                   id="langs_php"
-                  value="PHP"
-                />{" "}
-                <label for="langs_php">PHP</label>
-              </div>{" "}
+                  defaultValue="PHP"
+                />
+                <label htmlFor="langs_php">PHP</label>
+              </div>
               <div>
                 <input type="checkbox" name="langs" id="langs_" value="C++" />
-                <label for="langs_php">C++</label>
+                <label htmlFor="langs_php">C++</label>
               </div>
             </div>
           </div>
           {/* Project Status */}
-          <div className="adminEditProjectForm_form_row">
-            <div className="adminEditProjectForm_form_col">
+          <div className="adminEditProjectForm__form_row">
+            <div className="adminEditProjectForm__form_col">
               <div>
                 <input type="checkbox" name="langs" id="langs_c#" value="C#" />
-                <label for="langs_php">Sign Up</label>
+                <label htmlFor="langs_php">Sign Up</label>
               </div>
               <div>
                 <input
@@ -155,24 +182,74 @@ const AdminEditProjectForm = (props) => {
                   id="langs_php"
                   value="PHP"
                 />{" "}
-                <label for="langs_php">Active</label>
+                <label htmlFor="langs_php">Active</label>
               </div>
             </div>
-            <div className="adminEditProjectForm_form_col">
+            <div className="adminEditProjectForm__form_col">
               <div>
                 <input type="checkbox" name="langs" id="langs_c#" value="C#" />
-                <label for="langs_php">Open Vote</label>
+                <label htmlFor="langs_php">Open Vote</label>
               </div>
               <div>
                 <input
                   type="checkbox"
                   name="langs"
                   id="langs_php"
-                  value="PHP"
-                />{" "}
-                <label for="langs_php">Completed</label>
+                  defaultValue="PHP"
+                />
+                <label htmlFor="langs_php">Completed</label>
               </div>
             </div>
+          </div>
+          <div className="member_data__container">
+            <div className="adminEditProjectForm__form_row">
+              <h3 className="adminEditProjectForm__section_header">
+                Member Data
+              </h3>
+            </div>
+            <div className="adminEditProjectForm__form_row">
+              <span className="adminEditProjectForm__section_sub_header">
+                Team Members Voted
+              </span>
+            </div>
+            <table>
+              <thead className="adminEditProjectForm__table_header">
+                <th>
+                  <h5>Name</h5>
+                </th>
+                <th>
+                  <h5>Slack Handle || Email</h5>
+                </th>
+              </thead>
+              <tbody>
+                {/* <tr>{getMembersVoted}</tr> */}
+                {getMembersVoted}
+                <tr className="adminEditProjectForm__horizontal_line"></tr>
+                {getMembersSignedUp}
+              </tbody>
+            </table>
+            <div className="adminEditProjectForm__form_row">
+              <span className="adminEditProjectForm__section_sub_header">
+                Team Members Signed Up
+              </span>
+            </div>
+            <table>
+              <thead className="adminEditProjectForm__table_header">
+                <th>
+                  <h5>Name</h5>
+                </th>
+                <th>
+                  <h5>GitHub Handle</h5>
+                </th>
+                <th>
+                  <h5>Email</h5>
+                </th>
+              </thead>
+              <tbody>
+                <tr className="adminEditProjectForm__horizontal_line"></tr>
+                {getMembersSignedUp}
+              </tbody>
+            </table>
           </div>
         </form>
       </div>
