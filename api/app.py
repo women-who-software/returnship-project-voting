@@ -137,6 +137,7 @@ class Vote(db.Model):
     voter_email = db.Column(db.String(100), primary_key=True)
 
     def __init__(self, project_id, voter_email, voter_name=None, voter_slack_name=None):
+        self.project_id = project_id
         self.voter_name = voter_name
         self.voter_slack_name = voter_slack_name
         self.voter_email = voter_email
@@ -145,7 +146,7 @@ class Vote(db.Model):
         return '<Vote %r>' % self.voter_name
 
     def serialize(self):
-        return {'voter_name': self.voter_name, 'voter_slack_name': self.voter_slack_name, 'voter_email': self.voter_email}
+        return {'voter_name': self.voter_name, 'voter_slack_name': self.voter_slack_name, 'voter_email': self.voter_email, 'project_id': self.project_id}
 
 
 # method for adding vote
@@ -175,16 +176,16 @@ def all_vote():
 
 
 # method to read the votes
-@app.route('/api/vote/<project_id>')
-def read_vote(project_id):
-    vote = Vote.query.get(project_id)
-    return jsonify(vote.serialize() if vote else 'no object')
+@app.route('/api/vote/project/<project_id>')
+def read_votes(project_id):
+    rows = [i for i in Vote.query.all() if i.project_id == int(project_id)]
+    return jsonify(list(map(lambda v: v.serialize(), rows)))
 
 
 # method to delete the votes
-@app.route('/api/vote/<project_id>', methods=['DELETE'])
-def delete_vote(project_id):
-    db.session.query(Vote).filter(Vote.project_id == project_id).delete()
+@app.route('/api/vote/<voter_email>', methods=['DELETE'])
+def delete_vote(voter_email):
+    db.session.query(Vote).filter(Vote.voter_email == voter_email).delete()
     db.session.commit()
     return jsonify({'success': True})
 
@@ -303,13 +304,12 @@ def update_project(project_id):
     project_old.project_name = project_new['project_name']
     project_old.project_status = project_new['project_status']
     project_old.project_stack = project_new['project_stack']
-    # TODO дописать остальные поля класса Project
 
     db.session.commit()
     return jsonify(project_old.serialize())
     # "{"project_name": "sdkjfhs", "project_status": "new project"}"
     # t = json.loads("{"project_name": "sdkjfhs", "project_status": "new project"}") -> {"project_name": "sdkjfhs", "project_status": "new project"}
-    # обращаемся к t['project_name'] и получаем (sdkjfhs)
+    # call t['project_name'] and get (sdkjfhs)
 
 
 if __name__ == "__main__":
