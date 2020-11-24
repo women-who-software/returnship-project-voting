@@ -2,19 +2,69 @@
   &__header {
     background-color: #e0e5f0;
     width: 76.97rem;
-    height: 7rem;
+    height: 14.25rem;
     display: flex;
+    flex-direction: column;
+    padding-top: 5.65rem;
+  }
+  &__row {
+    flex-direction: row;
+  }
+  &__col {
+    flex-direction: column;
+  }
+  &__toolbar {
     justify-content: space-evenly;
   }
-  &__btn {
-    height: 40px;
-    border-radius: 8px;
-    // margin: 12px 32px;
-    // background-color: #d71549;
+  &__header_title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    line-height: 1.761rem;
   }
-  &__btn :focus,
-  &__btn:hover {
+  &__project_info_container {
+    margin-left: 12.6rem;
+    margin-top: 1rem;
+  }
+  &__project_title {
+    font-size: 0.875rem;
+  }
+  &__project_title_input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    // border-bottom-style: hidden;
+    -webskit-apperance: none;
+    box-shadow: none;
+    border-bottom: 1px solid black;
+    width: 47rem;
+    background-color: #e0e5f0;
+  }
+  &__btn_col {
+    height: 2.5rem;
+  }
+  &__btn {
+    // margin: 12px 32px;
+    color: #d71549;
+    border: 0;
+    font-family: inherit !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    font-family: "Raleway", sans-serif !important;
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+  }
+  &__btn:focus,
+  &__btn:hover,
+  &__btn:active {
+    height: 2.5rem;
     background-color: #d71549;
     color: whitesmoke;
+    border-radius: 0.5rem;
+    padding: 12px, 32px, 12px, 32px;
   }
 }
