@@ -4,6 +4,13 @@
     // margin: 0 auto;
     height: 100%;
   }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__form_container {
+    justify-content: center;
+  }
   &__form_row {
     display: flex;
     flex-direction: row;
