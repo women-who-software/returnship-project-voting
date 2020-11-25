@@ -202,8 +202,6 @@ const AdminEditProjectForm = (props) => {
                     </div>
                   </div>
                   <div className="adminEditProjectForm__form_row adminEditProjectForm__lang_add_row">
-                    {/* <label htmlFor="">
-                    </label> */}
                     <input
                       className="adminEditProjectForm__lang_input"
                       type="text"
