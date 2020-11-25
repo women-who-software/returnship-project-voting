@@ -1,4 +1,4 @@
-#!/Users/RAFNA/Documents/Rafna/MyProjects/Returnship/ProjectHub/returnship-project-voting/API/venv/bin/python3
+#!/Users/RAFNA/Documents/Rafna/MyProjects/Returnship/ProjectHub/returnship-project-voting/api/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

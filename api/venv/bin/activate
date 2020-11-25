@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/RAFNA/Documents/Rafna/MyProjects/Returnship/ProjectHub/returnship-project-voting/API/venv"
+VIRTUAL_ENV="/Users/RAFNA/Documents/Rafna/MyProjects/Returnship/ProjectHub/returnship-project-voting/api/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

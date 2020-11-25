@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/RAFNA/Documents/Rafna/MyProjects/Returnship/ProjectHub/returnship-project-voting/API/venv"
+set -gx VIRTUAL_ENV "/Users/RAFNA/Documents/Rafna/MyProjects/Returnship/ProjectHub/returnship-project-voting/api/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
