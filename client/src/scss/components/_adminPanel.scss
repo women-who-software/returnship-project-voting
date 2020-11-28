@@ -1,6 +1,6 @@
 //! Admin Panel Styling
 
-//! CSS Variables
+//* CSS Variables
 $bg: #e8eef2;
 $font-color: #37393a;
 $bg-nav: #d6c9c9;
@@ -20,7 +20,7 @@ $small-button-bg: #d6c9c9;
   margin-right: 0 !important;
   width: 98.7vw !important;
 }
-//! Project Card Styling
+//* Project Card Styling
 .projectCards {
   padding: 0 !important;
   width: 98.7vw !important;
@@ -81,7 +81,7 @@ a {
 }
 // -------------------
 
-//! Toolbar
+//* Toolbar
 .toolbar {
   display: flex;
   background-color: #fff;
@@ -93,7 +93,7 @@ a {
   margin-top: 5rem;
 }
 
-//! Tool-Btn
+//* Tool-Btn
 // html body div#root main.main div.row.admin-container div.col.admin-panel div.row.toolbar div.col a.tool-btn
 a.tool-btn {
   padding: 0.7rem 2.1rem 0.7rem 2.1rem;
@@ -106,7 +106,7 @@ a.tool-btn {
 //   color: black;
 // }
 
-//! Buttons
+//* Buttons
 .bulk-btn {
   padding: 0.7rem 3rem 0.7rem 1.5rem !important;
   border: 1px #707070 solid;
@@ -130,7 +130,7 @@ a.tool-btn {
   margin-left: -2.4rem !important;
 }
 
-//! Table Header
+//* Table Header
 .table-header {
   background-color: #e0e5f1;
   width: 81vw !important;
@@ -167,6 +167,7 @@ a.tool-btn {
 }
 
 //! Media Queries
+//* Mobile Large and below
 @media (min-width: 540px) {
   .projectdetails {
     margin: 20px 50px;
@@ -177,6 +178,7 @@ a.tool-btn {
     float: right;
   }
 }
+//* 4K Screens
 @media (min-width: 2560px) {
   .header-name {
     padding-left: 7rem;
@@ -218,8 +220,45 @@ a.tool-btn {
   }
 }
 
+//* Tablets and below
 @media screen and (max-width: 940px) {
+  .admin-container {
+    margin: 0rem !important;
+  }
+  .admin-panel {
+    width: 100vw !important;
+    padding: 0 !important;
+  }
   .sideBar {
     display: none !important;
+  }
+  //* Toolbar
+  .toolbar {
+    background-color: #e0e5f1;
+    width: 99vw !important;
+    margin-left: 0rem !important;
+    margin-top: 5rem;
+  }
+  //* Tool-Btn
+  // html body div#root main.main div.row.admin-container div.col.admin-panel div.row.toolbar div.col a.tool-btn
+  a.tool-btn {
+    padding: 0rem 0rem 0rem 0rem !important;
+    border-radius: 10px;
+    // border: 1px black solid;
+    // width: 5rem;
+  }
+  //* Buttons
+  .bulk-btn {
+    padding: 0.7rem 3rem 0.7rem 1.5rem !important;
+  }
+  .apply-btn {
+    margin-left: -5rem;
+  }
+  // .projects-btn {
+  // }
+
+  .chevronDownElement {
+    padding-right: 5rem;
+    margin-left: -2.4rem !important;
   }
 }
