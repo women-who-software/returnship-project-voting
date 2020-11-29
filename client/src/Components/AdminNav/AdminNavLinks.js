@@ -6,13 +6,18 @@ import AdminNavSmall from "./AdminNavSmall";
 export default function AdminNavLinks() {
   return (
     <>
-      <div className="admin_nav_links_container">
-        <div className="admin_nav_links_row">
-          <NavLink to="/admin">Projects</NavLink>
+      <div className="admin_nav__links_container">
+        <div className="admin_nav__links_row">
+          <NavLink className="admin_nav__links_a" to="/admin">
+            Projects
+          </NavLink>
         </div>
-        <div className="admin_nav_links_row">
-          <NavLink to="/admin">Users</NavLink>
+        <div className="admin_nav__links_row">
+          <NavLink className="admin_nav__links_a" to="/admin">
+            Users
+          </NavLink>
         </div>
+          <div className="hr_line"></div>
       </div>
     </>
   );
