@@ -1,33 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Logo from "../Images/Logo.svg";
+import NavLinks from "./NavLinks";
 
 export default function Nav() {
   return (
-    <>
-      <div className="nav__header">
-        <div>WWC - Boulder / Denver</div>
-        <div className="spacer" />
-        <div>Career Returnship</div>
+    <nav className="nav__large">
+      
+      <div className="nav__large-logo">
+        <img src={Logo} alt="Career Returnship Logo" />
+        <NavLink to="/">CAREER RETURNSHIP</NavLink>
       </div>
-      <nav className="nav">
-        <div className="nav__logo">
-          <NavLink to="/">ProjectHub</NavLink>
-        </div>
-        <div className="spacer" />
-        <div className="nav__links">
-          <ul>
-            <li>
-              <NavLink to="/projects">Projects</NavLink>
-            </li>
-            <li>
-              <NavLink to="/voting">Voting</NavLink>
-            </li>
-            <li>
-              <NavLink to="/signups">Sign-Ups</NavLink>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </>
+
+      <div className="spacer" />
+
+      <NavLinks />
+    </nav>
   );
 }

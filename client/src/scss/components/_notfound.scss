@@ -1,0 +1,21 @@
+.notfound {
+  text-align: center;
+  padding: 50px 10px;
+  &__text {
+    margin-top: 20px;
+  }
+  &__link {
+    font-size: $font-size-xsmall;
+    & a {
+      color: $font-color;
+      text-decoration: underline;
+      &:hover {
+        color: $text-nav-hover
+      }
+    }
+  }
+  &__section {
+    background-color: #e0e5f1;
+    height: 100vh;
+  }
+}

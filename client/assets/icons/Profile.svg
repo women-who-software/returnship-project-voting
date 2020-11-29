@@ -1,0 +1,7 @@
+<svg id="Profile" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <path id="Ellipse_234" data-name="Ellipse 234" d="M20,0A20,20,0,1,1,0,20,20,20,0,0,1,20,0Z" fill="#58bacc "/>
+  <g id="Union_44" data-name="Union 44" transform="translate(12 -342)">
+    <ellipse id="Ellipse_235" data-name="Ellipse 235" cx="4" cy="4" rx="4" ry="4" transform="translate(4 354)" fill="#fff"/>
+    <path id="Path_200" data-name="Path 200" d="M8,10c-4.4,0-8,1.8-8,4v2H16V14C16,11.8,12.4,10,8,10Z" transform="translate(0 354)" fill="#fff"/>
+  </g>
+</svg>
