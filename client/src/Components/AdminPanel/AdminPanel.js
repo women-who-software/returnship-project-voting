@@ -7,34 +7,48 @@ import AdminPanelHeader from "../AdminPanelHeader/AdminPanelHeader";
 import SideBar from "../SideBar/SideBar";
 import { GlobalContext } from "../../Context/GlobalContext";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function AdminPanel() {
   //?? TODO - Move `project` into a separate component
   const { projects } = useContext(GlobalContext);
-  const chevronDownElement = <FontAwesomeIcon icon={faChevronDown} />;
+  // const chevronDownElement = <FontAwesomeIcon icon={faChevronDown} />;
 
   const getProjects = projects.map((projects) => (
     <div className="projects__items-project card" key={projects.project_id}>
       {/* TODO: Create method function for checkbox action */}
-      <input
-        type="checkbox"
-        name="select_checkbox"
-        className="project_checkbox"
-        id=""
-      />
-      <div className="projects__items-project-name table-col">
-        <NavLink to={`/admin/projects/${projects.project_id}`}>
-          {projects.project_name}
-        </NavLink>
+      <div className="projects__mobile_row1">
+        <input
+          type="checkbox"
+          name="select_checkbox"
+          className="project_checkbox"
+          id=""
+        />
+        <div className="projects__items-project-name table-col">
+          <NavLink to={`/admin/projects/${projects.project_id}`}>
+            {projects.project_name}
+          </NavLink>
+        </div>
       </div>
-      <div className="projects__items-vote table-col">{projects.vote}</div>
-      <div className="projects__items-sign_up table-col">
-        {projects.sign_up}
+      <div className="projects__mobile_row2">
+        <div className="projects__items-vote table-col">
+          <span className="projects__mobile_table_header">Vote:</span>
+          {projects.vote}
+        </div>
+        <div className="projects__items-sign_up table-col">
+          <span className="projects__mobile_table_header">Sign Up:</span>
+          {projects.sign_up}
+        </div>
+        <div className="projects__items-status table-col">
+          <span className="projects__mobile_table_header">Status:</span>
+          {projects.status}
+        </div>
+        <div className="projects__items-date table-col">
+          <span className="projects__mobile_table_header">Date:</span>
+          {projects.date}
+        </div>
       </div>
-      <div className="projects__items-status table-col">{projects.status}</div>
-      <div className="projects__items-date table-col">{projects.date}</div>
     </div>
   ));
   return (
@@ -46,21 +60,26 @@ export default function AdminPanel() {
         </div>
         <div className="col admin-panel">
           <div className="row toolbar">
-            {/* <div className="row d-flex justify-content-end"> */}
-            <div className="col">
-              <a role="button" href="#" className="tool-btn bulk-btn">
-                Bulk Actions
-              </a>
-              {/* TODO: Convert to accordion with options: 1) Edit 2) Move to Trash  */}
-              <span className="chevronDownElement">{chevronDownElement}</span>
-              <i className="fas fa-chevron-down"></i>
+            <div className="row projects__toolbar_row">
+              <div className="col btn btn_row2">
+                <a role="button" href="#" className="tool-btn bulk-btn">
+                  Bulk Actions
+                </a>
+                {/* TODO: Convert to accordion with options: 1) Edit 2) Move to Trash  */}
+                <span className="chevronDownElement">
+                  <img
+                    src="https://github.com/wwcodecolorado/returnship-project-voting/blob/feature-admin-details-mobile/client/assets/icons/Up_Vector.png?raw=true"
+                    alt="Up_Vector"
+                  />
+                </span>
+              </div>
+              <div className="col btn apply-btn">
+                <a role="button" href="#" className="tool-btn apply-btn_a">
+                  Apply
+                </a>
+              </div>
             </div>
-            <div className="col">
-              <a role="button" href="#" className="tool-btn apply-btn">
-                Apply
-              </a>
-            </div>
-            <div className="col">
+            <div className="col btn btn_projects">
               <a role="button" href="#" className="tool-btn projects-btn">
                 Add New Projects
               </a>

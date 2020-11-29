@@ -49,6 +49,9 @@ a {
     margin: 5px 0;
   }
 }
+// .projects__items-project-name {
+//   margin-right: 2rem;
+// }
 .projects__items-project-name a {
   // font-weight: 700;
   font-size: 1em;
@@ -57,18 +60,34 @@ a {
   display: inline-block;
   width: 11rem;
 }
+.projects__mobile_row1 {
+  display: flex;
+  margin-left: 6rem !important;
+  margin-right: 30rem !important;
+}
+.projects__mobile_row2 {
+  display: flex;
+  width: 76rem;
+  flex-direction: row !important;
+  margin-left: 7.7rem !important;
+}
 
 .projects__items-vote {
-  width: 2rem;
-}
-.projects__items-status {
-  width: 8rem;
+  width: 4rem;
 }
 .projects__items-sign_up {
   width: 5.5rem;
 }
+.projects__items-status {
+  text-align: center !important;
+  width: 7rem;
+  text-transform: capitalize;
+}
 .projects__items-date {
   width: 7rem;
+}
+.projects__mobile_table_header {
+  display: none;
 }
 
 .strong {
@@ -76,14 +95,14 @@ a {
 }
 
 .project_checkbox {
-  margin-left: -3.5rem;
-  margin-right: -4rem;
+  margin-left: -2.5rem !important;
+  // margin-right: -2rem;
 }
-// -------------------
 
 //* Toolbar
 .toolbar {
   display: flex;
+  flex-direction: row;
   background-color: #fff;
   width: 69vw !important;
   justify-content: space-between;
@@ -92,34 +111,55 @@ a {
   margin-left: 3.5rem !important;
   margin-top: 5rem;
 }
+.projects__toolbar_row {
+  width: 23.7vw !important;
+}
+.btn_row2 {
+  display: flex !important;
+  justify-content: flex-start;
+}
 
 //* Tool-Btn
 // html body div#root main.main div.row.admin-container div.col.admin-panel div.row.toolbar div.col a.tool-btn
 a.tool-btn {
   padding: 0.7rem 2.1rem 0.7rem 2.1rem;
   border-radius: 10px;
-  // border: 1px black solid;
+  border: 1px black solid;
   // width: 5rem;
 }
 
-// div.row:nth-child(1) > div:nth-child(1) > a:nth-child(1) {
-//   color: black;
-// }
-
 //* Buttons
+
 .bulk-btn {
   padding: 0.7rem 3rem 0.7rem 1.5rem !important;
-  border: 1px #707070 solid;
+  border: none;
   color: black;
 }
 .apply-btn {
   border: 1px #434447 solid;
-  background-color: #dde2e5;
   color: black;
-  margin-left: -5rem;
+  // margin-left: -16rem;
+  flex-grow: 0.3 !important;
+  // background-color: #dde2e5 !important;
 }
-.projects-btn {
-  border: 1px #000000 solid;
+a.apply-btn_a,
+a.apply-btn_a:visited {
+  // border: 1px #434447 solid;
+  // color: black;
+  // margin-left: -5rem;
+  background-color: #dde2e5 !important;
+  color: black;
+  display: flex;
+  align-content: flex-end;
+  width: 7rem;
+}
+.btn_projects {
+  display: flex !important;
+  justify-content: flex-end;
+  margin-right: -8rem !important;
+}
+a.projects-btn {
+  border: none;
   background-color: #d7154a;
   color: #fff;
   text-transform: uppercase;
@@ -129,53 +169,346 @@ a.tool-btn {
   padding-right: 5rem;
   margin-left: -2.4rem !important;
 }
+.chevronDownElement img {
+  margin-top: 1.1rem !important;
+}
 
 //* Table Header
 .table-header {
   background-color: #e0e5f1;
   width: 81vw !important;
   height: 5rem;
-  margin-left: 1.8rem !important;
+  display: flex;
   margin-top: 2.5rem;
   align-items: center;
   font-weight: 550;
   color: #434447;
   font-size: 1.2rem;
-  justify-content: flex-start;
+  margin-left: 1.85rem !important;
+  justify-content: space-evenly;
 }
-
 .header-name {
-  padding-left: 2.5rem;
-  padding-right: 9rem;
   width: max-content;
+  margin-left: 0rem !important;
+  margin-right: 30rem;
 }
 .header-vote {
-  padding-left: 3rem;
   width: max-content;
+  margin-left: 8rem !important;
 }
 .header-sign_up {
-  padding-left: 8.5rem;
   width: max-content;
 }
 .header-status {
-  padding-left: 10rem;
   width: max-content;
 }
 .header-date {
-  padding-left: 13rem;
   width: max-content;
 }
 
+// -------------------------------------
 //! Media Queries
 //* Mobile Large and below
-@media (min-width: 540px) {
-  .projectdetails {
-    margin: 20px 50px;
-    padding: 20px;
+
+//* Tablets and below
+@media screen and (max-width: 940px) {
+  .admin-container {
+    margin: 0rem !important;
+    margin-right: 0rem !important;
+    width: 100vw !important;
+  }
+  .admin-panel {
+    width: 100vw !important;
+    padding: 0 !important;
+  }
+  .sideBar {
+    display: none !important;
+  }
+  //* Toolbar
+  .toolbar {
+    flex-direction: column-reverse;
+    background-color: #e0e5f1;
+    width: 100vw !important;
+    margin-left: 0rem !important;
+    margin-top: 0rem;
+    padding-bottom: 2.5rem;
+    height: 12.5rem;
+  }
+  .projects__toolbar_row {
+    width: 99.7vw !important;
+  }
+  //* Tool-Btn
+  // html body div#root main.main div.row.admin-container div.col.admin-panel div.row.toolbar div.col a.tool-btn
+  a.tool-btn {
+    padding: 0.4rem 1rem 0rem 0rem !important;
+    border-radius: 10px;
+    display: inline-block;
+    width: 7rem;
+    // border: 1px black solid;
+  }
+  //* Buttons
+  .bulk-btn {
+    // padding: 0.7rem 1rem 0.7rem 1.5rem !important;
+    color: #434447;
+    background-color: #fff;
+    margin: 0 auto;
+    display: flex;
+    // width: ;
+    margin-left: 2rem;
+    padding-right: 2rem !important;
+    border: 1px solid #707070 !important;
+  }
+  a.bulk-btn {
+    padding: 0.7rem 1rem 0.7rem 0rem !important;
+    width: 11rem !important;
+    flex-shrink: 0;
+  }
+  .apply-btn {
+    margin-left: 14rem;
+    // text-align: center;
+  }
+  a.apply-btn_a,
+  a.apply-btn_a:visited {
+    display: flex;
+    justify-content: center;
+    background-color: #dde2e5;
+    padding: 0.3rem 0rem 0.3rem 0rem !important;
+    width: 6rem;
+    border-radius: 5px;
+    color: black;
+  }
+  .btn {
+    display: flex;
+    flex-grow: 0 !important;
+  }
+  a.projects-btn {
+    width: 15rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem !important;
+    border: none;
+  }
+  .btn_projects {
+    display: flex !important;
+    justify-content: flex-end;
+    padding: 1.37rem;
+    margin-top: 1rem;
+  }
+  .btn_row2 {
+    display: flex !important;
+    flex-direction: row !important;
+    // flex-grow: 0;
+  }
+  .chevronDownElement {
+    padding-right: 0rem;
+    margin-left: -2.5rem !important;
+    margin-top: 0.02rem;
+  }
+  .table-header {
+    display: none !important;
+  }
+  // Project Cards
+  .card {
+    margin-left: 0rem !important;
+    padding: 0rem;
+    background-color: $card-bg;
+    border-radius: 0rem;
+    border-left-style: none;
+    width: 99.9vw;
+    // height: 6rem;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center;
+  }
+  .projects__mobile_table_header {
+    display: inline;
+    margin-right: 0.2rem;
+  }
+  .projects__mobile_row1 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 9rem !important;
+  }
+  .projects__mobile_row2 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 95vw;
+    margin-left: 0rem !important;
+  }
+  .projects__items-vote,
+  .projects__items-sign_up,
+  .projects__items-status,
+  .projects__items-date {
+    display: flex;
+    flex-direction: row !important;
+    font-size: 0.75rem;
+    width: max-content;
+    margin-right: 0.5rem !important;
+  }
+}
+.project_checkbox {
+  margin-left: -11rem;
+  margin-right: 5rem;
+}
+
+//* 1080 Full HD - Large
+@media screen and (min-width: 1920px) {
+  .projects__items-project-name a {
+    // font-weight: 700;
+    font-size: 1em;
+    color: #707070;
+    margin: -4.1rem;
+    display: inline-block;
+    width: 11rem;
+  }
+  .projects__mobile_row1 {
+    display: flex;
+    margin-left: 8rem !important;
+    margin-right: 8rem;
+  }
+  .projects__mobile_row2 {
+    display: flex;
+    width: 76rem;
+    flex-direction: row !important;
+    margin-left: 12rem !important;
   }
 
-  .projects__items-more {
-    float: right;
+  .projects__items-vote {
+    width: 10rem;
+  }
+  .projects__items-sign_up {
+    width: 4.5rem;
+  }
+  .projects__items-status {
+    text-align: center !important;
+    width: 14rem;
+    text-transform: capitalize;
+  }
+  .projects__items-date {
+    width: 7rem;
+  }
+  .projects__mobile_table_header {
+    display: none;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  .project_checkbox {
+    margin-left: -2.5rem !important;
+    // margin-right: -2rem;
+  }
+  // -------------------
+
+  //* Toolbar
+  .toolbar {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    width: 69vw !important;
+    justify-content: space-between;
+    // left: -39rem;
+    // width: 70vw;
+    margin-left: 3.5rem !important;
+    margin-top: 5rem;
+  }
+  .projects__toolbar_row {
+    width: 23.7vw !important;
+  }
+  .btn_row2 {
+    display: flex !important;
+    justify-content: flex-start;
+  }
+
+  //* Tool-Btn
+  // html body div#root main.main div.row.admin-container div.col.admin-panel div.row.toolbar div.col a.tool-btn
+  a.tool-btn {
+    padding: 0.7rem 2.1rem 0.7rem 2.1rem;
+    border-radius: 10px;
+    border: 1px black solid;
+    // width: 5rem;
+  }
+
+  // div.row:nth-child(1) > div:nth-child(1) > a:nth-child(1) {
+  //   color: black;
+  // }
+
+  //* Buttons
+
+  .bulk-btn {
+    padding: 0.7rem 3rem 0.7rem 1.5rem !important;
+    border: none;
+    color: black;
+  }
+  .apply-btn {
+    border: 1px #434447 solid;
+    color: black;
+    margin-left: -16rem;
+    flex-grow: 0.3 !important;
+    // background-color: #dde2e5 !important;
+  }
+  a.apply-btn_a,
+  a.apply-btn_a:visited {
+    // border: 1px #434447 solid;
+    // color: black;
+    // margin-left: -5rem;
+    background-color: #dde2e5 !important;
+    color: black;
+    display: flex;
+    align-content: flex-end;
+    width: 7rem;
+  }
+  .btn_projects {
+    display: flex !important;
+    justify-content: flex-end;
+    margin-right: -8rem !important;
+  }
+  a.projects-btn {
+    border: none;
+    background-color: #d7154a;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .chevronDownElement {
+    padding-right: 5rem;
+    margin-left: -2.4rem !important;
+  }
+  .chevronDownElement img {
+    margin-top: 1.1rem !important;
+  }
+  //* Table Header
+  .table-header {
+    background-color: #e0e5f1;
+    width: 81vw !important;
+    height: 5rem;
+    display: flex;
+    margin-top: 2.5rem;
+    align-items: center;
+    font-weight: 550;
+    color: #434447;
+    font-size: 1.2rem;
+    margin-left: 1.85rem !important;
+    justify-content: space-evenly;
+  }
+
+  .header-name {
+    width: max-content;
+    margin-left: 0rem !important;
+    margin-right: 30rem;
+  }
+  .header-vote {
+    width: max-content;
+    margin-left: 8rem !important;
+  }
+  .header-sign_up {
+    width: max-content;
+  }
+  .header-status {
+    width: max-content;
+  }
+  .header-date {
+    width: max-content;
   }
 }
 //* 4K Screens
@@ -219,46 +552,16 @@ a.tool-btn {
     width: 7rem;
   }
 }
+@media (max-width: 540px) {
+  .projectdetails {
+    margin: 20px 50px;
+    padding: 20px;
+  }
 
-//* Tablets and below
-@media screen and (max-width: 940px) {
-  .admin-container {
-    margin: 0rem !important;
+  .projects__items-more {
+    float: right;
   }
-  .admin-panel {
-    width: 100vw !important;
-    padding: 0 !important;
-  }
-  .sideBar {
-    display: none !important;
-  }
-  //* Toolbar
-  .toolbar {
-    background-color: #e0e5f1;
-    width: 99vw !important;
-    margin-left: 0rem !important;
-    margin-top: 5rem;
-  }
-  //* Tool-Btn
-  // html body div#root main.main div.row.admin-container div.col.admin-panel div.row.toolbar div.col a.tool-btn
-  a.tool-btn {
-    padding: 0rem 0rem 0rem 0rem !important;
-    border-radius: 10px;
-    // border: 1px black solid;
-    // width: 5rem;
-  }
-  //* Buttons
-  .bulk-btn {
-    padding: 0.7rem 3rem 0.7rem 1.5rem !important;
-  }
-  .apply-btn {
-    margin-left: -5rem;
-  }
-  // .projects-btn {
-  // }
-
-  .chevronDownElement {
-    padding-right: 5rem;
-    margin-left: -2.4rem !important;
+  .projects__mobile_row1 {
+    margin-left: 19rem !important;
   }
 }
