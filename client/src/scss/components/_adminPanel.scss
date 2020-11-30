@@ -259,9 +259,10 @@ a.projects-btn {
     border: 1px solid #707070 !important;
   }
   a.bulk-btn {
-    padding: 0.7rem 1rem 0.7rem 0rem !important;
+    padding: 0.5rem 1rem 0.4rem 0rem !important;
     width: 11rem !important;
     flex-shrink: 0;
+    border-radius: 5px;
   }
   .apply-btn {
     margin-left: 14rem;
@@ -301,6 +302,9 @@ a.projects-btn {
     padding-right: 0rem;
     margin-left: -2.5rem !important;
     margin-top: 0.02rem;
+  }
+  .chevronDownElement img {
+    margin-top: 0.6rem !important;
   }
   .table-header {
     display: none !important;
