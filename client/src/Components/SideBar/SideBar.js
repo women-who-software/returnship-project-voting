@@ -16,7 +16,7 @@ const SideBar = () => (
                   className="admin-header--icon"
                   id="admin-header--archives-icon"
                 />
-                Projects
+                <span className='sideBar_link__header'>Projects</span>
               </NavLink>
             </li>
             <li>
@@ -26,7 +26,7 @@ const SideBar = () => (
                   alt="User Icon"
                   className="admin-header--icon"
                 />
-                Users
+                <span className='sideBar_link__header'>Users</span>
               </NavLink>
             </li>
           </ul>
