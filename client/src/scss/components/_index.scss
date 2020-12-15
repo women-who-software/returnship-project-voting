@@ -5,8 +5,6 @@
 @import "./accordion";
 @import "./projects";
 @import "./modal";
-@import "./adminPanel";
-@import "./adminPanelHeader";
 @import "./sideBar";
 @import "./header";
 @import "./headersmall";
@@ -18,3 +16,10 @@
 @import "./notfound";
 @import "./form";
 @import "./search";
+
+// Admin Panel Styling
+@import "./adminPanel";
+@import "./adminPanelHeader";
+@import "./adminProjectDetails";
+@import "./adminEditProjectForm";
+@import "./FormHeader";

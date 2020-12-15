@@ -1,0 +1,180 @@
+.adminEditProjectForm {
+  &__container {
+    // background-color: #fff;
+    // margin: 0 auto;
+    height: 100%;
+  }
+  &__form_container_col {
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    padding-bottom: 4rem;
+    margin: 0 auto;
+    font-family: inherit;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+  }
+  &__contact_info {
+    background-color: #ffffff;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+  }
+  &__company_info {
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  &__header {
+    width: 78.1rem !important;
+  }
+  &__form_row {
+    display: flex;
+    flex-direction: row;
+    // background-color: palegreen;
+  }
+  &__form_col {
+    display: flex;
+    flex-direction: column;
+    // margin-right: 5.5rem !important;
+    // background-color: purple;
+  }
+  &__contact_input {
+    border-radius: 0.5rem;
+    width: 21rem;
+    height: 3rem;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    // border-bottom-style: hidden;
+    -webskit-apperance: none;
+    box-shadow: none;
+    border: 1px solid #000000;
+    padding-left: 1rem;
+  }
+  &__textarea {
+    border-radius: 8px;
+    width: max-content;
+    padding: 2rem 7rem;
+    font-family: inherit;
+    box-shadow: none;
+    border: 1px solid black;
+  }
+  &__checkbox_squares {
+    margin-top: 2.5rem;
+  }
+  &__tech_stack_header {
+    font-size: 0.875rem;
+    line-height: 1.028rem;
+    color: #434447;
+    margin-bottom: 0.8rem;
+  }
+  &__project_tech_container {
+    margin-right: 1.5rem;
+  }
+  &__project_status_container {
+    margin-left: 1.5rem;
+  }
+  &__form_container_square {
+    background-color: rgba(221, 226, 229, 0.369);
+    width: 21rem;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__input_checkbox {
+    outline: 1px solid #000000;
+    margin-right: 0.8rem;
+    margin-left: 1.8rem;
+    box-shadow: none;
+  }
+  &__square_row {
+    width: 21rem;
+    padding-top: 1rem;
+  }
+  &__square_col {
+    width: 10.5rem;
+  }
+  &__lang_add_btn {
+    // margin: 12px 32px;
+    color: #d71549;
+    width: 5rem;
+    border: 1px solid #434447;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    font-family: inherit !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    font-family: "Raleway", sans-serif !important;
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 1rem;
+  }
+  &__lang_add_row {
+    margin-bottom: 1.5rem;
+  }
+  &__lang_input {
+    border-radius: 0.5rem;
+    width: 13rem;
+    height: 2rem;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    // border-bottom-style: hidden;
+    -webskit-apperance: none;
+    box-shadow: none;
+    border: 1px solid #000000;
+    padding-left: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 1rem;
+  }
+  &__section_header {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 2.75rem;
+    font-weight: 400;
+  }
+  &__section_sub_header {
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #434447;
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  &__horizontal_line {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+table {
+  // background-color: #e0e5f0;
+  width: 50vw;
+  margin-bottom: 4rem;
+}
+thead,
+th {
+  background-color: #e0e5f0;
+  color: #434447;
+  width: 50vw;
+}
+.memberData__container {
+  width: 50vw;
+}
+.members_voted__member_data {
+  border-bottom: 3px solid #0000001a;
+  font-size: 18px;
+  line-height: 48px;
+  color: #434447;
+}
+// #2D3748
+.adminEditProjectForm__table_header {
+  border-top: 2px solid #2d3748;
+}

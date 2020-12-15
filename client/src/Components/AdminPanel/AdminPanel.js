@@ -25,7 +25,7 @@ export default function AdminPanel() {
         id=""
       />
       <div className="projects__items-project-name table-col">
-        <NavLink to={`/projects/${projects.project_id}`}>
+        <NavLink to={`/admin/projects/${projects.project_id}`}>
           {projects.project_name}
         </NavLink>
       </div>

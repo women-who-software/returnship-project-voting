@@ -11,7 +11,7 @@ export default function AdminPanelHeader() {
       <Navbar expand="lg" className="admin-header--container">
         <Navbar.Brand href="/" className="admin-header--brand">
           <img
-            src="https://github.com/wwcodecolorado/returnship-project-voting/blob/kl-feature12-admin-panel-redesign/client/assets/icons/Home.png?raw=true"
+            src="https://github.com/wwcodecolorado/returnship-project-voting/blob/master/client/assets/icons/Home.png?raw=true"
             alt="Home Icon"
             className="admin-header--icon"
           />
@@ -20,9 +20,9 @@ export default function AdminPanelHeader() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="">
-            <Nav.Link href="/" className="">
+            <Nav.Link href="/admin" className="">
               <img
-                src="https://github.com/wwcodecolorado/returnship-project-voting/blob/kl-feature12-admin-panel-redesign/client/assets/icons/login%20icon.png?raw=true"
+                src="https://github.com/wwcodecolorado/returnship-project-voting/blob/master/client/assets/icons/login%20icon.png?raw=true"
                 alt="Profile Icon"
                 className="admin-header--icon"
                 id="admin-header--profile-icon"
