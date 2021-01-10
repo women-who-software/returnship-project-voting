@@ -1,3 +1,4 @@
 node_modules
-returnship-project-voting/.idea
-returnship-project-voting/venv
+/api/venv/
+/api/project.db
+.idea
