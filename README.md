@@ -37,8 +37,9 @@ If not locally installed, you will need to install these via [Homebrew](https://
 ```shell
  cd returnship-project-voting/client
 ```
-  and pull down the node modules inside the client subdirectory
+  and pull down the node modules including the dependencies inside the client subdirectory
   ```shell
+  npm install react-bootstrap
   npm install
   ```
 3. Once all developer dependencies are downloaded, you are ready to get started. To start the ReactJS development server,
@@ -53,14 +54,10 @@ Install a recent Python 3 interpreter to run the Flask Backend on. To install Py
 ```shell
 python3 --version
 ```
-To install Flask, enter into the terminal
-```shell
-pip install flask python-dotenv
-```
 
 ### Project Setup
 
-Since we want to have both the frontend and backend combined into a single project,  Backend is in the top-level subdirectory API.
+Since we want to have both the frontend and backend combined into a single project,  Backend is in the top-level subdirectory "api".
 
 1. If you haven't cloned the project, open the terminal and in the desired directory, run
 ```shell
@@ -70,27 +67,31 @@ Since we want to have both the frontend and backend combined into a single proje
 
 2. Once cloned, in the terminal run
 ```shell
-  cd returnship-project-voting/API
+  cd returnship-project-voting/api
 ```
-  and create a virtual environment called `venv`, by entering (for Unix-based operating systems)
+  and activate the virtual environment called `venv`, by entering (for Unix-based operating systems)
 ```shell
-  $ python3 -m venv venv
   $ source venv/bin/activate
 ```
   and you will get the terminal as `(venv) $ `
   If you are using Windows, then you will do this instead:
 ```shell
-  $ python -m venv venv
   $ venv\Scripts\activate
 ```
 
-3. To get started, in `returnship-project-voting/API` run
+3. Now inside the virtual environment `venv` install Flask and other dependencies by following commands
+```shell
+  (venv) $ pip install Flask
+  (venv) $ pip install flask_sqlalchemy
+  (venv) $ pip install pip install flask_migrate
+```
+3. To get started, in `returnship-project-voting/api` run
    ```shell
     flask run
    ```
    to start the Flask development server. To stop the Flask server press Ctrl-C.
 
-4. Visit api of the project locally at `http://localhost:5000/`
+4. Visit api of the project locally at `http://localhost:5000/api/`
 
 ### Contribute to this project:
 
@@ -140,3 +141,8 @@ git push
 Then go to Github and click the 'Create Pull Request' button and assign a reviewer.
 
 7. **After reviewing, your changes will be merged to the master branch.🎉 🎉 🎉**
+
+To install Flask, enter into the terminal
+```shell
+pip install flask python-dotenv
+```
