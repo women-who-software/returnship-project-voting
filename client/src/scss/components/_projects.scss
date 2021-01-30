@@ -1,6 +1,16 @@
 .projects {
   padding: 10px 20px;
 
+  &__api_message {
+    border: 1px solid $error;
+    border-radius: 10px;
+    font-style: italic;
+    color: $error;
+    font-size: $font-size-small;
+    padding: 10px 15px;
+    text-align: center;
+  }
+
   &__header {
     font-size: $font-size-large;
     font-weight: $font-weight-bold;

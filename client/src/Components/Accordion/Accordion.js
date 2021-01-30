@@ -39,9 +39,9 @@ export default function Accordion({ project, children }) {
   // ClassNames
   let titleOpen = isOpen ? "open" : "";
   let projectDev =
-    project.status === "active" ? "accordion__title-project-dev" : "";
+    project.project_status === "active" ? "accordion__title-project-dev" : "";
   let projectComplete =
-    project.status === "completed" ? "accordion__title-project-complete" : "";
+    project.project_status === "completed" ? "accordion__title-project-complete" : "";
     
   return (
     <div className="accordion__wrapper">
@@ -62,7 +62,7 @@ export default function Accordion({ project, children }) {
           </div>
           <div className="accordion__title-status">
             <span className="accordion__title-status-title">Status</span>
-            {"\u00a0"} {getStatusImage(project.status)}
+            {"\u00a0"} {getStatusImage(project.project_status)}
           </div>
         </div>
         <div className="accordion__title-more">More Details{"\u00a0"}</div>

@@ -1,11 +1,12 @@
 import React, { useState, useContext } from "react";
 import ValidateError from "../ValidateError/ValidateError";
 import { GlobalContext } from "../../Context/GlobalContext";
+import VoteApiService from "../../services/vote-api-service";
 
 const validator = require("email-validator");
 
 export default function VotingModalForm(props) {
-  const { projects } = useContext(GlobalContext);
+  const { projects, addVote, setApiMessage } = useContext(GlobalContext);
   const { handleSubmit } = props;
 
   const Checkbox = ({
@@ -29,11 +30,19 @@ export default function VotingModalForm(props) {
 
   const [name, setName] = useState({ value: "", touched: "" });
   const [email, setEmail] = useState({ value: "", touched: "" });
+  const [slackHandle, setslackHandle] = useState({ value: "", touched: "" });
   const [selectedProjects, setSelectedProjects] = useState({});
   const [projectsTouched, setProjectsTouched] = useState(false);
 
-  // Update state from form
+  const initializeFormFields = () => {
+    setName({ value: "", touched: "" });
+    setEmail({ value: "", touched: "" });
+    setslackHandle({ value: "", touched: "" });
+    setSelectedProjects({});
+    setProjectsTouched(false);
+  };
 
+  // Update state from form
   const updateName = (name) => {
     setName({
       value: name,
@@ -44,6 +53,13 @@ export default function VotingModalForm(props) {
   const updateEmail = (email) => {
     setEmail({
       value: email,
+      touched: true,
+    });
+  };
+
+  const updateSlackHandle = (slackHandle) => {
+    setslackHandle({
+      value: slackHandle,
       touched: true,
     });
   };
@@ -63,19 +79,30 @@ export default function VotingModalForm(props) {
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
-    console.log("name", name);
+    let projects = Object.values(selectedProjects);
+    let project_ids = [];
+    projects.map((project) => {
+      project_ids.push(project.id);
+    });
 
-    validator.validate(email)
-      ? console.log("email", email)
-      : console.log("slack", email);
+    const newVote = {
+      voter_name: name.value,
+      voter_email: email.value,
+      voter_slack_name: slackHandle.value,
+    };
 
-    console.log(
-      "selected",
-      Object.keys(selectedProjects).filter(
-        (key) => selectedProjects[key].checked
-      )
-    );
+    for (let i = 0; i < project_ids.length; i++) {
+      newVote.project_id = Number(project_ids[i]);
 
+      VoteApiService.addVote(newVote)
+        .then((data) => {
+          addVote(data);
+          setApiMessage("Thank you for voting for a project.");
+        })
+        .catch((error) => setApiMessage(error.message));
+    }
+
+    initializeFormFields();
     handleSubmit(true);
   };
 
@@ -93,10 +120,26 @@ export default function VotingModalForm(props) {
   const validateEmail = () => {
     const userEmail = email.value.trim();
 
-    if (userEmail.length <= 0) {
+    if (userEmail.length > 0) {
+      if (!validator.validate(userEmail)) {
+        return {
+          error: true,
+          message: "Please enter a valid email address",
+        };
+      }
+    }
+
+    return { error: false, message: "" };
+  };
+
+  const validateEmailOrSlack = () => {
+    const userSlackHandle = slackHandle.value.trim();
+    const userEmail = email.value.trim();
+
+    if (userSlackHandle.length <= 0 && userEmail.length <= 0) {
       return {
         error: true,
-        message: "Please enter a email address or Slack Handle",
+        message: "Please enter either an email address OR Slack Name",
       };
     }
 
@@ -131,15 +174,21 @@ export default function VotingModalForm(props) {
   const NameError = validateUserName();
   const EmailError = validateEmail();
   const SelectedProjectsError = validateSelectedProjects();
+  const EmailOrSlackError = validateEmailOrSlack();
 
-  if (!NameError.error && !EmailError.error && !SelectedProjectsError.error) {
+  if (
+    !NameError.error &&
+    !EmailError.error &&
+    !SelectedProjectsError.error &&
+    !EmailOrSlackError.error
+  ) {
     buttonDisabled = false;
   }
 
   // Project Options
   const projectOptions = [];
   projects.map((project) => {
-    if (project.status === "open vote") {
+    if (project.project_status === "open vote") {
       projectOptions.push({
         key: project.project_id,
         name: project.project_name,
@@ -157,78 +206,108 @@ export default function VotingModalForm(props) {
 
   // render
   return (
-    <div className="form">
-      <h1>VOTE ON PROJECTS</h1>
+    <>
+      {projectOptions.length > 0 ? (
+        <div className="form">
+          <h1>VOTE ON PROJECTS</h1>
 
-      <div className="form__about">
-        Select your top choice so we can prioritize projects.
-      </div>
+          <div className="form__about">
+            Select your top choice so we can prioritize projects.
+          </div>
 
-      <form onSubmit={handleOnSubmit} className="form__form">
-        <div className="form__options">
-          <div className="form__options-label">Pick your top 2:</div>
-          <div className="form__options-values">
-            {projectOptions.map((item) => (
-              <div key={item.key}>
-                <Checkbox
-                  name={item.name}
-                  id={item.key}
-                  checked={checkSelectedProject(item.name)}
-                  value={item.key}
-                  onChange={updateSelectedProjects}
-                />
-                <label id={item.key} htmlFor={item.key}>
-                  {item.name}
-                </label>
+          <form onSubmit={handleOnSubmit} className="form__form">
+            <div className="form__options">
+              <div className="form__options-label">Pick your top 2:</div>
+              <div className="form__options-values">
+                {projectOptions.map((item) => (
+                  <div key={item.key}>
+                    <Checkbox
+                      name={item.name}
+                      id={item.key}
+                      checked={checkSelectedProject(item.name)}
+                      value={item.key}
+                      onChange={updateSelectedProjects}
+                    />
+                    <label id={item.key} htmlFor={item.key}>
+                      {item.name}
+                    </label>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div>
+              {projectsTouched && (
+                <ValidateError message={SelectedProjectsError.message} />
+              )}
+            </div>
+
+            <div className="form__input">
+              <label className="form__input-label" htmlFor="userName">
+                Name:
+              </label>
+              <input
+                name="userName"
+                className="form__input-input"
+                onChange={(e) => updateName(e.target.value)}
+                type="text"
+                required
+              />
+            </div>
+            <div>
+              {name.touched && <ValidateError message={NameError.message} />}
+            </div>
+
+            <div>
+              {email.touched && slackHandle.touched && (
+                <ValidateError message={EmailOrSlackError.message} />
+              )}
+            </div>
+
+            <div className="form__input">
+              <label className="form__input-label" htmlFor="email">
+                Email:
+              </label>
+              <input
+                name="email"
+                className="form__input-input"
+                onChange={(e) => updateEmail(e.target.value)}
+                type="text"
+                size="50"
+              />
+            </div>
+            <div>
+              {email.touched && <ValidateError message={EmailError.message} />}
+            </div>
+
+            <div className="form__input">
+              <label className="form__input-label" htmlFor="slackHandle">
+                Slack Handle:
+              </label>
+              <input
+                name="slackHandle"
+                className="form__input-input"
+                onChange={(e) => updateSlackHandle(e.target.value)}
+                type="text"
+                size="50"
+              />
+            </div>
+
+            <div className="form__submit">
+              <button type="submit" disabled={buttonDisabled}>
+                SUBMIT CHOICE
+              </button>
+            </div>
+          </form>
+        </div>
+      ) : (
+        <div className="form">
+          <h1>VOTE ON PROJECTS</h1>
+          <div>
+            There are currently no projects to vote on at this time.
+            Please check back with us regularly!
           </div>
         </div>
-        <div>
-          {projectsTouched && (
-            <ValidateError message={SelectedProjectsError.message} />
-          )}
-        </div>
-
-        <div className="form__input">
-          <label className="form__input-label" htmlFor="userName">
-            Name:
-          </label>
-          <input
-            name="userName"
-            className="form__input-input"
-            onChange={(e) => updateName(e.target.value)}
-            type="text"
-            required
-          />
-        </div>
-        <div>
-          {name.touched && <ValidateError message={NameError.message} />}
-        </div>
-
-        <div className="form__input">
-          <label className="form__input-label" htmlFor="email">
-            Slack Handle or Email:
-          </label>
-          <input
-            name="email"
-            className="form__input-input"
-            onChange={(e) => updateEmail(e.target.value)}
-            type="text"
-            size="50"
-            required
-          />
-        </div>
-        <div>
-          {email.touched && <ValidateError message={EmailError.message} />}
-        </div>
-
-        <div className="form__submit">
-          <button type="submit" disabled={buttonDisabled}>
-            SUBMIT CHOICE
-          </button>
-        </div>
-      </form>
-    </div>
+      )}
+    </>
   );
 }

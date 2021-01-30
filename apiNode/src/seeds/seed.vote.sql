@@ -1,0 +1,85 @@
+INSERT INTO vote (
+  vote_id,
+  voter_email,
+  project_id,
+  voter_name,
+  voter_slack_name
+)
+VALUES
+(
+  1,
+  'Kathy@aol.com',
+  1,
+  'Kathy',
+  'CodeMeKathy'      
+),
+(
+  2,
+  'Kim@aol.com',
+  1,
+  'Kim',
+  'KimSlim'
+),
+(
+  3,
+  'Kathy@aol.com',
+  2,
+  'Kathy',
+  'Kathy'
+),
+(
+  4,
+  'Kathy@aol.com',
+  3,
+  'Kathy',
+  'Kathy'
+),
+(
+  5,
+  'Kathy@aol.com',
+  4,
+  'Kathy',
+  'CodeMeKathy'      
+),
+(
+  6,
+  'Kim@aol.com',
+  4,
+  'Kim',
+  'KimSlim'
+),
+(
+  7,
+  'Kathy@aol.com',
+  5,
+  'Kathy',
+  'CodeMeKathy'      
+),
+(
+  8,
+  'Kim@aol.com',
+  5,
+  'Kim',
+  'KimSlim'
+),
+(
+  9,
+  'Kathy@aol.com',
+  6,
+  'Kathy',
+  'CodeMeKathy'      
+),
+(
+  10,
+  'Kim@aol.com',
+  6,
+  'Kim',
+  'KimSlim'
+),
+(
+  11,
+  'Kathy@aol.com',
+  7,
+  'Kathy',
+  'CodeMeKathy'      
+);

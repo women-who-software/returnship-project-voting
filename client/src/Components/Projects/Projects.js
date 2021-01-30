@@ -16,8 +16,8 @@ export default function Projects() {
       ? projects.filter(
           (project) =>
             project.project_name.toLowerCase().match(search) ||
-            project.status.toLowerCase().match(search) ||
-            project.tech_stack.find(
+            project.project_status.toLowerCase().match(search) ||
+            project.project_stack.split(',').find(
               (tech) => tech.toLowerCase() === search.toLowerCase()
             )
         )
@@ -43,7 +43,7 @@ export default function Projects() {
             Team Members Needed
           </div>
           <div className="accordion__content-value">
-            {project.max_team_members}
+            {project.max_members}
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function Projects() {
         <div className="accordion__content-item">
           <div className="accordion__content-label">Tech Stack</div>
           <div className="accordion__content-value">
-            {project.tech_stack.join(", ")}
+            {project.project_stack.split(',').join(', ')}
           </div>
         </div>
       </div>

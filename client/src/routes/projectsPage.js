@@ -7,7 +7,7 @@ import Search from "../Components/Search/Search";
 import { GlobalContext } from "../Context/GlobalContext";
 
 export default function ProjectsPage() {
-  const { search, setSearch } = useContext(GlobalContext);
+  const { setSearch, apiMessage, setApiMessage } = useContext(GlobalContext);
 
   return (
     <section>
@@ -18,6 +18,8 @@ export default function ProjectsPage() {
         <div className="projects__search">
           <Search setSearchValue={setSearch} />
         </div>
+
+        {apiMessage && apiMessage.length > 0 && <div className="projects__api_message">{apiMessage}</div>}
 
         <h1 className="projects__header">Project List:</h1>
 

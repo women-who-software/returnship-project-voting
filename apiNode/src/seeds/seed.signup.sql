@@ -1,0 +1,47 @@
+INSERT INTO signup (
+  signup_id,
+  project_id,
+  signup_name,
+  signup_github,
+  signup_email
+)
+VALUES
+(
+  1,
+  1,
+  'Kathy',
+  'CodeMeKathy',
+  'Kathy@aol.com'    
+),(
+  2,
+  2,
+  'Kim',
+  'KimSlim',
+  'Kim@aol.com'
+),
+(
+  3,
+  3,
+  'Kathy',
+  'CodeMeKathy',
+  'Kathy@aol.com'    
+),(
+  4,
+  4,
+  'Kim',
+  'KimSlim',
+  'Kim@aol.com'
+),
+(
+  5,
+  1,
+  'Bob',
+  'BobSmith',
+  'BobSmith@aol.com'    
+),(
+  6,
+  2,
+  'Henry',
+  'HenrySmith',
+  'Henry@aol.com'
+);

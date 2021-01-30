@@ -1,9 +1,10 @@
 // Import React Components
 import React, { useState, useEffect, useContext } from "react";
 import { Route, Switch } from "react-router-dom";
+import ProjectApiService from "./services/projects-api-service";
 
 // Temporary Data
-import STORE from "./STORE";
+//import STORE from "./STORE";
 
 // State Management
 import { GlobalContext } from "./Context/GlobalContext";
@@ -19,7 +20,10 @@ export default function App() {
   const { projects, setProjects } = useContext(GlobalContext);
 
   useEffect(() => {
-    setProjects(STORE.projects);
+    //setProjects(STORE.projects);
+    ProjectApiService.getAll()
+      .then(setProjects)
+      .catch((error) => setHasError(error));
   }, []);
 
   return (
