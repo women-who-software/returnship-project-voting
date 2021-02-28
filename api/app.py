@@ -60,23 +60,23 @@ class Signup(db.Model):
     project_id = db.Column(db.Integer, ForeignKey(
         "project.project_id"), nullable=False)
     signup_name = db.Column(db.String(100), nullable=True)
-    sign_up_github = db.Column(db.String(100), nullable=True)
+    signup_github = db.Column(db.String(100), nullable=True)
     signup_email = db.Column(db.String(100))
 
     # TODO project_id must be array -> projects_ids
 
     # constructor of Signup
-    def __init__(self, signup_email, project_id, signup_name=None, sign_up_github=None):
+    def __init__(self, signup_email, project_id, signup_name=None, signup_github=None):
         self.project_id = project_id
         self.signup_email = signup_email
         self.signup_name = signup_name
-        self.sign_up_github = sign_up_github
+        self.signup_github = signup_github
 
     def __repr__(self):
         return '<Signup %r>' % self.signup_name
 
     def serialize(self):
-        return {'signup_email': self.signup_email, 'signup_name': self.signup_name, 'sign_up_github': self.sign_up_github, 'project_id': self.project_id, 'signup_id': self.signup_id}
+        return {'signup_email': self.signup_email, 'signup_name': self.signup_name, 'signup_github': self.signup_github, 'project_id': self.project_id, 'signup_id': self.signup_id}
 
 
 # method for creating signup
@@ -84,10 +84,10 @@ class Signup(db.Model):
 def create_signup():
     project_id = request.form['project_id']
     signup_email = request.form['signup_email']
-    sign_up_github = request.form['sign_up_github'] if 'sign_up_github' in request.form else None
+    signup_github = request.form['signup_github'] if 'signup_github' in request.form else None
     signup_name = request.form['signup_name'] if 'signup_name' in request.form else None
 
-    signup = Signup(project_id=project_id, sign_up_github=sign_up_github,
+    signup = Signup(project_id=project_id, signup_github=signup_github,
                     signup_email=signup_email, signup_name=signup_name)
     try:
         db.session.add(signup)
@@ -122,7 +122,7 @@ def update_signup(signup_id):
     signup_old = Signup.query.get(signup_id)
     signup_old.signup_name = signup_new['signup_name']
     signup_old.signup_email = signup_new['signup_email']
-    signup_old.sign_up_github = signup_new['sign_up_github']
+    signup_old.signup_github = signup_new['signup_github']
     signup_old.project_id = signup_new['project_id']
 
     db.session.commit()
@@ -205,6 +205,9 @@ class Admin(db.Model):
     def __repr__(self):
         return '<Admin %r>' % self.admin_name
 
+    def serialize(self):
+        return {'admin_name': self.admin_name, 'password': self.password, 'chapter_name': self.chapter_name}
+
 
 # method for adding in admin
 @app.route('/api/admin', methods=['POST'])
@@ -227,23 +230,16 @@ def create_admin():
 # method to get in admin
 @app.route('/api/admin')
 def all_admin():
-    rows = Vote.query.all()
+    rows = Admin.query.all()
     return jsonify(list(map(lambda v: v.serialize(), rows)))
 
 
-# method to read in admin
-@app.route('/api/admin')
-def read_admin(project_id):
-    admin = Admin.query.get(project_id)
+# method to get admin by name
+@app.route('/api/admin/<admin_name>')
+def get_admin(admin_name):
+    admin = db.session.query(Admin).filter(
+        Admin.admin_name == admin_name).scalar()
     return jsonify(admin.serialize() if admin else 'no object')
-
-
-# method to delete in admin
-@app.route('/api/admin/<project_id>', methods=['DELETE'])
-def delete_admin(project_id):
-    db.session.query(Admin).filter(Admin.project_id == project_id).delete()
-    db.session.commit()
-    return jsonify({'success': True})
 
 
 # @app.route('/')
@@ -251,7 +247,7 @@ def delete_admin(project_id):
 #     return "Home"
 
 # method for creating the project
-@app.route('/api/post-project', methods=['POST'])
+@app.route('/api/projects', methods=['POST'])
 def post_project():
     max_members = request.form['max_members']
     project_name = request.form['project_name']
