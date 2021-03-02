@@ -18,7 +18,6 @@ db = SQLAlchemy(app)
 # class for creating ptoject
 
 
-
 class Project(db.Model):
     project_id = db.Column(db.Integer, primary_key=True)
     project_name = db.Column(db.String(100))
@@ -63,6 +62,7 @@ class Signup(db.Model):
     signup_name = db.Column(db.String(100), nullable=True)
     sign_up_github = db.Column(db.String(100), nullable=True)
     signup_email = db.Column(db.String(100))
+
     # TODO project_id must be array -> projects_ids
 
     # constructor of Signup
@@ -270,17 +270,20 @@ def post_project():
         print(e)
         return "Nothing here. Try add the project again."
 
+
 # method to get all signup
 @app.route('/api/signup')
 def all_signup():
     rows = Signup.query.all()
     return jsonify(list(map(lambda v: v.serialize(), rows)))
 
+
 # method to get all projects
 @app.route('/api/projects')
 def all_projects():
     projects = Project.query.order_by(Project.project_id).all()
     return jsonify(list(map(lambda v: v.serialize(), projects)))
+
 
 # method to read the project
 @app.route('/api/projects/<project_id>')
