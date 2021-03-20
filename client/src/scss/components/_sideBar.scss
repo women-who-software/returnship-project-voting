@@ -4,7 +4,7 @@
     justify-content: flex-start;
     font-family: "Raleway", sans-serif;
     width: 13rem !important;
-    height: 100vh !important;
+    height: 100% !important;
     background-color: #262e3d;
     padding: 0 !important;
     margin-left: -18px;
@@ -23,7 +23,12 @@
     flex-direction: column;
   }
 }
-
+a.sideBar--link {
+  margin-left: 1rem !important;
+}
+.sideBar_link__header {
+  margin-left: 1rem !important;
+}
 .sideBar--col li {
   padding: 1rem 1rem 1rem 1.2rem;
 }

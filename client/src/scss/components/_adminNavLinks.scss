@@ -1,0 +1,28 @@
+.admin_nav__ {
+  &links_row {
+    width: 100vw;
+    height: 3rem;
+    border-bottom: 1px solid#dde2e5;
+    display: flex;
+    align-items: center !important;
+  }
+}
+a.admin_nav__links_a,
+a.admin_nav__links_a:active,
+a.admin_nav__links_a:visited {
+  color: #d71549 !important;
+  margin-left: 1.5rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+.hr_line {
+  border: 1px solid #d2d3d5;
+  box-shadow: 0px 15px 15px #d2d3d5 !important;
+}
+// div.admin_nav__links_row:nth-child(2) {
+// }
+// html body div#root main.main div.admin_nav_small_container div.admin_nav__links_container div.admin_nav__links_row a.admin_nav__links_a.active
+
+// div.admin_nav__links_row:nth-child(2) > a:nth-child(1) {
+//   box-shadow: 0px 15px 15px black !important;
+// }
