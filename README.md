@@ -87,7 +87,7 @@ Since we want to have both the frontend and backend combined into a single proje
 ```
 3. To get started, in `returnship-project-voting/api` run
    ```shell
-    flask run
+    ./venv/bin/python3.7 ./app.py
    ```
    to start the Flask development server. To stop the Flask server press Ctrl-C.
 
