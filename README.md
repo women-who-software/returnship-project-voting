@@ -85,12 +85,18 @@ Since we want to have both the frontend and backend combined into a single proje
   (venv) $ pip install flask_sqlalchemy
   (venv) $ pip install flask_migrate
 ```
-3. To get started, in `returnship-project-voting/api` run
-   ```shell
-    ./venv/bin/python3.7 ./app.py
-   ```
-   to start the Flask development server. To stop the Flask server press Ctrl-C.
-
+3. To get started,
+  - in `returnship-project-voting/api` run
+    ```shell
+      ./venv/bin/python3.7 ./app.py
+    ```
+    to start the Flask development server.
+    **OR**
+  - in `returnship-project-voting/client` run
+    ```shell
+      npm run start-api
+    ```
+    To stop the Flask server press Ctrl-C.
 4. Visit api of the project locally at `http://localhost:5000/api/`
 
 ### Contribute to this project:
