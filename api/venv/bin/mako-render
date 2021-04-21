@@ -1,8 +1,11 @@
-#!/Users/RAFNA/Documents/Rafna/MyProjects/Returnship/ProjectHub/returnship-project-voting/api/venv/bin/python3
+#!/Users/anastasiashafir/returnship-project-voting/api/flask/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
-from mako.cmd import cmdline
+from pkg_resources import load_entry_point
+
 if __name__ == '__main__':
-    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
-    sys.exit(cmdline())
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(
+        load_entry_point('Mako==1.1.4', 'console_scripts', 'mako-render')()
+    )
