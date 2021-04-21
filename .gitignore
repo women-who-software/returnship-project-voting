@@ -2,3 +2,4 @@ node_modules
 /api/venv/
 /api/project.db
 .idea
+/api/MOCK_DATA.json
