@@ -39,7 +39,6 @@ If not locally installed, you will need to install these via [Homebrew](https://
 ```
   and pull down the node modules including the dependencies inside the client subdirectory
   ```shell
-  npm install react-bootstrap
   npm install
   ```
 3. Once all developer dependencies are downloaded, you are ready to get started. To start the ReactJS development server,

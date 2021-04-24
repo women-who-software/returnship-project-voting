@@ -1,34 +1,95 @@
-.about {
+.about__large {
+  display: none;
+}
+
+.about__small {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-left: 10px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 10px;
+}
 
-  &__header {
-    font-weight: $font-weight-bold;
-    margin-bottom: 20px;
-    font-size: $font-size-large;
+.about {
+  &__left {
+    margin: 20px;
+    font-size: 18px;
+
+    & div {
+      margin: 20px 0;
+    }
   }
 
-  &__body div {
-    margin: 15px 20px;
-    font-size: $font-size-small;
-    line-height: 1.8em;
+  &__header {
+    font-size: 30px;
+    line-height: 1.2em;
+    margin-bottom: 20px;
+  }
+
+  &__quote {
+    font-size: 18px;
+    line-height: 1.3em;
+
+    & cite {
+      font-size: 18px;
+      padding-left: 20px;
+      font-style: normal;
+
+      &::before {
+        content: "\2014";
+      }
+    }
+
+    & blockquote {
+      position: relative;
+      margin: 25px;
+    }
+
+    & blockquote::before {
+      content: open-quote;
+      font-size: 36px;
+      position: absolute;
+      top: 0.17em;
+      left: -0.35em;
+    }
+    & blockquote {
+      quotes: "\201C""\201D""\2018""\2019";
+    }
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
+  .about__small {
+    display: none;
+  }
+  .about__large {
+    display: flex;
+    flex-direction: row;
+    margin: 70px 100px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
   .about {
-    margin-top: 100px;
-    margin-left: 20%;
-  
     &__header {
-      margin-bottom: 40px;
-      font-size: $font-size-large;
+      font-size: 56px;
+      line-height: 1.5em;
     }
-  
-    &__body div {
-      width: 495px;
+
+    &__left {
+      font-size: 16px;
+      flex-basis: 66.66%;
+    }
+
+    &__quote {
+      flex-basis: 33.33%;
+      font-size: 40px;
+      line-height: 48px;
+      margin-left: 50px;
+
+      & blockquote::before {
+        font-size: 200px;
+      }
     }
   }
 }

@@ -1,15 +1,17 @@
 .projects {
-  padding: 10px 20px;
+  padding: 10px;
 
   &__header {
     font-size: $font-size-large;
     font-weight: $font-weight-bold;
   }
   &__about {
+    margin: 0 10px;
+
     &-title {
       font-weight: $font-weight-semi-bold;
     }
-    
+
     & ol {
       list-style-position: inside;
       & li {
@@ -17,18 +19,22 @@
       }
     }
   }
-
+ 
   &__search {
-   display: flex;
-   justify-content: flex-end;
-   margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+
+  &__details {
+    margin-top: 50px;
   }
 }
 
 @media (min-width: 700px) {
   .projects {
     padding: 20px 110px;
-  
+
     &__header {
       font-size: $font-size-xlarge;
       font-weight: $font-weight-bold;
@@ -38,7 +44,7 @@
         font-size: $font-size-large;
         font-weight: $font-weight-bold;
       }
-  
+
       & ol {
         list-style-position: inside;
       }

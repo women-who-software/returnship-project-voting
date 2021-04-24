@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 
 // Custom Imports
 import AdminPanelHeader from "../AdminPanelHeader/AdminPanelHeader";
-import SideBar from "../SideBar/SideBar";
-import { GlobalContext } from "../../Context/GlobalContext";
+import SideBar from "../../SideBar/SideBar";
+import { GlobalContext } from "../../../Context/GlobalContext";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -65,7 +65,7 @@ export default function AdminPanel() {
                 <a role="button" href="#" className="tool-btn bulk-btn">
                   Bulk Actions
                 </a>
-                {/* TODO: Convert to accordion with options: 1) Edit 2) Move to Trash  */}
+                {/* TODO: Convert to projectDetail with options: 1) Edit 2) Move to Trash  */}
                 <span className="chevronDownElement">
                   <img
                     src="https://github.com/wwcodecolorado/returnship-project-voting/blob/feature-admin-details-mobile/client/assets/icons/Up_Vector.png?raw=true"

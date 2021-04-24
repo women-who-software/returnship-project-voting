@@ -1,0 +1,232 @@
+.projectDetail {
+  margin: 0 10px;
+
+  & + * {
+    margin-top: 1em;
+  }
+
+  &__item {
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+    height: auto;
+    max-height: 9999px;
+
+    &.collapsed {
+      max-height: 0;
+      transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+    }
+  }
+
+  &__title {
+    font-weight: $font-weight-regular;
+    font-size: $font-size-small;
+    cursor: pointer;
+    color: $font-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: $bg;
+    padding: 10px 20px;
+    border: 1px solid $card-border;
+    border-radius: 10px;
+    transition: background-color 0.6s ease;
+
+    &-status {
+      margin-top: 10px;
+      & img {
+        margin-right: 5px;
+        width: 25px;
+        height: auto;
+        vertical-align: middle;
+      }
+      &-title {
+        display: inline-block;
+        margin-right: 0;
+      }
+    }
+
+    &-project {
+      font-weight: $font-weight-bold;
+    }
+
+    &-project-active {
+      background-color: $card-project-active;
+    }
+
+    &-project-complete {
+      background-color: $card-project-complete;
+    }
+
+    &-right {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &-modal {
+        & button {
+          background-color: $font-hover-color;
+          color: white;
+          border-radius: 5px;
+          border: none;
+          padding: 10px 20px;
+          font-size: 14px;
+          width: 160px;
+
+          & img {
+            width: 25px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      &-accordion {
+        &::after {
+          content: "\1433";
+          font-weight: bold;
+          transform: rotate(90deg);
+        }
+
+        &-large {
+          display: none;
+        }
+      }
+    }
+
+    &:hover,
+    &.open {
+      color: black;
+    }
+
+    &.open {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+
+    &.open {
+      .projectDetail__title-right-accordion {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__noresults {
+    color: $font-color;
+    font-weight: 600;
+    border: 1px solid $border-color;
+    padding: 20px 50px;
+    border-radius: 10px;
+  }
+
+  &__content {
+    font-weight: $font-weight-regular;
+    font-size: $font-size-small;
+    padding: 10px 10px;
+    border-right: 1px solid $card-border;
+    border-left: 1px solid $card-border;
+    border-bottom: 1px solid $card-border;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 3px 6px 0 $shadow-color;
+
+    display: flex;
+    flex-direction: column;
+
+    &-line {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-item {
+      border-bottom: 1px solid $card-border;
+    }
+
+    &-item,
+    &-desc {
+      margin: 10px;
+    }
+
+    &-label,
+    &-desc-label {
+      width: 300px;
+      font-weight: $font-weight-bold;
+    }
+
+    &-value {
+      text-align: right;
+      padding-right: 10px;
+    }
+
+    &-desc-label {
+      width: 100%;
+      border-bottom: 1px solid $card-border;
+    }
+
+    &-desc-value {
+      padding: 20px;
+      background-color: $card-project-description;
+    }
+
+    &-button {
+      margin: 20px auto;
+      border: 1px solid $card-border;
+      border-radius: 5px;
+      width: 175px;
+      text-align: center;
+      background-color: $bg;
+      font-weight: 600;
+      padding: 10px 5px;
+      &:hover {
+        color: $font-accent-color;
+      }
+      & a {
+        &:hover {
+          color: $font-accent-color;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .projectDetail {
+    &__title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &-left {
+        flex-basis: 80%;
+      }
+
+      &-right {
+        flex-basis: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-modal {
+          flex-basis: 80%;
+        }
+
+        &-accordion {
+          flex-basis: 20%;
+          margin-top: 10px;
+          display: inline-block;
+
+          &-large {
+            display: inline-block;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

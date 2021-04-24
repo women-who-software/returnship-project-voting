@@ -1,21 +1,34 @@
 .notfound {
-  text-align: center;
   padding: 50px 10px;
+  background-color: #e0e5f1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    & img {
+      height: 300px;
+      width: auto;
+    }
+  }
   &__text {
-    margin-top: 20px;
+    font-size: 36px;
+    line-height: 1.5em;
+    width: 764px;
   }
   &__link {
-    font-size: $font-size-xsmall;
+    font-size: 18px;
+    width: 764px;
+
     & a {
       color: $font-color;
       text-decoration: underline;
+
       &:hover {
-        color: $text-nav-hover
+        color: $font-hover-color;
       }
     }
-  }
-  &__section {
-    background-color: #e0e5f1;
-    height: 100vh;
   }
 }

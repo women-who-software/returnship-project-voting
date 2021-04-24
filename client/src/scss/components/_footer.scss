@@ -5,24 +5,32 @@
   &__nav {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0 ;
+    justify-content: space-around;
+    margin: 10px 0 10px 50px;
+
     &-logo {
       & img {
-        width: 20px;
+        width: 33px;
         height: auto;
         margin-right: 10px;
         vertical-align: middle;
       }
+      & a {
+        color: $font-color;
+        font-size: 18px;
+      }
     }
-    &-link {
-      font-size: $font-size-xsmall;
-      & li {
-        padding: 0 5px;
+    &-title {
+      font-size: 16px;
+      line-height: 1.3em;
+      margin-left: 40px;
+      & a {
+        color: $font-color;
       }
     }
     &-icons {
+        margin-left: 40px;
+
       & a {
         margin: 0 10px;
         vertical-align: middle;
@@ -34,9 +42,13 @@
   }
   &__bottom {
     background-color: $font-accent-color;
-    height: 40px;
+    height: 48px;
     padding: 10px 50px;
     text-align: left;
+
+    &-copyright {
+        vertical-align: middle;
+    }
   }
 }
 
@@ -46,9 +58,10 @@
       flex-direction: row;
       justify-content: space-around;
       padding: 0px 20px;
-      margin: 10px 0;
-      &-copyright {
-        display: block;
+      margin: 10px 50px;
+
+      &-title {
+          margin-left: 60px;
       }
     }
   }

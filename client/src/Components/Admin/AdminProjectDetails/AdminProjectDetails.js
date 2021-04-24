@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 
 // Import Custom Components
 import AdminPanelHeader from "../AdminPanelHeader/AdminPanelHeader";
-import SideBar from "../SideBar/SideBar";
+import SideBar from "../../SideBar/SideBar";
 import AdminEditProjectForm from "../AdminEditProjectForm/AdminEditProjectForm";
 
 export default function AdminProjectDetails(props) {

@@ -42,11 +42,11 @@
     & button {
       width: 185px;
       height: 40px;
-      background-color: $text-nav;
+      //background-color: $text-nav;
       color: white;
       border-radius: 5px;
       &:hover {
-        background-color: $text-nav-hover;
+        background-color: $font-hover-color;
         color: $font-color;
         font-weight: $font-weight-bold;
       }

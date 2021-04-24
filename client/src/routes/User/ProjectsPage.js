@@ -1,19 +1,13 @@
 import React, { useContext } from "react";
-import HeaderSmall from "../Components/Header/HeaderSmall";
-import Nav from "../Components/Nav/Nav";
-import Projects from "../Components/Projects/Projects";
-import Footer from "../Components/Footer/Footer";
-import Search from "../Components/Search/Search";
-import { GlobalContext } from "../Context/GlobalContext";
+import Projects from "../../Components/User/Projects/Projects";
+import Search from "../../Components/User/Search/Search";
+import { GlobalContext } from "../../Context/GlobalContext";
 
 export default function ProjectsPage() {
   const { search, setSearch } = useContext(GlobalContext);
 
   return (
     <section>
-      <HeaderSmall />
-      <Nav />
-
       <div className="projects">
         <div className="projects__search">
           <Search setSearchValue={setSearch} />
@@ -23,32 +17,33 @@ export default function ProjectsPage() {
 
         <div className="projects__about">
           <div className="projects__about-title">
-            How to be involved in WWC Returnship:
+            How to be involved in <strong>ProjectHUB</strong>:
           </div>
           <ol>
             <li>Read about Projects and details.</li>
             <li>
-              An <strong>Open Vote</strong> project is available for voting.
-              Vote on projects you are interested in.
+              An <strong>Open Vote</strong> project is available for voting. You
+              can <strong>vote for 2 different projects</strong>.
             </li>
             <li>
-              Once enough votes are received, you can <strong>Sign Up</strong>{" "}
-              for projects.
+              Once enough votes are received, a project becomes an{" "}
+              <strong>Open Project</strong>. You can <strong>Sign Up</strong>{" "}
+              for 2 different projects.
             </li>
             <li>
-              Once enough members are signed up for a project, a project is{" "}
+              Once enough members are signed up for a project, a project becomes{" "}
               <strong>Active</strong>.
             </li>
             <li>
-              In development projects may still accept members.{" "}
+              <strong>Active</strong> projects may still accept members,{" "}
               <strong>contact us</strong> to find out how to get involved.
             </li>
           </ol>
         </div>
-        <Projects />
+        <div className="projects__details">
+          <Projects />
+        </div>
       </div>
-
-      <Footer />
     </section>
   );
 }

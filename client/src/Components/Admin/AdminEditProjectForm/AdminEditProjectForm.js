@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { GlobalContext } from "../../Context/GlobalContext";
+import { GlobalContext } from "../../../Context/GlobalContext";
 import FormHeader from "./FormHeader";
 const AdminEditProjectForm = (props) => {
   const { project } = props; //Passed on project based on user click and project_id

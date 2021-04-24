@@ -7,8 +7,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
 // Import Custom Components
-import MenuClosed from "../Images/hamburger-closed.svg";
-import MenuOpen from "../Images/hamburger-open.svg";
+import MenuClosed from "../../Images/hamburger-closed.svg";
+import MenuOpen from "../../Images/hamburger-open.svg";
 import AdminNavSmall from "../AdminNav/AdminNavSmall";
 export default function AdminPanelHeader() {
   const [openMenu, setOpenMenu] = useState(false);

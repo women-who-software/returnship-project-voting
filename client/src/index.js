@@ -10,7 +10,7 @@ import { GlobalProvider } from "./Context/GlobalContext";
 import "./scss/styles.scss";
 
 // Bootstrap 
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <BrowserRouter>

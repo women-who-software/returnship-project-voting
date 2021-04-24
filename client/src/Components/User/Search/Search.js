@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { GlobalContext } from "../../Context/GlobalContext";
-import SearchIcon from "../Images/search.svg";
+import { GlobalContext } from "../../../Context/GlobalContext";
 
 export default function Search() {
   const { search, setSearch } = useContext(GlobalContext);

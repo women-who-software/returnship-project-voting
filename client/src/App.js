@@ -7,24 +7,29 @@ import STORE from "./STORE";
 
 // State Management
 import { GlobalContext } from "./Context/GlobalContext";
-import NotFound from "./routes/notFoundPage";
 
 // Import Custom Components
-import AboutPage from "./routes/aboutPage";
-import ProjectsPage from "./routes/projectsPage";
-import AdminPanel from "./Components/AdminPanel/AdminPanel";
-import AdminProjectDetails from "./Components/AdminProjectDetails/AdminProjectDetails";
+import Header from "./Components/User/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import AboutPage from "./Routes/User/AboutPage";
+import ProjectsPage from "./Routes/User/ProjectsPage";
+import NotFoundPage from "./Routes/NotFoundPage";
+import AdminPanel from "./Components/Admin/AdminPanel/AdminPanel";
+import AdminProjectDetails from "./Components/Admin/AdminProjectDetails/AdminProjectDetails";
+
 export default function App() {
   const [hasError, setHasError] = useState("");
   const { projects, setProjects } = useContext(GlobalContext);
 
   useEffect(() => {
-    setProjects(STORE.projects);
+    setProjects(STORE.Project);
   }, []);
 
   return (
-    <React.Fragment>
-      <main className="main">
+    <main>
+      <Header />
+
+      <div>
         {hasError && <p className="red">There was an error</p>}
         <Switch>
           <Route exact path="/" component={AboutPage} />
@@ -43,9 +48,11 @@ export default function App() {
               />
             )}
           />
-          <Route component={NotFound} />
+          <Route component={NotFoundPage} />
         </Switch>
-      </main>
-    </React.Fragment>
+      </div>
+
+      <Footer />
+    </main>
   );
 }

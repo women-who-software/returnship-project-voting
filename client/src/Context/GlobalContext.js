@@ -1,12 +1,14 @@
 import React, { createContext, useReducer } from "react";
 import ProjectsReducer from "./ProjectsReducer";
 import SearchReducer from "./SearchReducer";
+import AdminReducer from './AdminReducer';
 
 export const GlobalContext = createContext(null);
 
 export const GlobalProvider = ({ children }) => {
   const [projects, dispatchProjects] = useReducer(ProjectsReducer, []);
   const [search, dispatchSearch] = useReducer(SearchReducer, []);
+  const [isAdmin, dispatchAdmin] = useReducer(AdminReducer, true);
 
   const setProjects = (projects) => {
     dispatchProjects({
@@ -22,6 +24,11 @@ export const GlobalProvider = ({ children }) => {
     });
   };
 
+  const setAdmin = () => {
+    dispatchAdmin({
+      type: 'SET_ADMIN',
+    })
+  }
 
   return (
     <GlobalContext.Provider
@@ -29,7 +36,9 @@ export const GlobalProvider = ({ children }) => {
         projects: projects,
         setProjects,
         search: search,
-        setSearch
+        setSearch,
+        isAdmin: isAdmin,
+        setAdmin,
       }}
     >
       {children}

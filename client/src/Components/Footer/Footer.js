@@ -10,9 +10,10 @@ export default function Footer() {
       <hr />
       <div className="footer__nav">
         <div className="footer__nav-logo">
-          <img src={Logo} alt="Career Returnship Logo" />
-          <a href="https://career-returnship.netlify.app/">Career Returnship</a>
+          <img src={Logo} alt="ProjectHUB Logo" />
+          <a href="https://career-returnship.netlify.app/">Project<strong>HUB</strong></a>
         </div>
+        <div className='spacer'></div>
         <div>
           <div className="footer__nav-icons">
             <a href="https://github.com/wwcodecolorado/">
@@ -26,13 +27,10 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div>
+        <div className='footer__nav-title'>
           <a href="https://linktr.ee/wwcodecolorado">
-            Women Who Code
+            Women Who Code <br />Boulder / Denver
           </a>
-        </div>
-        <div>
-          <div className="footer__nav-copyright">{"\u00A9"} Career Returnship</div>
         </div>
       </div>
       <div className="footer__bottom">

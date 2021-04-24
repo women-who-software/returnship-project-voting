@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
-import ValidateError from "../ValidateError/ValidateError";
-import { GlobalContext } from "../../Context/GlobalContext";
+import ValidateError from "../../ValidateError/ValidateError";
+import { GlobalContext } from "../../../Context/GlobalContext";
 
 const validator = require("email-validator");
 
-export default function SignUpsModalForm(props) {
-  const { handleSubmit } = props;
+export default function VotingModalForm(props) {
   const { projects } = useContext(GlobalContext);
+  const { handleSubmit } = props;
 
   const Checkbox = ({
     type = "checkbox",
@@ -28,7 +28,6 @@ export default function SignUpsModalForm(props) {
   };
 
   const [name, setName] = useState({ value: "", touched: "" });
-  const [github, setGithub] = useState({ value: "", touched: "" });
   const [email, setEmail] = useState({ value: "", touched: "" });
   const [selectedProjects, setSelectedProjects] = useState({});
   const [projectsTouched, setProjectsTouched] = useState(false);
@@ -38,13 +37,6 @@ export default function SignUpsModalForm(props) {
   const updateName = (name) => {
     setName({
       value: name,
-      touched: true,
-    });
-  };
-
-  const updateGithub = (github) => {
-    setGithub({
-      value: github,
       touched: true,
     });
   };
@@ -72,8 +64,11 @@ export default function SignUpsModalForm(props) {
     e.preventDefault();
 
     console.log("name", name);
-    console.log("github", github);
-    console.log("email", email);
+
+    validator.validate(email)
+      ? console.log("email", email)
+      : console.log("slack", email);
+
     console.log(
       "selected",
       Object.keys(selectedProjects).filter(
@@ -95,23 +90,13 @@ export default function SignUpsModalForm(props) {
     return { error: false, message: "" };
   };
 
-  const validateGithub = () => {
-    const userGithub = github.value.trim();
-
-    if (userGithub.length === 0) {
-      return { error: true, message: "Github Handle is required" };
-    }
-
-    return { error: false, message: "" };
-  };
-
   const validateEmail = () => {
     const userEmail = email.value.trim();
 
-    if (!validator.validate(userEmail)) {
+    if (userEmail.length <= 0) {
       return {
         error: true,
-        message: "Please enter a valid email address",
+        message: "Please enter a email address or Slack Handle",
       };
     }
 
@@ -126,7 +111,7 @@ export default function SignUpsModalForm(props) {
     if (Object.keys(userSelectedProjects).length === 0 || count.length === 0) {
       return {
         error: true,
-        message: "Please select at least 1 Project to signup for",
+        message: "You must selected at least 1 Project to vote for",
       };
     }
 
@@ -144,23 +129,17 @@ export default function SignUpsModalForm(props) {
   let buttonDisabled = true;
 
   const NameError = validateUserName();
-  const GithubError = validateGithub();
   const EmailError = validateEmail();
   const SelectedProjectsError = validateSelectedProjects();
 
-  if (
-    !NameError.error &&
-    !GithubError.error &&
-    !EmailError.error &&
-    !SelectedProjectsError.error
-  ) {
+  if (!NameError.error && !EmailError.error && !SelectedProjectsError.error) {
     buttonDisabled = false;
   }
 
   // Project Options
   const projectOptions = [];
   projects.map((project) => {
-    if (project.status === "sign up") {
+    if (project.status === "open vote") {
       projectOptions.push({
         key: project.project_id,
         name: project.project_name,
@@ -179,15 +158,15 @@ export default function SignUpsModalForm(props) {
   // render
   return (
     <div className="form">
-      <h1>SIGN UP FOR PROJECTS</h1>
+      <h1>VOTE ON PROJECTS</h1>
+
       <div className="form__about">
-        Select the projects you are interested in
+        Select your top choice so we can prioritize projects.
       </div>
+
       <form onSubmit={handleOnSubmit} className="form__form">
         <div className="form__options">
-          <div className="form__options-label">
-            Pick your top 2:
-          </div>
+          <div className="form__options-label">Pick your top 2:</div>
           <div className="form__options-values">
             {projectOptions.map((item) => (
               <div key={item.key}>
@@ -229,7 +208,7 @@ export default function SignUpsModalForm(props) {
 
         <div className="form__input">
           <label className="form__input-label" htmlFor="email">
-            Email:
+            Slack Handle or Email:
           </label>
           <input
             name="email"
@@ -244,26 +223,9 @@ export default function SignUpsModalForm(props) {
           {email.touched && <ValidateError message={EmailError.message} />}
         </div>
 
-        <div className="form__input">
-          <label className="form__input-label" htmlFor="github">
-            Github Handle:
-          </label>
-          <input
-            name="github"
-            className="form__input-input"
-            onChange={(e) => updateGithub(e.target.value)}
-            type="text"
-            size="50"
-            required
-          />
-        </div>
-        <div>
-          {github.touched && <ValidateError message={GithubError.projects} />}
-        </div>
-
         <div className="form__submit">
           <button type="submit" disabled={buttonDisabled}>
-            SIGN ME UP
+            SUBMIT CHOICE
           </button>
         </div>
       </form>
