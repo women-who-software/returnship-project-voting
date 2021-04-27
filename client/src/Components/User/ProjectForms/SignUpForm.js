@@ -2,33 +2,18 @@ import React, { useState, useContext } from "react";
 import config from "../../../config";
 import ValidateError from "../../ValidateError/ValidateError";
 import { GlobalContext } from "../../../Context/GlobalContext";
-import { Button } from "../UI";
+import { Button, Input, Checkbox } from "../../UI";
+import {
+  validateEmail,
+  validateGithub,
+  validateSelectedProjects,
+  validateUserName,
+} from "./Validation";
 import StatusNew from "../../Images/project-accepting-new.svg";
-
-const validator = require("email-validator");
 
 export default function SignUpsModalForm(props) {
   const { handleSubmit } = props;
   const { projects } = useContext(GlobalContext);
-
-  const Checkbox = ({
-    type = "checkbox",
-    name,
-    id,
-    checked = false,
-    onChange,
-  }) => {
-    return (
-      <input
-        type={type}
-        htmlFor={id}
-        name={name}
-        value={id}
-        checked={checked}
-        onChange={onChange}
-      />
-    );
-  };
 
   const [name, setName] = useState({ value: "", touched: "" });
   const [github, setGithub] = useState({ value: "", touched: "" });
@@ -72,84 +57,30 @@ export default function SignUpsModalForm(props) {
 
   // Form Submit
   const handleOnSubmit = (e) => {
-    e.preventDefault();
+    if (!buttonDisabled) {
+      e.preventDefault();
 
-    console.log("name", name);
-    console.log("github", github);
-    console.log("email", email);
-    console.log(
-      "selected",
-      Object.keys(selectedProjects).filter(
-        (key) => selectedProjects[key].checked
-      )
-    );
+      console.log("name", name);
+      console.log("github", github);
+      console.log("email", email);
+      console.log(
+        "selected",
+        Object.keys(selectedProjects).filter(
+          (key) => selectedProjects[key].checked
+        )
+      );
 
-    handleSubmit(true);
-  };
-
-  // Validate form fields
-  const validateUserName = () => {
-    const userName = name.value.trim();
-
-    if (userName.length === 0) {
-      return { error: true, message: "Name is required" };
+      handleSubmit(true);
     }
-
-    return { error: false, message: "" };
-  };
-
-  const validateGithub = () => {
-    const userGithub = github.value.trim();
-
-    if (userGithub.length === 0) {
-      return { error: true, message: "Github Handle is required" };
-    }
-
-    return { error: false, message: "" };
-  };
-
-  const validateEmail = () => {
-    const userEmail = email.value.trim();
-
-    if (!validator.validate(userEmail)) {
-      return {
-        error: true,
-        message: "Please enter a valid email address",
-      };
-    }
-
-    return { error: false, message: "" };
-  };
-
-  const validateSelectedProjects = () => {
-    const userSelectedProjects = selectedProjects;
-
-    const count = Object.values(userSelectedProjects).filter((k) => k.checked);
-
-    if (Object.keys(userSelectedProjects).length === 0 || count.length === 0) {
-      return {
-        error: true,
-        message: "Please select at least 1 Project to signup for",
-      };
-    }
-
-    if (count.length > 2) {
-      return {
-        error: true,
-        message: "Please only select a max of 2 projects",
-      };
-    }
-
-    return { error: false, message: "" };
   };
 
   // Check for validation errors
   let buttonDisabled = true;
 
-  const NameError = validateUserName();
-  const GithubError = validateGithub();
-  const EmailError = validateEmail();
-  const SelectedProjectsError = validateSelectedProjects();
+  const NameError = validateUserName(name.value.trim());
+  const GithubError = validateGithub(github.value.trim());
+  const EmailError = validateEmail(email.value.trim());
+  const SelectedProjectsError = validateSelectedProjects(selectedProjects);
 
   if (
     !NameError.error &&
@@ -206,9 +137,6 @@ export default function SignUpsModalForm(props) {
                   value={item.key}
                   onChange={updateSelectedProjects}
                 />
-                <label id={item.key} htmlFor={item.key}>
-                  {item.name}
-                </label>
               </div>
             ))}
           </div>
@@ -220,55 +148,32 @@ export default function SignUpsModalForm(props) {
           )}
         </div>
 
-        <div className="form__input">
-          <label className="form__input-label" htmlFor="userName">
-            Name:
-          </label>
-          <input
-            name="userName"
-            className="form__input-input"
-            onChange={(e) => updateName(e.target.value)}
-            type="text"
-            required
-          />
-        </div>
-        <div>
-          {name.touched && <ValidateError message={NameError.message} />}
-        </div>
+        <Input
+          type="text"
+          name="name"
+          onChange={(e) => updateName(e.target.value)}
+          error={name.touched && NameError}
+          label="Name"
+          width="200px"
+        />
 
-        <div className="form__input">
-          <label className="form__input-label" htmlFor="email">
-            Email:
-          </label>
-          <input
-            name="email"
-            className="form__input-input"
-            onChange={(e) => updateEmail(e.target.value)}
-            type="text"
-            size="50"
-            required
-          />
-        </div>
-        <div>
-          {email.touched && <ValidateError message={EmailError.message} />}
-        </div>
+        <Input
+          type="text"
+          name="email"
+          onChange={(e) => updateEmail(e.target.value)}
+          error={email.touched && EmailError}
+          label="Email:"
+          width="200px"
+        />
 
-        <div className="form__input">
-          <label className="form__input-label" htmlFor="github">
-            Github Handle:
-          </label>
-          <input
-            name="github"
-            className="form__input-input"
-            onChange={(e) => updateGithub(e.target.value)}
-            type="text"
-            size="50"
-            required
-          />
-        </div>
-        <div>
-          {github.touched && <ValidateError message={GithubError.projects} />}
-        </div>
+        <Input
+          type="text"
+          name="github"
+          onChange={(e) => updateGithub(e.target.value)}
+          error={github.touched && GithubError}
+          label="Github Handle:"
+          width="200px"
+        />
 
         <div className="form__submit">
           <Button

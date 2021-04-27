@@ -1,9 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "../../../Context/GlobalContext";
 import ProjectDetail from "./ProjectDetail";
 
 export default function Projects() {
   const { projects, search } = useContext(GlobalContext);
+  const [flashMessage, setFlashMessage] = useState("");
+
+  // useEffect
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const filterProjects =
     search.length > 0
@@ -18,7 +24,11 @@ export default function Projects() {
       : projects;
 
   const getProjects = filterProjects.map((project) => (
-    <ProjectDetail project={project} key={project.project_id}>
+    <ProjectDetail
+      project={project}
+      key={project.project_id}
+      handleFlashMessage={(message) => setFlashMessage(message)}
+    >
       <div className="projectDetail__content-line">
         <div className="projectDetail__content-item">
           <div className="projectDetail__content-label">Client Name</div>
@@ -56,6 +66,10 @@ export default function Projects() {
 
   return (
     <>
+      {flashMessage && (
+        <div className="projectDetail__flashMessage">{flashMessage}</div>
+      )}
+
       <div className="projectDetail">
         {getProjects.length > 0 ? (
           getProjects

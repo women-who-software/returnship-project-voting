@@ -22,4 +22,38 @@
       background-color: #a10020;
     }
   }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+
+    & input {
+      border: 2px solid $card-border;
+      border-radius: 10px;
+      line-height: 2em;
+      padding: 5px;
+      width: 250px;
+    }
+
+    & label {
+      margin-top: 10px;
+      margin-left: 10px;
+      font-size: $font-size-small;
+    }
+  }
+
+  &__checkbox {
+    margin-right: 10px;
+
+    & label {
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+  }
+
+  &__error {
+    color: $error;
+  }
 }

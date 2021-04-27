@@ -16,40 +16,41 @@ export default function AdminPanel() {
   // const chevronDownElement = <FontAwesomeIcon icon={faChevronDown} />;
 
   const getProjects = projects.map((projects) => (
-    <div className="projects__items-project card" key={projects.project_id}>
-      {/* TODO: Create method function for checkbox action */}
-      <div className="projects__mobile_row1">
-        <input
-          type="checkbox"
-          name="select_checkbox"
-          className="project_checkbox"
-          id=""
-        />
-        <div className="projects__items-project-name table-col">
-          <NavLink to={`/admin/projects/${projects.project_id}`}>
-            {projects.project_name}
-          </NavLink>
-        </div>
-      </div>
-      <div className="projects__mobile_row2">
-        <div className="projects__items-vote table-col">
-          <span className="projects__mobile_table_header">Vote:</span>
-          {projects.vote}
-        </div>
-        <div className="projects__items-sign_up table-col">
-          <span className="projects__mobile_table_header">Sign Up:</span>
-          {projects.sign_up}
-        </div>
-        <div className="projects__items-status table-col">
-          <span className="projects__mobile_table_header">Status:</span>
-          {projects.status}
-        </div>
-        <div className="projects__items-date table-col">
-          <span className="projects__mobile_table_header">Date:</span>
-          {projects.date}
-        </div>
-      </div>
-    </div>
+    // <div className="projects__items-project card" key={projects.project_id}>
+    //   {/* TODO: Create method function for checkbox action */}
+    //   <div className="projects__mobile_row1">
+    //     <input
+    //       type="checkbox"
+    //       name="select_checkbox"
+    //       className="project_checkbox"
+    //       id=""
+    //     />
+    //     <div className="projects__items-project-name table-col">
+    //       <NavLink to={`/admin/projects/${projects.project_id}`}>
+    //         {projects.project_name}
+    //       </NavLink>
+    //     </div>
+    //   </div>
+    //   <div className="projects__mobile_row2">
+    //     <div className="projects__items-vote table-col">
+    //       <span className="projects__mobile_table_header">Vote:</span>
+    //       {projects.vote}
+    //     </div>
+    //     <div className="projects__items-sign_up table-col">
+    //       <span className="projects__mobile_table_header">Sign Up:</span>
+    //       {projects.sign_up}
+    //     </div>
+    //     <div className="projects__items-status table-col">
+    //       <span className="projects__mobile_table_header">Status:</span>
+    //       {projects.status}
+    //     </div>
+    //     <div className="projects__items-date table-col">
+    //       <span className="projects__mobile_table_header">Date:</span>
+    //       {projects.date}
+    //     </div>
+    //   </div>
+    // </div>
+    <div>Projects</div>
   ));
   return (
     <>

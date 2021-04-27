@@ -16,25 +16,6 @@
     margin-left: 20px;
   }
 
-  & input[type="checkbox"] {
-    margin-right: 10px;
-  }
-
-  &__input-label {
-    display: block;
-    margin-top: 10px;
-    margin-left: 10px;
-    font-size: $font-size-small;
-  }
-
-  &__input-input {
-    border: 2px solid $card-border;
-    border-radius: 10px;
-    line-height: 2em;
-    padding: 5px;
-    width: 250px;
-  }
-
   &__options-label {
     margin-bottom: 10px;
   }
@@ -42,10 +23,7 @@
   &__options-values {
     margin-left: 10px;
     margin-bottom: 20px;
-
-    & label {
-      margin-left: 10px;
-    }
+    line-height: 2em;
   }
 
   &__submit {

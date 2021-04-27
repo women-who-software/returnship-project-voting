@@ -147,7 +147,14 @@
 
     &-spacer {
       height: 43px;
+      width: 160px;
     }
+  }
+
+  &__flashMessage {
+    color: #58bacc;
+    margin: 20px 0;
+    text-align: center;
   }
 }
 
@@ -185,6 +192,10 @@
           }
         }
       }
+    }
+
+    &__content {
+      padding: 10px 100px;
     }
   }
 }

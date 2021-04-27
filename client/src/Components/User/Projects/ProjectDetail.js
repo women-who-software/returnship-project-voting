@@ -3,21 +3,27 @@ import config from "../../../config";
 import StatusOpen from "../../Images/project-open.svg";
 import StatusNew from "../../Images/project-accepting-new.svg";
 import useToggle from "../../Hooks/useToggle";
-import { Modal, Button } from "../UI";
+import { Modal, Button } from "../../UI";
 import VotingForm from "../ProjectForms/VotingForm";
 import SignUpsForm from "../ProjectForms/SignUpForm";
 
-export default function Accordion({ project, children }) {
+export default function ProjectDetail({
+  project,
+  handleFlashMessage,
+  children,
+}) {
   const [isOpen, setOpen] = React.useState(false);
   const [openVoting, setOpenVoting] = useToggle(false);
   const [openSignUps, setOpenSignUps] = useToggle(false);
 
   const handleSignUpsOnSubmit = () => {
     setOpenSignUps();
+    handleFlashMessage("Your sign up is submitted. Thanks");
   };
 
   const handleVotingOnSubmit = () => {
     setOpenVoting();
+    handleFlashMessage("Vote submitted. Thank you! ");
   };
 
   const getStatus = (status) => {
