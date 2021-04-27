@@ -40,6 +40,11 @@
       }
     }
 
+    &-end {
+      font-size: 200px;
+      line-height: 36px;
+    }
+
     & blockquote {
       position: relative;
       margin: 25px;
@@ -58,7 +63,7 @@
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .about__small {
     display: none;
   }

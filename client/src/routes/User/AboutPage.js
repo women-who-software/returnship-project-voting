@@ -48,7 +48,7 @@ export default function About() {
           <blockquote>
             <strong>ProjectHUB</strong> is your place to browse projects. It
             allows you to put into practice your knowledge and gain skill
-            through building practical projects.{" "}
+            through building practical projects.
           </blockquote>
           <cite>
             Rafna, Project<strong>HUB</strong> PM

@@ -18,7 +18,7 @@ const NavLinks = () => {
         <div>
           <img src={AdminLogo} alt="Admin Logo" />
 
-          <NavLink to="/">Admin</NavLink>
+          <NavLink to="/admin">Admin</NavLink>
         </div>
       )}
     </div>

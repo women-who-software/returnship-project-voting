@@ -34,12 +34,7 @@
 
     &-status {
       margin-top: 10px;
-      & img {
-        margin-right: 5px;
-        width: 25px;
-        height: auto;
-        vertical-align: middle;
-      }
+
       &-title {
         display: inline-block;
         margin-right: 0;
@@ -66,31 +61,9 @@
       justify-content: space-between;
       align-items: center;
 
-      &-modal {
-        & button {
-          background-color: $font-hover-color;
-          color: white;
-          border-radius: 5px;
-          border: none;
-          padding: 10px 20px;
-          font-size: 14px;
-          width: 160px;
-
-          & img {
-            width: 25px;
-            height: auto;
-            vertical-align: middle;
-            margin-right: 10px;
-          }
-        }
-      }
-
       &-accordion {
-        &::after {
-          content: "\1433";
-          font-weight: bold;
-          transform: rotate(90deg);
-        }
+        font-weight: bold;
+        transform: rotate(90deg);
 
         &-large {
           display: none;
@@ -99,18 +72,18 @@
     }
 
     &:hover,
-    &.open {
+    & .open {
       color: black;
     }
 
-    &.open {
+    & .open {
       border-bottom-left-radius: 0px;
       border-bottom-right-radius: 0px;
     }
 
-    &.open {
-      .projectDetail__title-right-accordion {
-        transform: rotate(90deg);
+    & .open {
+      & .projectDetail__title-right-accordion {
+        transform: rotate(-90deg);
       }
     }
   }
@@ -172,23 +145,8 @@
       background-color: $card-project-description;
     }
 
-    &-button {
-      margin: 20px auto;
-      border: 1px solid $card-border;
-      border-radius: 5px;
-      width: 175px;
-      text-align: center;
-      background-color: $bg;
-      font-weight: 600;
-      padding: 10px 5px;
-      &:hover {
-        color: $font-accent-color;
-      }
-      & a {
-        &:hover {
-          color: $font-accent-color;
-        }
-      }
+    &-spacer {
+      height: 43px;
     }
   }
 }

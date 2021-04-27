@@ -1,72 +1,67 @@
-.form {
-  margin: 20px;
+// .form {
+//   margin: 20px;
 
-  & hr {
-    border: 1px solid $border-color;
-  }
+//   & hr {
+//     border: 1px solid $border-color;
+//   }
 
-  & h1 {
-    font-size: $font-size-med;
-    font-weight: $font-weight-bold;
-    text-align: center;
-  }
+//   & h1 {
+//     font-size: $font-size-med;
+//     font-weight: $font-weight-bold;
+//     text-align: center;
+//   }
 
-  &__about {
-    font-weight: $font-weight-regular;
-    text-align: center;
-    border-bottom: 1px solid $border-color;
-    margin-bottom: 20px;
-  }
+//   &__about {
+//     font-weight: $font-weight-regular;
+//     text-align: center;
+//     border-bottom: 1px solid $border-color;
+//     margin-bottom: 20px;
+//   }
 
-  &__input {
-    margin-bottom: 10px;
-    margin-left: 10px;
+//   &__input {
+//     margin-bottom: 10px;
 
-    &-label {
-      display: inline-block;
-      font-weight: $font-weight-bold;
-      margin-right: 10px;
-      width: 150px;
-    }
+//     &-label {
+//       display: inline-block;
+//       font-weight: $font-weight-bold;
+//       margin-right: 10px;
+//       width: 150px;
+//     }
 
-    &-input {
-      border: none;
-    }
-  }
+//     &-input {
+//       border: none;
+//     }
+//   }
 
-  &__options-label {
-    margin-bottom: 10px;
-  }
+//   &__options-label {
+//     margin-bottom: 10px;
+//   }
 
-  &__options-values {
-    margin-left: 10px;
-    margin-bottom: 20px;
-    & label {
-      margin-left: 10px;
-    }
-  }
+//   &__options-values {
+//     margin-left: 10px;
+//     margin-bottom: 20px;
+//     & label {
+//       margin-left: 10px;
+//     }
+//   }
 
-  &__submit {
-    text-align: center;
-    margin-top: 40px;
-    & button {
-      width: 150px;
-      height: 32px;
-      border-radius: 5px;
-      //background-color: $text-nav;
-      color: $bg;
-      font-weight: $font-weight-bold;
-      border: none;
-    }
-  }
-}
+//   &__submit {
+//     text-align: center;
+//     margin-top: 40px;
+//     & button {
+//       width: 150px;
+//       height: 32px;
+//       border-radius: 5px;
+//       //background-color: $text-nav;
+//       color: $bg;
+//       font-weight: $font-weight-bold;
+//       border: none;
+//     }
+//   }
+// }
 
-@media (min-width: 700px) {
-  .form__input {
-    margin-left: 50px;
-  }
-
-  .form__options-values {
-    margin-left: 20px;
-  }
-}
+// @media (min-width: 700px) {
+//   .form__options-values {
+//     margin-left: 20px;
+//   }
+// }

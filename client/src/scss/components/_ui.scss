@@ -1,0 +1,25 @@
+.ui {
+  &__button {
+    background-color: $font-hover-color;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 160px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    & img {
+      width: 25px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      background-color: #a10020;
+    }
+  }
+}

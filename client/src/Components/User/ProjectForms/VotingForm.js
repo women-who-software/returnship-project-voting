@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import ValidateError from "../../ValidateError/ValidateError";
 import { GlobalContext } from "../../../Context/GlobalContext";
+import { Button } from "../../UI";
+import StatusOpen from "../../Images/project-open.svg";
 
 const validator = require("email-validator");
 
@@ -139,7 +141,7 @@ export default function VotingModalForm(props) {
   // Project Options
   const projectOptions = [];
   projects.map((project) => {
-    if (project.status === "open vote") {
+    if (project.project_status === "OpenVote") {
       projectOptions.push({
         key: project.project_id,
         name: project.project_name,
@@ -155,6 +157,10 @@ export default function VotingModalForm(props) {
       : false;
   };
 
+  const getImage = () => {
+    return <img src={StatusOpen} alt="VOTE" />;
+  };
+
   // render
   return (
     <div className="form">
@@ -164,7 +170,7 @@ export default function VotingModalForm(props) {
         Select your top choice so we can prioritize projects.
       </div>
 
-      <form onSubmit={handleOnSubmit} className="form__form">
+      <form className="form__form">
         <div className="form__options">
           <div className="form__options-label">Pick your top 2:</div>
           <div className="form__options-values">
@@ -224,9 +230,13 @@ export default function VotingModalForm(props) {
         </div>
 
         <div className="form__submit">
-          <button type="submit" disabled={buttonDisabled}>
-            SUBMIT CHOICE
-          </button>
+          <Button
+            type="submit"
+            label="VOTE"
+            handleClick={handleOnSubmit}
+            disabled={buttonDisabled}
+            img={getImage()}
+          />
         </div>
       </form>
     </div>

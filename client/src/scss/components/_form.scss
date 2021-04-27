@@ -8,7 +8,6 @@
   &__about {
     font-size: $font-size-small;
     padding-bottom: 10px;
-    border-bottom: 1px solid $border-color;
     margin-bottom: 10px;
     text-align: center;
   }
@@ -36,20 +35,25 @@
     width: 250px;
   }
 
+  &__options-label {
+    margin-bottom: 10px;
+  }
+
+  &__options-values {
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+    & label {
+      margin-left: 10px;
+    }
+  }
+
   &__submit {
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: center;
-    & button {
-      width: 185px;
-      height: 40px;
-      //background-color: $text-nav;
-      color: white;
-      border-radius: 5px;
-      &:hover {
-        background-color: $font-hover-color;
-        color: $font-color;
-        font-weight: $font-weight-bold;
-      }
+
+    & .ui__button {
+      margin: 0 auto;
     }
   }
 }

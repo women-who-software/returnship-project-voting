@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import ValidateError from "../../ValidateError/ValidateError";
 import { GlobalContext } from "../../../Context/GlobalContext";
+import { Button } from "../../UI";
+import StatusNew from "../../Images/project-accepting-new.svg";
 
 const validator = require("email-validator");
 
@@ -160,13 +162,13 @@ export default function SignUpsModalForm(props) {
   // Project Options
   const projectOptions = [];
   projects.map((project) => {
-    if (project.status === "sign up") {
-      projectOptions.push({
-        key: project.project_id,
-        name: project.project_name,
-        label: project.project_name,
-      });
-    }
+    return project.project_status === "SignUp"
+      ? projectOptions.push({
+          key: project.project_id,
+          name: project.project_name,
+          label: project.project_name,
+        })
+      : "";
   });
 
   // Check if selectedOption is checked
@@ -176,18 +178,23 @@ export default function SignUpsModalForm(props) {
       : false;
   };
 
+  const getImage = () => {
+    return <img src={StatusNew} alt="SIGN UP" />;
+  };
+
   // render
   return (
     <div className="form">
       <h1>SIGN UP FOR PROJECTS</h1>
+
       <div className="form__about">
         Select the projects you are interested in
       </div>
-      <form onSubmit={handleOnSubmit} className="form__form">
+
+      <form className="form__form">
         <div className="form__options">
-          <div className="form__options-label">
-            Pick your top 2:
-          </div>
+          <div className="form__options-label">Pick your top 2:</div>
+
           <div className="form__options-values">
             {projectOptions.map((item) => (
               <div key={item.key}>
@@ -205,6 +212,7 @@ export default function SignUpsModalForm(props) {
             ))}
           </div>
         </div>
+
         <div>
           {projectsTouched && (
             <ValidateError message={SelectedProjectsError.message} />
@@ -262,9 +270,13 @@ export default function SignUpsModalForm(props) {
         </div>
 
         <div className="form__submit">
-          <button type="submit" disabled={buttonDisabled}>
-            SIGN ME UP
-          </button>
+          <Button
+            type="submit"
+            label="SIGN UP"
+            img={getImage()}
+            handleClick={handleOnSubmit}
+            disabled={buttonDisabled}
+          />
         </div>
       </form>
     </div>

@@ -1,6 +1,7 @@
 .footer {
   & hr {
-    margin: 20px 20px 0 20px;
+    margin: 10px;
+    color: #878585;
   }
   &__nav {
     display: flex;
@@ -54,11 +55,15 @@
 
 @media (min-width: 940px) {
   .footer {
+    & hr {
+      margin: 20px 100px 0 100px;
+    }
+  
     &__nav {
       flex-direction: row;
       justify-content: space-around;
       padding: 0px 20px;
-      margin: 10px 50px;
+      margin: 20px 80px;
 
       &-title {
           margin-left: 60px;

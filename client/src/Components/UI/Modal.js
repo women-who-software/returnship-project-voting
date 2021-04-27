@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 
-function Portal({ children }) {
+const Portal = ({ children }) => {
   const modalRoot = document.getElementById("modal-root");
   const element = document.createElement("div");
 
@@ -16,7 +16,7 @@ function Portal({ children }) {
   return createPortal(children, element);
 }
 
-function Modal({ children, toggle, open }) {
+const Modal = ({ children, toggle, open }) => {
   return (
     <Portal>
       {open && (
@@ -36,4 +36,4 @@ function Modal({ children, toggle, open }) {
   );
 }
 
-export default Modal;
+export { Modal };
