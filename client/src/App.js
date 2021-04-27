@@ -2,9 +2,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Route, Switch } from "react-router-dom";
 
-// Temporary Data
-import STORE from "./STORE";
-
 // State Management
 import { GlobalContext } from "./Context/GlobalContext";
 
@@ -16,13 +13,22 @@ import ProjectsPage from "./Routes/User/ProjectsPage";
 import NotFoundPage from "./Routes/NotFoundPage";
 import AdminPanel from "./Components/Admin/AdminPanel/AdminPanel";
 import AdminProjectDetails from "./Components/Admin/AdminProjectDetails/AdminProjectDetails";
+import ProjectsApiService from "./Services/projects-service";
 
 export default function App() {
   const [hasError, setHasError] = useState("");
   const { projects, setProjects } = useContext(GlobalContext);
 
   useEffect(() => {
-    setProjects(STORE.Project);
+    // ProjectsApiService.getAll()
+    //   .then((res) => {
+    //     setProjects(res);
+    //   })
+    //   .catch((error) => {
+    //     setHasError(error);
+    //   });
+
+    setProjects(ProjectsApiService.getAll());
   }, []);
 
   return (
@@ -31,6 +37,7 @@ export default function App() {
 
       <div>
         {hasError && <p className="red">There was an error</p>}
+
         <Switch>
           <Route exact path="/" component={AboutPage} />
           <Route exact path="/projects" component={ProjectsPage} />

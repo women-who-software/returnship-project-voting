@@ -1,8 +1,9 @@
 import React from "react";
+import config from "../../../config";
 import StatusOpen from "../../Images/project-open.svg";
 import StatusNew from "../../Images/project-accepting-new.svg";
 import useToggle from "../../Hooks/useToggle";
-import { Modal, Button } from "../../UI";
+import { Modal, Button } from "../UI";
 import VotingForm from "../ProjectForms/VotingForm";
 import SignUpsForm from "../ProjectForms/SignUpForm";
 
@@ -56,11 +57,11 @@ export default function Accordion({ project, children }) {
   // ClassNames
   let titleOpen = isOpen ? "open" : "";
   let projectActive =
-    project.project_status === "Active"
+    project.project_status === config.PROJECT_STATUS_ACTIVE
       ? "projectDetail__title-project-active"
       : "";
   let projectComplete =
-    project.project_status === "Complete"
+    project.project_status === config.PROJECT_STATUS_COMPLETE
       ? "projectDetail__title-project-complete"
       : "";
 
@@ -81,7 +82,7 @@ export default function Accordion({ project, children }) {
           </div>
           <div className="projectDetail__title-right">
             <div className="projectDetail__title-right-modal">
-              {project.project_status === "OpenVote" ? (
+              {project.project_status === config.PROJECT_STATUS_OPENVOTE ? (
                 <Button
                   handleClick={() => setOpenVoting()}
                   label={getStatus(project.project_status).statusImageText}
@@ -90,7 +91,7 @@ export default function Accordion({ project, children }) {
               ) : (
                 ""
               )}
-              {project.project_status === "SignUp" ? (
+              {project.project_status === config.PROJECT_STATUS_SIGNUP ? (
                 <Button
                   handleClick={() => setOpenSignUps()}
                   label={getStatus(project.project_status).statusImageText}
@@ -99,8 +100,8 @@ export default function Accordion({ project, children }) {
               ) : (
                 ""
               )}
-              {project.project_status !== "SignUp" &&
-              project.project_status !== "OpenVote" ? (
+              {project.project_status !== config.PROJECT_STATUS_SIGNUP &&
+              project.project_status !== config.PROJECT_STATUS_OPENVOTE ? (
                 <div className="projectDetail__content-spacer"></div>
               ) : (
                 ""

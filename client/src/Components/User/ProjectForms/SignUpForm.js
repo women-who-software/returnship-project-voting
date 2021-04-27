@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
+import config from "../../../config";
 import ValidateError from "../../ValidateError/ValidateError";
 import { GlobalContext } from "../../../Context/GlobalContext";
-import { Button } from "../../UI";
+import { Button } from "../UI";
 import StatusNew from "../../Images/project-accepting-new.svg";
 
 const validator = require("email-validator");
@@ -162,7 +163,7 @@ export default function SignUpsModalForm(props) {
   // Project Options
   const projectOptions = [];
   projects.map((project) => {
-    return project.project_status === "SignUp"
+    return project.project_status === config.PROJECT_STATUS_SIGNUP
       ? projectOptions.push({
           key: project.project_id,
           name: project.project_name,

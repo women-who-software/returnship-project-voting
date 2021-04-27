@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
+import config from "../../../config";
 import ValidateError from "../../ValidateError/ValidateError";
 import { GlobalContext } from "../../../Context/GlobalContext";
-import { Button } from "../../UI";
+import { Button } from "../UI";
 import StatusOpen from "../../Images/project-open.svg";
 
 const validator = require("email-validator");
@@ -141,7 +142,7 @@ export default function VotingModalForm(props) {
   // Project Options
   const projectOptions = [];
   projects.map((project) => {
-    if (project.project_status === "OpenVote") {
+    if (project.project_status === config.PROJECT_STATUS_OPENVOTE) {
       projectOptions.push({
         key: project.project_id,
         name: project.project_name,
